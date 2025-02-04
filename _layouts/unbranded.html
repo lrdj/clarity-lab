@@ -9,15 +9,19 @@
 <body class="govuk-template__body govuk-frontend-supported">
 
   {% include above-main.html %}
+  
+  <div class="govuk-width-container">
 
-  <main class="govuk-main-wrapper govuk-main-wrapper--l">
     {{ content }}
-  </main>
+
+  </div> <!--- class="govuk-width-container" -->
 
   <!-- call frontend -->
   {% include govuk-scripts.html %}
 
 </body>
 </html>
+
+
 
 
