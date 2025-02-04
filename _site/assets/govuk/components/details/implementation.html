@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Implementation notes | Bootstrap govuk</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Implementation notes" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A Jekyll-based prototype using the GOV.UK Design System." />
+<meta property="og:description" content="A Jekyll-based prototype using the GOV.UK Design System." />
+<link rel="canonical" href="http://localhost:4000/bootstrapgov/assets/govuk/components/details/implementation.html" />
+<meta property="og:url" content="http://localhost:4000/bootstrapgov/assets/govuk/components/details/implementation.html" />
+<meta property="og:site_name" content="Bootstrap govuk" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Implementation notes" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"A Jekyll-based prototype using the GOV.UK Design System.","headline":"Implementation notes","url":"http://localhost:4000/bootstrapgov/assets/govuk/components/details/implementation.html"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- link rel="stylesheet" href="/bootstrapgov/assets/main.css" --><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/bootstrapgov/feed.xml" title="Bootstrap govuk" /><link rel="stylesheet" href="/bootstrapgov/assets/govuk/govuk-frontend.min.css">
+	
+</head>
+<body class="govuk-template__body govuk-frontend-supported"><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/bootstrapgov/">Bootstrap govuk</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/bootstrapgov/about/">About</a><a class="page-link" href="/bootstrapgov/gov/">Gov frontend integration test</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/details/implementation.html">Implementation notes</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/accordion/">Accordion</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/back-link/">Back link</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/breadcrumbs/">Breadcrumbs</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/button/">Button</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/character-count/">Character count</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/checkboxes/">Checkboxes</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/cookie-banner/">Cookie banner</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/date-input/">Date input</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/details/">Details</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/error-message/">Error message</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/error-summary/">Error summary</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/exit-this-page/">Exit this page</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/fieldset/">Fieldset</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/file-upload/">File upload</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/footer/">Footer</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/header/">Header</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/hint/">Hint</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/input/">Input</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/inset-text/">Inset text</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/label/">Label</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/notification-banner/">Notification banner</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/pagination/">Pagination</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/panel/">Panel</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/phase-banner/">Phase banner</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/radios/">Radios</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/select/">Select</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/service-navigation/">Service navigation</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/skip-link/">Skip link</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/summary-list/">Summary list</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/table/">Table</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/tabs/">Tabs</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/tag/">Tag</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/task-list/">Task list</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/textarea/">Textarea</a><a class="page-link" href="/bootstrapgov/assets/govuk/components/warning-text/">Warning text</a></div>
+      </nav></div>
+</header>
+<main class="govuk-main-wrapper govuk-main-wrapper--l">
+	<article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Implementation notes</h1>
+  </header>
+
+  <div class="post-content">
+    <h2 id="implementation-notes">Implementation notes</h2>
+
+<h3 id="styling-in-older-browsers">Styling in older browsers</h3>
+
+<h4 id="browsers-with-support-for-typemodule-details-and-feature-queries">Browsers with support for <code class="language-plaintext highlighter-rouge">type=module</code>, <code class="language-plaintext highlighter-rouge">&lt;details&gt;</code> and feature queries</h4>
+
+<p>https://browsersl.ist/#q=supports+details+and+supports+css-featurequeries+and+supports+es6-module&amp;region=GB</p>
+
+<p>Previously, we provided a polyfill for older browsers which do not support the
+<code class="language-plaintext highlighter-rouge">&lt;details&gt;</code> component. Since most browsers now DO support <code class="language-plaintext highlighter-rouge">&lt;details&gt;</code>, we’ve
+removed that polyfill, and we need to make sure browsers which don’t support
+<code class="language-plaintext highlighter-rouge">&lt;details&gt;</code> don’t use any styles that make them look interactable.</p>
+
+<p>By wrapping these styles in a feature query, we can capture the vast majority of
+browsers which have full support.</p>
+
+<h4 id="browsers-that-support-typemodule-and-feature-queries-but-not-details">Browsers that support <code class="language-plaintext highlighter-rouge">type=module</code> and feature queries but not <code class="language-plaintext highlighter-rouge">&lt;details&gt;</code></h4>
+
+<p>https://browsersl.ist/#q=supports+es6-module+and+not+supports+details+and+supports+css-featurequeries&amp;region=GB</p>
+
+<p>This only affects Edge 16 - 18. We filter these out of the support query by
+checking for <code class="language-plaintext highlighter-rouge">-ms-ime-align: auto</code>, which isn’t supported by any other browsers.</p>
+
+<h4 id="browsers-that-support-details-but-not-typemodule-or-feature-queries">Browsers that support <code class="language-plaintext highlighter-rouge">&lt;details&gt;</code> but not <code class="language-plaintext highlighter-rouge">type=module</code> or feature queries</h4>
+
+<p>https://browsersl.ist/#q=supports+details+and+not+supports+css-featurequeries+and+not+supports+es6-module&amp;region=GB</p>
+
+<p>These will default to their native styling of the <code class="language-plaintext highlighter-rouge">&lt;details&gt;</code> element, with a
+few of our spacing and font styles.</p>
+
+<h4 id="browsers-which-dont-support-details-typemodule-or-feature-queries">Browsers which don’t support <code class="language-plaintext highlighter-rouge">&lt;details&gt;</code>, <code class="language-plaintext highlighter-rouge">type=module</code> or feature queries</h4>
+
+<p>https://browsersl.ist/#q=%3E0.0000001%25+and+not+supports+details+and+not+supports+es6-module+and+not+supports+css-featurequeries&amp;region=GB</p>
+
+<p>This is largely IE 8 - 11.</p>
+
+<p>We can account for IE by styling them like inset text, via a <code class="language-plaintext highlighter-rouge">@media screen\0</code>
+hack that no other browser supports.</p>
+
+<h4 id="browsers-that-support-feature-queries-but-not-details-or-typemodule">Browsers that support feature queries, but not <code class="language-plaintext highlighter-rouge">&lt;details&gt;</code> or <code class="language-plaintext highlighter-rouge">type=module</code></h4>
+
+<p>https://browsersl.ist/#q=supports+css-featurequeries+and+not+supports+details+and+not+supports+es6-module&amp;region=GB</p>
+
+<p>This is the only gap, as these browsers will get styled to look interactable,
+even though they aren’t. This is largely Opera Mini.</p>
+
+<h3 id="marker-styling">Marker styling</h3>
+
+<p>Firefox uses display: list-item to show the arrow marker for the summary
+element.</p>
+
+<p>Unfortunately we want to use <code class="language-plaintext highlighter-rouge">display: inline-block</code> to ‘shrink-wrap’ the focus
+outline around the summary text, which means that the arrow no longer shows up.</p>
+
+<p>Previously in GOV.UK Elements we resolved this by targeting Firefox specifically
+and reverting to <code class="language-plaintext highlighter-rouge">display: list-item</code>:</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@-moz-document</span> <span class="nt">regexp</span><span class="o">(</span><span class="s2">".*"</span><span class="o">)</span> <span class="p">{</span>
+  <span class="nt">details</span> <span class="nt">summary</span><span class="nd">:not</span><span class="o">([</span><span class="nt">tabindex</span><span class="o">])</span> <span class="p">{</span>
+    <span class="c1">// Allow duplicate properties, override the summary display property</span>
+    <span class="c1">// scss-lint:disable DuplicateProperty</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">list-item</span><span class="p">;</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">revert</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>However, <code class="language-plaintext highlighter-rouge">@-moz-document</code> has been removed in Firefox nightly as of 29th Nov
+2017 so with this in mind we have taken a different approach, hiding the
+browser’s marker and injecting and styling our own one across all browsers
+instead.</p>
+
+<p>This also gives us more control over the styling of the marker, allowing us for
+example to align the summary and disclosed text correctly across all browsers.</p>
+
+<p>The downside of this approach is that older browsers that require a polyfill for
+the details element will display the marker even when Javascript is disabled.
+Whilst this is not perfect, it is a cosmetic issue and the user will still be
+able to access the disclosed content.</p>
+
+<p>For the arrows themselves, we originally tried using unicode glyphs –
+specifically \25B6 (Black right-pointing triangle) and 25BC (Black down-pointing
+triangle) but Android insists on substituting the the former for an emoji even
+when the \00FE0E modifier is applied. Sad face.</p>
+
+<p>Hence the border-based triangles we are using today.</p>
+
+  </div>
+
+</article>
+
+  </main><footer class="govuk-footer" role="contentinfo">
+  <div class="govuk-width-container">
+    <div class="govuk-footer__meta">
+      <p class="govuk-footer__licence-description">
+        © Crown copyright 2025
+      </p>
+    </div>
+  </div>
+</footer>
+<!-- call frontend -->
+    <!--
+<script src="/bootstrapgov/assets/govuk/govuk-frontend.bundle.js"></script>
+<script>window.GOVUKFrontend.initAll();</script>
+-->
+
+
+<!--
+<script type="module" src="/bootstrapgov/assets/govuk/govuk-frontend.min.js"></script>
+<script type="module">
+  import { initAll } from '/bootstrapgov/assets/govuk/govuk-frontend.min.js';
+  initAll();
+</script>
+-->
+
+
+<script type="module" src="/bootstrapgov/assets/govuk-prototype-kit/init.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    if (window.GOVUKFrontend) {
+      window.GOVUKFrontend.initAll();
+    } else {
+      console.error("GOV.UK Frontend did not load correctly.");
+    }
+  });
+</script>
+
+
+  </body>
+
+</html>
