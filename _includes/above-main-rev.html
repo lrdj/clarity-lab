@@ -1,10 +1,30 @@
 
+<!-- header test -->
+
+<style type="text/css">
+  #cl-lockup { display: inline-block; width:20%; padding:1.25em 0 0 0;}
+  .govuk-header.cl-white { background-color: white; }
+  .govuk-header__container.govuk-width-container.cl-header { border-bottom:none; }
+</style>
+
+<!--
+header class="govuk-header cl-white" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container cl-header">
+    <div class="govuk-header__logo">
+      <a href="/" class="govuk-header__link govuk-header__link--homepage"><img src="{{ site.baseurl}}/assets/i/claritylab-lockup.svg" id="cl-lockup"></a>
+    </div>
+  </div>
+</header
+-->
+
 <section aria-label="Service information" class="govuk-service-navigation"
   data-module="govuk-service-navigation">
   <div class="govuk-width-container">
     <div class="govuk-service-navigation__container">
       <span class="govuk-service-navigation__service-name">
-        <a href="/" class="govuk-service-navigation__link"><img src="{{ site.baseurl}}/assets/i/claritylab-lockup.svg" id="cl-lockup"></a>
+        <a href="/" class="govuk-service-navigation__link">
+          <img src="{{ site.baseurl}}/assets/i/claritylab-lockup.svg" id="cl-lockup">
+        </a>
       </span>
       <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
         <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden>
