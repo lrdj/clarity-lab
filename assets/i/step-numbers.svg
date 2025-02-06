@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" fill="none">
+    <!-- Step 1 -->
+    <circle cx="100" cy="100" r="50" fill="#EADDF0"/>
+    <text x="100" y="110" font-size="40" font-weight="bold" text-anchor="middle" fill="#161616">1</text>
+    
+    <!-- Step 2 -->
+    <circle cx="300" cy="100" r="50" fill="#F4D4D4"/>
+    <text x="300" y="110" font-size="40" font-weight="bold" text-anchor="middle" fill="#161616">2</text>
+    
+    <!-- Step 3 -->
+    <circle cx="500" cy="100" r="50" fill="#CBE9E2"/>
+    <text x="500" y="110" font-size="40" font-weight="bold" text-anchor="middle" fill="#161616">3</text>
+</svg>
