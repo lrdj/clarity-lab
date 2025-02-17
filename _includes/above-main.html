@@ -10,21 +10,27 @@
         <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden>
           Menu
         </button>
+
+        <!-- 
+        active syntax: 
+        - li class="govuk-service-navigation__item govuk-service-navigation__item--active" 
+        - strong class="govuk-service-navigation__active-fallback">Retreats</strong
+        -->
+
         <ul class="govuk-service-navigation__list" id="navigation">
           <li class="govuk-service-navigation__item">
             <a class="govuk-service-navigation__link" href="/book-a-discovery">
               Free discovery call
             </a>
           </li>
+<!--
           <li class="govuk-service-navigation__item">
             <a class="govuk-service-navigation__link" href="/121-landing-test">
               Clarity method workshop
             </a>
           </li>
-          <!-- li class="govuk-service-navigation__item govuk-service-navigation__item--active" -->
           <li class="govuk-service-navigation__item govuk-service-navigation__item">
             <a class="govuk-service-navigation__link" href="#" aria-current="true">
-              <!-- strong class="govuk-service-navigation__active-fallback">Retreats</strong -->
               Retreats
             </a>
           </li>
@@ -33,40 +39,67 @@
               Toolkit (build 7)
             </a>
           </li>
+-->
         </ul>
       </nav>
     </div>
   </div>
 </section>
 
-<style>
 
-.hero-image {
-    width: 100%; /* Full width */
-    margin: 0;padding: 0;
-}
-.hero-image img {
-    width: 100%;
-    height: auto; /* Maintain aspect ratio */
-}
-.hero-caption {
-    font-size: small;
-    color: #666;
-    font-family: sans-serif;
-    margin:0.25em 0 0 3em;
-}
-</style>
+{% if page.hero-image and page.hero-video %}
+  <!-- Display video when both are present -->
+  <div class="hero-video">
+	<video autoplay loop muted playsinline width="100%">
+		<source src="{{ page.hero-video }}" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+  </div>
 
-<!--
-<figure class="hero-image">
-    <img src="/assets/i/retreat-night-sky.jpg" alt="A peaceful night sky over a retreat, providing a place away from chaos.">
-    <figcaption class="hero-caption">The night sky over Fidden Bay on the Isle of Mull, Scotland.</figcaption>
-</figure>
--->
+{% elsif page.hero-image %}
+  <!-- Display image when only hero-image is present -->
 
-<video autoplay loop muted playsinline width="100%">
-    <source src="/assets/i/pano-stars.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
+	<style>
+	.hero-image {
+		width: 100%; /* Full width */
+		margin: 0;padding: 0;
+	}
+	.hero-image img {
+		width: 100%;
+		height: auto; /* Maintain aspect ratio */
+	}
+	.hero-caption {
+		font-size: small;
+		color: #666;
+		font-family: sans-serif;
+		margin:0.25em 0 0 3em;
+	}
+	</style>
+
+	<figure class="hero-image">
+		<img src="{{ page.hero-image }}" alt="{{ page.hero-image-alt }}">
+		<figcaption class="hero-caption">{{ page.hero-image-caption }}</figcaption>
+	</figure>
+
+{% elsif page.hero-video %}
+  <!-- Display video when only hero-video is present -->
+  <div class="hero-video">
+	<video autoplay loop muted playsinline width="100%">
+		<source src="{{ page.hero-video }}" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+  </div>
+
+{% else %}
+  <!-- Display placeholder when neither is present -->
+  <!-- div class="hero-placeholder">
+    <img src="/assets/i/placeholder.jpg" alt="Placeholder Image">
+  </div -->
+{% endif %}
+
+
+
+
+
 
 
