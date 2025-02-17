@@ -5,15 +5,13 @@ hero-image: ""
 hero-video: "/assets/i/pano-stars.mp4"
 ---
 
-
 <main class="govuk-main-wrapper govuk-main-wrapper--l">
-
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 		<h1 class="govuk-heading-xl inyourface">Your breakthrough <span style="color: var(--rose-tan);">starts here.</span></h1>
     </div>
-</div>    
+</div>
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -54,6 +52,9 @@ hero-video: "/assets/i/pano-stars.mp4"
 
     <div class="govuk-grid-column-one-third">
 
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<a href="" class="govuk-button" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/booking-claritylab/clarity-lab-method-2-hour-workshop?background_color=F0EEE9&hide_gdpr_banner=1'});return false;">Book your breakthrough session now</a>
+
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--m">Workshop details:</caption>
   <tbody class="govuk-table__body">
@@ -76,9 +77,6 @@ hero-video: "/assets/i/pano-stars.mp4"
   </tbody>
 </table>
 
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<a href="" class="govuk-button" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/booking-claritylab/clarity-lab-method-2-hour-workshop?background_color=F0EEE9&hide_gdpr_banner=1'});return false;">Book your breakthrough session now</a>
-
 <!-- 
 Calendly inline widget
   hide_event_type_details=1
@@ -97,7 +95,11 @@ Gardenia: #F0EEE9;
   Cornflower-blue: #93CCEA;
 -->
 
-      <p class="govuk-body">Too fast? Not sure yet? <a href="/book-a-discovery">Grab a free discovery call</a></p>
+
+<p class="govuk-body">
+  <img src="{{ site.baseurl}}/assets/i/disco-call-g.png" class="cl-icon-m" alt="Call us" style="float:left;margin:0 0.5em 0 0;padding:0;">Too fast? Not sure yet? <a href="/book-a-discovery">Grab a free discovery call</a>
+</p>
+
 
     </div>
 
