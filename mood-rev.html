@@ -1,0 +1,206 @@
+---
+layout: unbranded
+title: The Clarity Lab moodboard
+---
+
+<style>
+    /* Basic Reset */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Helvetica', sans-serif;
+        background-color: #f3f4f6;
+        color: #333;
+    }
+
+	.grid {
+		column-count: 3;
+		column-gap: 30px;
+		margin: 0;
+	}
+
+	.grid img {
+		width: 100%;
+		margin-bottom: 30px;
+		border-radius: 0;
+        box-shadow: 10px 10px 0px #A6C36F;
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		cursor: pointer;
+		break-inside: avoid;
+		object-fit: cover;
+	}
+
+    .grid img:hover {
+        transform: translate(10px, 10px);
+        box-shadow: 0 0 0px #A6C36F;
+    }
+
+    /* Modal Lightbox */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.85);
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+        cursor: zoom-out;
+    }
+
+    .modal img {
+        max-width: 90%;
+        max-height: 90%;
+        border: 5px solid #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    .modal .nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 3rem;
+        color: #fff;
+        user-select: none;
+        cursor: pointer;
+        padding: 20px;
+        opacity: 0.7;
+        transition: opacity 0.3s;
+    }
+
+    .modal .nav:hover {
+        opacity: 1;
+    }
+
+    .nav.left {
+        left: 20px;
+    }
+
+    .nav.right {
+        right: 20px;
+    }
+
+</style>
+
+
+<main class="govuk-main-wrapper govuk-main-wrapper--l">
+
+<h1 class="govuk-heading-xl inyourface">Clarity Lab retreats feel <span style="color: var(--rose-tan);">like:</span></h1>
+
+<div class="grid" id="imageGrid"></div>
+
+
+<!-- Lightbox Modal -->
+<div class="modal" id="modal">
+    <span class="nav left" id="prev">&lt;</span>
+    <img id="modalImg" src="" alt="Full-size view">
+    <span class="nav right" id="next">&gt;</span>
+</div>
+
+
+</main>
+
+
+
+
+<script>
+    const grid = document.querySelector('.grid');
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modalImg');
+    const nextBtn = document.getElementById('next');
+    const prevBtn = document.getElementById('prev');
+
+    const totalImages = {{ site.totalImages }}; // Pulled from config.yml
+    let images = [];
+    let currentIndex = 0;
+
+    // Preload and display images
+    for (let i = 1; i <= totalImages; i++) {
+        const baseName = String(i).padStart(3, '0');
+        const pngPath = `./assets/i/concept-moodboard/${baseName}.png`;
+        const jpgPath = `./assets/i/concept-moodboard/${baseName}.jpg`;
+
+        const img = document.createElement('img');
+        img.alt = `Moodboard image ${i}`;
+        img.loading = 'lazy';
+        img.dataset.index = i - 1;
+        img.style.opacity = '0';
+
+        const testImg = new Image();
+        testImg.src = pngPath;
+
+        testImg.onload = () => {
+            img.src = pngPath;
+            images.push(pngPath);
+            grid.appendChild(img);
+            requestAnimationFrame(() => (img.style.opacity = '1'));
+        };
+
+        testImg.onerror = () => {
+            img.src = jpgPath;
+            images.push(jpgPath);
+            grid.appendChild(img);
+            requestAnimationFrame(() => (img.style.opacity = '1'));
+        };
+    }
+
+    // Open modal on click
+    grid.addEventListener('click', (e) => {
+        if (e.target.tagName === 'IMG') {
+            const clickedSrc = e.target.src.split('/').pop();
+            const matchedIndex = images.findIndex(img => img.endsWith(clickedSrc));
+            if (matchedIndex !== -1) {
+                currentIndex = matchedIndex;
+                openModal(currentIndex);
+            }
+        }
+    });
+
+    function openModal(index) {
+        modal.style.display = 'flex';
+        modalImg.src = images[index];
+    }
+
+    // Close modal when clicking outside image
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    // Navigate images
+    nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex + 1) % images.length;
+        openModal(currentIndex);
+    });
+
+    prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        openModal(currentIndex);
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (modal.style.display === 'flex') {
+            if (e.key === 'ArrowRight') {
+                currentIndex = (currentIndex + 1) % images.length;
+                openModal(currentIndex);
+            } else if (e.key === 'ArrowLeft') {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                openModal(currentIndex);
+            } else if (e.key === 'Escape') {
+                modal.style.display = 'none';
+            }
+        }
+    });
+</script>
+
