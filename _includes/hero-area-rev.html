@@ -1,0 +1,51 @@
+
+{% if page.hero-image and page.hero-video %}
+  <!-- Display video when both are present -->
+  <div class="hero-video">
+	<video autoplay loop muted playsinline width="100%">
+		<source src="{{ page.hero-video }}" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+  </div>
+
+{% elsif page.hero-image %}
+  <!-- Display image when only hero-image is present -->
+
+	<style>
+	.hero-image {
+		width: 100%; /* Full width */
+		margin: 0;padding: 0;
+	}
+	.hero-image img {
+		width: 100%;
+		height: auto; /* Maintain aspect ratio */
+	}
+	.hero-caption {
+		font-size: x-small;
+		color: #666;
+		font-family: sans-serif;
+		margin:0.25em 0 0 1em;
+	}
+	</style>
+
+	<figure class="hero-image">
+		<img src="{{ page.hero-image }}" alt="{{ page.hero-image-alt }}">
+		<figcaption class="hero-caption">{{ page.hero-image-caption }}</figcaption>
+	</figure>
+
+{% elsif page.hero-video %}
+  <!-- Display video when only hero-video is present -->
+  <div class="hero-video">
+	<video autoplay loop muted playsinline width="100%">
+		<source src="{{ page.hero-video }}" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+  </div>
+
+{% else %}
+  <!-- Display placeholder when neither is present -->
+  <!-- div class="hero-placeholder">
+    <img src="/assets/i/placeholder.jpg" alt="Placeholder Image">
+  </div -->
+{% endif %}
+
