@@ -33,11 +33,15 @@
 	}
 </style>
 <div class="govuk-grid-row hero-container">
-    <video muted autoplay loop playsinline class="hero-video" preload="auto"><source src="{{ page.hero-video }}" type="video/mp4"></video>
+<video muted autoplay loop playsinline class="hero-video" preload="auto">
+    <source src="{{ page.hero-video }}" type="video/webm">
+    <source src="{{ page.hero-video-colourblock }}" type="video/mp4">
+</video>
     <div class="govuk-grid-column-three-quarters">
 		<h1 class="govuk-heading-xl inyourface"><mark>{{ page.hero-h1a}}</mark> <span style="color:{{ page.hero-accent }};">{{ page.hero-h1b}}</span></h1>
     </div>
 </div>
+
 {% elsif page.hero-image %}
 <style>
 /* fitting h1 in hero with img bg */
