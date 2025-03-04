@@ -23,6 +23,12 @@ sass:
   load_paths:
     - assets/govuk
     
+# Workshop investment
+
+investment_checkpoint: "£65.00"
+investment_breakthrough: "£495.00"
+investment_retreat: "£1,450.00"
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
