@@ -1,41 +1,25 @@
 
-
-
-<!---
-
- /class="govuk-width-container" 
- The matching tags are in hero-area.html
- 
- -->
-
-	</main>
-</div>
-
-
-
-
-
-<style>
-.govuk-footer { padding-bottom: 5em; border: none; }
-.govuk-footer * { font-size: small; }
-</style>
-
-<footer class="govuk-footer" role="contentinfo">
-
-  <div class="govuk-width-container">
-    <!-- div class="govuk-footer__meta" -->
-    <div>
-
-      <p class="govuk-footer__licence-description">
-      Whether you’re shifting careers, rethinking your business, or simply trying to find your next step, Clarity Method workshops offer a structured approach designed to help you think deeply, reset your perspective, and define your meaningful path forward – whether in work, life, or creative pursuits.</p>
-
-      <p class="govuk-footer__licence-description">© {{ 'now' | date: "%Y" }} Cockburn Advisory Services Ltd. The Clarity Lab is a Cockburn Advisory service.</p>
-      </p>
-
-    </div>
-  </div>
-</footer>
-
-
-
+<h2 class="govuk-heading-l">What's my investment?</h2>
+  
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header">Checkpoint session</th>
+      <th class="govuk-table__header">Breakthrough workshop</th>
+      <th class="govuk-table__header">Island Retreat</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">{{- site.investment_checkpoint -}}</td>
+      <td class="govuk-table__cell">{{- site.investment_breakthrough -}}</td>
+      <td class="govuk-table__cell">{{- site.investment_retreat -}}</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="" class="govuk-button" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/booking-claritylab/checkpoint-session?background_color=F0EEE9&hide_gdpr_banner=1'});return false;">Book</a></td>
+      <td class="govuk-table__cell"><a href="" class="govuk-button" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/booking-claritylab/clarity-lab-method-2-hour-workshop?background_color=F0EEE9&hide_gdpr_banner=1'});return false;">Book</a></td>
+      <td class="govuk-table__cell"><a href="mailto:booking@claritylab.uk?subject=Enquiry%20for%202026%20retreat%20season" class="govuk-button">Book</a></td>
+    </tr>
+  </tbody>
+</table>
 

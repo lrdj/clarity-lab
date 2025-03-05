@@ -22,7 +22,7 @@
 		left: 50%;
 		width: 100%;
 		height: 100%;
-		object-fit: cover; /* Ensures video behaves like a background */
+		object-fit: cover;
 		transform: translate(-50%, -50%);
 		z-index: -1;
 	}
@@ -31,13 +31,14 @@
 		z-index: 1;
 	}
 </style>
+
 <div class="govuk-grid-row hero-container">
 <video muted autoplay loop playsinline class="hero-video" preload="auto">
     <source src="{{ page.hero-video }}" type="video/webm">
     <source src="{{ page.hero-video-colourblock }}" type="video/mp4">
 </video>
     <div class="govuk-grid-column-three-quarters">
-		<h1 class="govuk-heading-xl inyourface"><mark>{{ page.hero-h1a}}</mark> <span style="color:{{ page.hero-accent }};">{{ page.hero-h1b}}</span></h1>
+		<h1 class="govuk-heading-xl inyourface"><mark>{{ page.hero-h1a }}</mark> <span style="color:{{ page.hero-accent }};">{{ page.hero-h1b}}</span></h1>
     </div>
 </div>
 
