@@ -1,107 +1,65 @@
 ---
 layout: unbranded
-title: "Say hello to a new way of finding answers."
+title: "Clarity Lab podcast episodes"
 hero-video: "/assets/i/pano-stars.webm"
 hero-video-colourblock: "/assets/i/mousse-vidcolours/586994.mp4"
-hero-h1a: "Your breakthrough"
-hero-h1b: "starts here."
+hero-h1a: "The Clarity"
+hero-h1b: " Lab podcast"
 hero-mark: "#FFFFFF"
 hero-accent: "#D19C97"
 ---
 
-<div class="govuk-grid-row">
+  <p class="govuk-body-l">Listen to recent episodes below or browse the archive.</p>
+
+  <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-    
-        <p class="govuk-body-l">
-        For years, we’ve helped the world’s biggest brands shape your decisions using our design thinking methods – guiding them to clarity, strategy, and impact.</p>
-    
-        <p class="govuk-body-l">
-        <strong>Now, it’s your turn.</strong></p>
+      
+      <!-- Latest 4 Episodes -->
+      <h2 class="govuk-heading-m">Latest Episodes</h2>
 
-        <p class="govuk-body">
-        Step away from the distractions of daily life and clear your mind on the Isle of Mull – or work with us remotely. Applying business-proven frameworks and guided through expert-led sessions, you’ll reframe your challenges, and create an action plan for what's next.</p>
+      {% assign latest_episodes = site.podcasts | sort: "date" | reverse | slice: 0,4 %}
 
-        <p class="govuk-body">
-        We think your breakthrough starts with a checkpoint.</p>       
-        
-        <a style="display: block;" href="" class="govuk-button" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/booking-claritylab/checkpoint-session?background_color=F0EEE9&hide_gdpr_banner=1'});return false;">Book your checkpoint session</a>
+      {% for episode in latest_episodes %}
+        <div class="govuk-card">
+          <h3 class="govuk-heading-s">{{ episode.title }}</h3>
+          <audio controls class="govuk-!-margin-bottom-3">
+            <source src="{{ episode.file }}" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          <p class="govuk-body">
+            <a href="{{ episode.file }}" class="govuk-link" download>Download episode</a>
+          </p>
+        </div>
+      {% endfor %}
 
-        <p class="govuk-body">
-        <strong>What is it?</strong> A one-hour remote coaching call that helps you kick-start the process of challenging what's holding you back. Whether you're wrestling with a career decision, a business challenge, or a personal transition, we’ll explore what types of things are acting against you. We'll then create a clarity checklist together, so you come away with a set of methods and actions to get you started on your transformation.</p>
+      <!-- Archive Section -->
+      <h2 class="govuk-heading-m">Episode Archive</h2>
 
-        <h2 class="govuk-heading-l">What do I get out of it?</h2>
-        
-        <ul class="govuk-list cl-check">
-          <li><strong>Gain an outside perspective</strong> From seasoned strategists.</li>
-          <li><strong>A problem reframed.</strong> See your challenge from new angles.</li>
-          <li><strong>An immediate action plan.</strong> Walk away with clear next steps.</li>
+      {% assign sorted_episodes = site.podcasts | sort: "date" | reverse %}
+      {% assign grouped_episodes = sorted_episodes | group_by_exp: "episode", "episode.date | date: '%Y-%m'" %}
+
+      {% for group in grouped_episodes %}
+        {% assign year = group.name | slice: 0,4 %}
+        {% assign month = group.name | slice: 5,2 %}
+
+        <h3 class="govuk-heading-s">{{ year }} – {{ month | date: "%B" }}</h3>
+        <ul class="govuk-list">
+          {% for episode in group.items %}
+            <li>
+              <a href="{{ episode.file }}" class="govuk-link" download>{{ episode.title }}</a>
+            </li>
+          {% endfor %}
         </ul>
-
-        <h2 class="govuk-heading-l">Why do this?</h2>
-
-        <p class="govuk-body">
-        You don’t need another round of overthinking. You need clarity, and that starts right here. <strong>Let’s get started.</strong></p>
+      {% endfor %}
 
     </div>
+  </div>
 
-    <div class="govuk-grid-column-one-third">
-
-        <table class="govuk-table">
-          <caption class="govuk-table__caption govuk-table__caption--m">Workshop details:</caption>
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Investment:</th>
-              <td class="govuk-table__cell">£65</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Format:</th>
-              <td class="govuk-table__cell">Private 1:1 online session</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Preparation:</th>
-              <td class="govuk-table__cell">Survey before call</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Duration:</th>
-              <td class="govuk-table__cell">1 hour</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h3 class="govuk-heading-m">Service details:</h3>
-
-        <p class="govuk-body">
-        The Checkpoint Session delivers expert-led remote coaching aimed at challenging customers' perspectives and reframing their challenges.</p>
-
-        <p class="govuk-body">
-        Through the online workshop, the Clarity Lab Method creates value by offering customers an immediate action plan with clear next steps.</p>
-
-<p class="govuk-body">
-  <img src="{{ site.baseurl}}/assets/i/disco-call-g.png" class="cl-icon-m" alt="Call us" style="float:left;margin:0 0.5em 0 0;padding:0;">Too fast? Not sure yet? <a href="/book-a-discovery">Grab a free discovery call</a>
-</p>
-
-
-    </div>
-</div>        
 
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"  id="customerReviews">
 
-{% include testimonials.html %}
+{% include testimonials-doug.html %}
 
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible" id="productComparison">
-
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-
-      {% include options.html %}
-
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--invisible"  id="investment">
-
-      {% include investment.html %}
-
-    </div>
-</div>
-
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break">
 

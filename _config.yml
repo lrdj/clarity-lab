@@ -24,10 +24,16 @@ sass:
     - assets/govuk
     
 # Workshop investment
-
 investment_checkpoint: "£65.00"
 investment_breakthrough: "£495.00"
 investment_retreat: "£1,450.00"
+
+# podcast
+collections:
+  podcasts:
+    output: true
+    permalink: /pod/:title/
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
