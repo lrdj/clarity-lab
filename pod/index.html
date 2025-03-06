@@ -23,7 +23,7 @@ hero-accent: "#FFCC4E"
 		  <source src="{{ episode.file }}" type="audio/mpeg">
 		  Your browser does not support the audio element.
 		</audio>
-		<p class="govuk-body">{{ episode.summary }}</p>
+		<p class="govuk-body-s">{{ episode.summary }}</p>
 		<p class="govuk-body">
 		  <a href="{{ episode.file }}" class="govuk-link" download>Download episode</a>
 		</p>
@@ -48,7 +48,7 @@ hero-accent: "#FFCC4E"
             <li>
               <a href="{{ episode.file }}" class="govuk-link" download>{{ episode.title }}</a>
               {% if episode.summary %}
-				<p class="govuk-body">{{ episode.summary | split: " " | slice: 0, 20 | join: " " }}...</p>
+				<p class="govuk-body-s">{{ episode.summary | split: " " | slice: 0, 20 | join: " " }}...</p>
               {% endif %}
             </li>
           {% endfor %}
