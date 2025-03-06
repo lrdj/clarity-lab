@@ -1,36 +1,35 @@
 ---
 layout: unbranded
 title: "Clarity Lab podcast episodes"
-hero-video: "/assets/i/pano-stars.webm"
-hero-video-colourblock: "/assets/i/mousse-vidcolours/586994.mp4"
-hero-h1a: "The Clarity"
-hero-h1b: " Lab podcast"
-hero-mark: "#FFFFFF"
-hero-accent: "#D19C97"
+# hero-image: "/assets/i/retreat-night-sky-rev.jpg"
+hero-image: "/assets/i/rocks-growth.jpg"
+hero-h1a: "The Clarity Lab"
+hero-h1b: "podcast episodes"
+hero-mark: "#A47764"
+hero-accent: "#FFCC4E"
 ---
 
-  <p class="govuk-body-l">Listen to recent episodes below or browse the archive.</p>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      
-      <!-- Latest 4 Episodes -->
       <h2 class="govuk-heading-m">Latest Episodes</h2>
 
       {% assign latest_episodes = site.podcasts | sort: "date" | reverse | slice: 0,4 %}
 
-      {% for episode in latest_episodes %}
-        <div class="govuk-card">
-          <h3 class="govuk-heading-s">{{ episode.title }}</h3>
-          <audio controls class="govuk-!-margin-bottom-3">
-            <source src="{{ episode.file }}" type="audio/mpeg">
-            Your browser does not support the audio element.
-          </audio>
-          <p class="govuk-body">
-            <a href="{{ episode.file }}" class="govuk-link" download>Download episode</a>
-          </p>
-        </div>
-      {% endfor %}
+	{% for episode in latest_episodes %}
+	  <div class="govuk-card">
+		<h3 class="govuk-heading-s">{{ episode.title }}</h3>
+		<audio controls class="govuk-!-margin-bottom-3">
+		  <source src="{{ episode.file }}" type="audio/mpeg">
+		  Your browser does not support the audio element.
+		</audio>
+		<p class="govuk-body">{{ episode.summary }}</p>
+		<p class="govuk-body">
+		  <a href="{{ episode.file }}" class="govuk-link" download>Download episode</a>
+		</p>
+	  </div>
+	{% endfor %}
+
 
       <!-- Archive Section -->
       <h2 class="govuk-heading-m">Episode Archive</h2>
@@ -43,10 +42,14 @@ hero-accent: "#D19C97"
         {% assign month = group.name | slice: 5,2 %}
 
         <h3 class="govuk-heading-s">{{ year }} – {{ month | date: "%B" }}</h3>
+
         <ul class="govuk-list">
           {% for episode in group.items %}
             <li>
               <a href="{{ episode.file }}" class="govuk-link" download>{{ episode.title }}</a>
+              {% if episode.summary %}
+				<p class="govuk-body">{{ episode.summary | split: " " | slice: 0, 20 | join: " " }}...</p>
+              {% endif %}
             </li>
           {% endfor %}
         </ul>
