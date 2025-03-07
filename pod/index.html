@@ -18,7 +18,7 @@ hero-accent: "#FFCC4E"
 
 	{% for episode in latest_episodes %}
 	  <div class="govuk-card">
-		<h3 class="govuk-heading-s">{{ episode.title }}</h3>
+		<h3 class="govuk-heading-s"><mark style="background-color:#B4C4AE;padding:1px 0.25em;">{{ episode.date | date: "%B %d" }}</mark> {{ episode.title }}</h3>
 		<audio controls class="govuk-!-margin-bottom-3">
 		  <source src="{{ episode.file }}" type="audio/mpeg">
 		  Your browser does not support the audio element.
