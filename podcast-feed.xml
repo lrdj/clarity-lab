@@ -1,0 +1,51 @@
+---
+layout: null
+permalink: /podcast-feed.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>{{ site.title }} – Podcast</title>
+    <link>{{ site.url }}{{ site.baseurl }}/</link>
+    <description>{{ site.description | xml_escape }}</description>
+    <language>en-gb</language>
+    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+    <atom:link href="{{ site.url }}{{ site.baseurl }}/podcast-feed.xml" rel="self" type="application/rss+xml"/>
+
+    <!-- iTunes Podcast Metadata -->
+    <itunes:author>{{ site.title }}</itunes:author>
+    <itunes:summary><![CDATA[{{ site.description | xml_escape }}]]></itunes:summary>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:image href="{{ site.url }}{{ site.baseurl }}/assets/podcast-cover.jpg"/>
+    
+    {% if site.email %}
+    <itunes:owner>
+      <itunes:name>{{ site.title }}</itunes:name>
+      <itunes:email>{{ site.email }}</itunes:email>
+    </itunes:owner>
+    {% endif %}
+
+    <!-- Podcasts -->
+    {% for podcast in site.podcasts %}
+    <item>
+      <title>{{ podcast.title | xml_escape }}</title>
+      <link>{{ site.url }}{{ site.baseurl }}{{ podcast.url }}</link>
+      <guid>{{ site.url }}{{ site.baseurl }}{{ podcast.url }}</guid>
+      <pubDate>{{ podcast.date | date_to_rfc822 }}</pubDate>
+      <description><![CDATA[{{ podcast.summary | strip_html }}]]></description>
+      <content:encoded><![CDATA[{{ podcast.content | default: podcast.summary | xml_escape }}]]></content:encoded>
+
+      <!-- iTunes Podcast Fields -->
+      <itunes:author>{{ site.title }}</itunes:author>
+      <itunes:summary><![CDATA[{{ podcast.summary | strip_html }}]]></itunes:summary>
+      <itunes:explicit>no</itunes:explicit>
+
+      {% if podcast.audio_url %}
+      <enclosure url="{{ podcast.audio_url }}" type="audio/mpeg"/>
+      {% endif %}
+    </item>
+    {% endfor %}
+  </channel>
+</rss>
