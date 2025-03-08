@@ -13,7 +13,7 @@ permalink: /podcast-feed.xml
     <description><![CDATA[The home of the Clarity Lab Method.]]></description>
     <language>en-gb</language>
     <lastBuildDate>Sat, 08 Mar 2025 00:20:29 +0000</lastBuildDate>
-    <atom:link href="https://claritylab.uk/podcast/podcast-feed.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="https://claritylab.uk/podcast-feed.xml" rel="self" type="application/rss+xml"/>
 
     <!-- iTunes Podcast Metadata -->
     <itunes:author><![CDATA[The Clarity Lab]]></itunes:author>
@@ -35,8 +35,8 @@ permalink: /podcast-feed.xml
 
     <item>
       <title><![CDATA[How vision and clarity connect via the methods]]></title>
-      <link>https://claritylab.uk/pod/vision-and-clarity/</link>
-      <guid>https://claritylab.uk/pod/vision-and-clarity/</guid>
+      <link>https://claritylab.uk/pod/</link>
+      <guid>https://claritylab.uk/pod/</guid>
       <pubDate>Sun, 29 Dec 2024 00:00:00 +0000</pubDate>
       <description><![CDATA[Exploring the connection between Clarity Lab Methods and how our consultants guide businesses and individuals towards clarity and purpose.]]></description>
       <itunes:author><![CDATA[The Clarity Lab]]></itunes:author>
@@ -48,8 +48,8 @@ permalink: /podcast-feed.xml
 
     <item>
       <title><![CDATA[Panel discussion: What is the Clarity Lab process?]]></title>
-      <link>https://claritylab.uk/pod/panel-discussion/</link>
-      <guid>https://claritylab.uk/pod/panel-discussion/</guid>
+      <link>https://claritylab.uk/pod/</link>
+      <guid>https://claritylab.uk/pod/</guid>
       <pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate>
       <description><![CDATA[Deep dive into the Clarity Lab Method, exploring its foundations in design thinking and problem-space hacking.]]></description>
       <itunes:author><![CDATA[The Clarity Lab]]></itunes:author>
@@ -61,8 +61,8 @@ permalink: /podcast-feed.xml
 
     <item>
       <title><![CDATA[Panel discussion: What is the Clarity Lab process?]]></title>
-      <link>https://claritylab.uk/pod/method-book-discussion/</link>
-      <guid>https://claritylab.uk/pod/method-book-discussion/</guid>
+      <link>https://claritylab.uk/pod/</link>
+      <guid>https://claritylab.uk/pod/</guid>
       <pubDate>Sat, 08 Mar 2025 00:00:00 +0000</pubDate>
       <description><![CDATA[Riffing on the first draft of the Clarity Lab Method book—exploring the business benefits of clarity.]]></description>
       <itunes:author><![CDATA[The Clarity Lab]]></itunes:author>
