@@ -49,7 +49,7 @@ permalink: /podcast-feed.xml
       <itunes:summary><![CDATA[{{ podcast.summary | strip_html }}]]></itunes:summary>
       <itunes:explicit>no</itunes:explicit>
 
-      <enclosure url="{{ podcast.audio_url }}" type="audio/mpeg" {% if podcast.file_size %}length="{{ podcast.length }}"{% endif %}/>
+      <enclosure url="{{ podcast.audio_url }}" type="audio/mpeg" {% if podcast.length %}length="{{ podcast.length }}"{% endif %}/>
       
       {% if podcast.duration %}
       <itunes:duration>{{ podcast.duration }}</itunes:duration>
