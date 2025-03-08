@@ -12,13 +12,13 @@ hero-accent: "#FFCC4E"
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h2 class="govuk-heading-m">Latest Episodes</h2>
+      <h2 class="govuk-heading-m">Latest recordings</h2>
 
       {% assign latest_episodes = site.podcasts | sort: "date" | reverse | slice: 0,4 %}
 
 	{% for episode in latest_episodes %}
 	  <div class="govuk-card">
-		<h3 class="govuk-heading-s">{{ episode.title }}</h3>
+		<h3 class="govuk-heading-s"><mark style="background-color:#B4C4AE;padding:0.2em 0.5em;">{{ episode.date | date: "%B %d" }}</mark> {{ episode.title }}</h3>
 		<audio controls class="govuk-!-margin-bottom-3">
 		  <source src="{{ episode.file }}" type="audio/mpeg">
 		  Your browser does not support the audio element.
@@ -32,7 +32,7 @@ hero-accent: "#FFCC4E"
 
 
       <!-- Archive Section -->
-      <h2 class="govuk-heading-m">Episode Archive</h2>
+      <h2 class="govuk-heading-m">Episode archive</h2>
 
       {% assign sorted_episodes = site.podcasts | sort: "date" | reverse %}
       {% assign grouped_episodes = sorted_episodes | group_by_exp: "episode", "episode.date | date: '%Y-%m'" %}
@@ -66,3 +66,4 @@ hero-accent: "#FFCC4E"
 
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible" id="productComparison">
 
+<a href="https://claritylab.uk/podcast-feed.xml">(File)</a>

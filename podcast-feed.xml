@@ -1,0 +1,62 @@
+---
+layout: null
+permalink: /podcast-feed.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>{{ site.title | xml_escape }}</title>
+    <link>{{ site.url }}{{ site.baseurl }}/pod/</link>
+    <description><![CDATA[{{ site.description }}]]></description>
+    <language>en-gb</language>
+    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+    <atom:link href="{{ site.url }}{{ site.baseurl }}/podcast-feed.xml" rel="self" type="application/rss+xml"/>
+
+    <!-- iTunes Podcast Metadata -->
+    <itunes:author><![CDATA[{{ site.title }}]]></itunes:author>
+    <itunes:summary><![CDATA[{{ site.description }}]]></itunes:summary>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:image href="{{ site.url }}{{ site.baseurl }}/assets/i/podcast-cover.jpg"/>
+
+    {% if site.email %}
+    <itunes:owner>
+      <itunes:name><![CDATA[{{ site.title }}]]></itunes:name>
+      <itunes:email><![CDATA[{{ site.email }}]]></itunes:email>
+    </itunes:owner>
+    {% endif %}
+
+    <!-- iTunes Categories -->
+    <itunes:category text="Education">
+      <itunes:category text="Self-Improvement"/>
+    </itunes:category>
+
+    <!-- Podcast Episodes -->
+    {% for podcast in site.podcasts %}
+    {% if podcast.audio_url %}
+    <item>
+      <title><![CDATA[{{ podcast.title }}]]></title>
+      <link>{{ site.url }}{{ site.baseurl }}/pod/</link>
+      
+      <!-- Generate a Unique GUID -->
+      <guid isPermaLink="false">{{ podcast.id | default: podcast.url | sha1 }}</guid>
+
+      <pubDate>{{ podcast.date | date_to_rfc822 }}</pubDate>
+      <description><![CDATA[{{ podcast.summary | strip_html }}]]></description>
+      <itunes:author><![CDATA[{{ site.title }}]]></itunes:author>
+      <itunes:summary><![CDATA[{{ podcast.summary | strip_html }}]]></itunes:summary>
+      <itunes:explicit>no</itunes:explicit>
+
+      <enclosure url="{{ podcast.audio_url }}" type="audio/mpeg" {% if podcast.length %}length="{{ podcast.length }}"{% endif %}/>
+      
+      {% if podcast.duration %}
+      <itunes:duration>{{ podcast.duration }}</itunes:duration>
+      {% endif %}
+    </item>
+    {% endif %}
+    {% endfor %}
+
+  </channel>
+</rss>
