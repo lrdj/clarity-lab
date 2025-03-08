@@ -1,0 +1,76 @@
+---
+layout: null
+permalink: /podcast-feed.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>The Clarity Lab</title>
+    <link>https://claritylab.uk/pod</link>
+    <description><![CDATA[The home of the Clarity Lab Method.]]></description>
+    <language>en-gb</language>
+    <lastBuildDate>Sat, 08 Mar 2025 00:20:29 +0000</lastBuildDate>
+    <atom:link href="https://claritylab.uk/podcast-feed.xml" rel="self" type="application/rss+xml"/>
+
+    <!-- iTunes Podcast Metadata -->
+    <itunes:author><![CDATA[The Clarity Lab]]></itunes:author>
+    <itunes:summary><![CDATA[The home of the Clarity Lab Method.]]></itunes:summary>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:image href="https://claritylab.uk/assets/i/podcast-cover.jpg"/>
+
+    <itunes:owner>
+      <itunes:name><![CDATA[The Clarity Lab]]></itunes:name>
+      <itunes:email><![CDATA[contact@claritylab.uk]]></itunes:email>
+    </itunes:owner>
+
+    <!-- iTunes Categories -->
+    <itunes:category text="Education">
+      <itunes:category text="Self-Improvement"/>
+    </itunes:category>
+
+    <!-- Podcast Episodes -->
+
+    <item>
+      <title><![CDATA[How vision and clarity connect via the methods]]></title>
+      <link>https://claritylab.uk/pod/</link>
+      <guid>000003</guid>
+      <pubDate>Sun, 29 Dec 2024 00:00:00 +0000</pubDate>
+      <description><![CDATA[Exploring the connection between Clarity Lab Methods and how our consultants guide businesses and individuals towards clarity and purpose.]]></description>
+      <itunes:author><![CDATA[The Clarity Lab]]></itunes:author>
+      <itunes:summary><![CDATA[Exploring the connection between Clarity Lab Methods and how our consultants guide businesses and individuals towards clarity and purpose.]]></itunes:summary>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://claritylab.uk/pod/mp3/The-Vision-Canvas_Crafting-Product-Vision-Together.mp3" length="19809218" type="audio/mpeg"/>
+      <itunes:duration>25:07</itunes:duration>
+    </item>
+
+    <item>
+      <title><![CDATA[Panel discussion: What is the Clarity Lab process?]]></title>
+      <link>https://claritylab.uk/pod/</link>
+      <guid>000002</guid>
+      <pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate>
+      <description><![CDATA[Deep dive into the Clarity Lab Method, exploring its foundations in design thinking and problem-space hacking.]]></description>
+      <itunes:author><![CDATA[The Clarity Lab]]></itunes:author>
+      <itunes:summary><![CDATA[Deep dive into the Clarity Lab Method, exploring its foundations in design thinking and problem-space hacking.]]></itunes:summary>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://claritylab.uk/pod/mp3/Clarity-Lab-panel-discussion.mp3" length="15050753" type="audio/mpeg"/>
+      <itunes:duration>20:05</itunes:duration>
+    </item>
+
+    <item>
+      <title><![CDATA[Panel discussion: What is the Clarity Lab process?]]></title>
+      <link>https://claritylab.uk/pod/</link>
+      <guid>000001</guid>
+      <pubDate>Sat, 08 Mar 2025 00:00:00 +0000</pubDate>
+      <description><![CDATA[Riffing on the first draft of the Clarity Lab Method book—exploring the business benefits of clarity.]]></description>
+      <itunes:author><![CDATA[The Clarity Lab]]></itunes:author>
+      <itunes:summary><![CDATA[Riffing on the first draft of the Clarity Lab Method book—exploring the business benefits of clarity.]]></itunes:summary>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://claritylab.uk/pod/mp3/Method-book-sections-discussion.mp3" length="22191167" type="audio/mpeg"/>
+      <itunes:duration>23:06</itunes:duration>
+    </item>
+
+  </channel>
+</rss>
