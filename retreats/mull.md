@@ -1,8 +1,14 @@
 ---
 layout: unbranded
-title: Retreats index page
+title: "Say hello to a new way of finding answers."
+hero-image: "/assets/i/frostylake-pano.jpeg"
+hero-image-alt: "Winter is a magical time to be in Scotland especially in Hebrides."
+hero-image-caption: "North-East shoreline of Loch Assapol in winter, Bunessan, Isle of Mull"
+hero-h1a: "Mull"
+hero-h1b: "footnotes"
+hero-mark: "#FFFFFF"
+hero-accent: "#D19C97"
 ---
-
 
 Here’s a structured draft for your **Retreats Landing Page** and individual retreat pages. This follows Kate Towsey’s model, emphasizing **scene-setting, emotional resonance, and clear calls to action**, while keeping your **nature-driven, clarity-focused** vibe.  
 

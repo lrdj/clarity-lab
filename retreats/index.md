@@ -1,9 +1,13 @@
 ---
 layout: unbranded
-title: Retreats index page
+title: "Say hello to a new way of finding answers."
 hero-image: "/assets/i/frostylake-pano.jpeg"
 hero-image-alt: "Winter is a magical time to be in Scotland especially in Hebrides."
 hero-image-caption: "North-East shoreline of Loch Assapol in winter, Bunessan, Isle of Mull"
+hero-h1a: "Your breakthrough"
+hero-h1b: "starts here."
+hero-mark: "#FFFFFF"
+hero-accent: "#D19C97"
 ---
 
 <style>
