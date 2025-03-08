@@ -1,51 +1,53 @@
 ---
 layout: null
-permalink: /podcast-feed.xml
+permalink: /feed.xml
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"
      xmlns:atom="http://www.w3.org/2005/Atom"
-     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>{{ site.title }} – Podcast</title>
+    <title>{{ site.title | xml_escape }}</title>
     <link>{{ site.url }}{{ site.baseurl }}/</link>
-    <description>{{ site.description | xml_escape }}</description>
+    <description><![CDATA[{{ site.description }}]]></description>
     <language>en-gb</language>
     <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
-    <atom:link href="{{ site.url }}{{ site.baseurl }}/podcast-feed.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="{{ site.url }}{{ site.baseurl }}/feed.xml" rel="self" type="application/rss+xml"/>
 
     <!-- iTunes Podcast Metadata -->
-    <itunes:author>{{ site.title }}</itunes:author>
-    <itunes:summary><![CDATA[{{ site.description | xml_escape }}]]></itunes:summary>
+    <itunes:author><![CDATA[{{ site.title }}]]></itunes:author>
+    <itunes:summary><![CDATA[{{ site.description }}]]></itunes:summary>
     <itunes:explicit>no</itunes:explicit>
     <itunes:image href="{{ site.url }}{{ site.baseurl }}/assets/podcast-cover.jpg"/>
-    
+
     {% if site.email %}
     <itunes:owner>
-      <itunes:name>{{ site.title }}</itunes:name>
-      <itunes:email>{{ site.email }}</itunes:email>
+      <itunes:name><![CDATA[{{ site.title }}]]></itunes:name>
+      <itunes:email><![CDATA[{{ site.email }}]]></itunes:email>
     </itunes:owner>
     {% endif %}
 
-    <!-- Podcasts -->
+    <!-- Podcast Episodes -->
     {% for podcast in site.podcasts %}
+    {% if podcast.audio_url %}
     <item>
-      <title>{{ podcast.title | xml_escape }}</title>
+      <title><![CDATA[{{ podcast.title }}]]></title>
       <link>{{ site.url }}{{ site.baseurl }}{{ podcast.url }}</link>
       <guid>{{ site.url }}{{ site.baseurl }}{{ podcast.url }}</guid>
       <pubDate>{{ podcast.date | date_to_rfc822 }}</pubDate>
-      <description><![CDATA[{{ podcast.summary | strip_html }}]]></description>
-      <content:encoded><![CDATA[{{ podcast.content | default: podcast.summary | xml_escape }}]]></content:encoded>
+      <description><![CDATA[{{ podcast.summary }}]]></description>
+      <content:encoded><![CDATA[{{ podcast.content | default: podcast.summary }}]]></content:encoded>
 
       <!-- iTunes Podcast Fields -->
-      <itunes:author>{{ site.title }}</itunes:author>
-      <itunes:summary><![CDATA[{{ podcast.summary | strip_html }}]]></itunes:summary>
+      <itunes:author><![CDATA[{{ site.title }}]]></itunes:author>
+      <itunes:summary><![CDATA[{{ podcast.summary }}]]></itunes:summary>
       <itunes:explicit>no</itunes:explicit>
 
-      {% if podcast.audio_url %}
       <enclosure url="{{ podcast.audio_url }}" type="audio/mpeg"/>
-      {% endif %}
     </item>
+    {% endif %}
     {% endfor %}
+
   </channel>
 </rss>
