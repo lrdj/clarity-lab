@@ -1,5 +1,5 @@
 ---
-title: "Panel discussion: What is the Clarity Lab process?"
+title: "Discussing the first draft of the Clarity Lab Method book"
 date: 2025-03-08
 file: "/pod/mp3/Method-book-sections-discussion.mp3"
 audio_url: "https://claritylab.uk/pod/mp3/Method-book-sections-discussion.mp3"
