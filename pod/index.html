@@ -11,6 +11,7 @@ hero-accent: "#FFCC4E"
 
 
   <div class="govuk-grid-row">
+
     <div class="govuk-grid-column-two-thirds">
       <h2 class="govuk-heading-m">Latest recordings</h2>
 
@@ -18,15 +19,24 @@ hero-accent: "#FFCC4E"
 
 	{% for episode in latest_episodes %}
 	  <div class="govuk-card">
-		<h3 class="govuk-heading-s"><mark style="background-color:#B4C4AE;padding:0.2em 0.5em;">{{ episode.date | date: "%B %d" }}</mark> {{ episode.title }}</h3>
+			  
+		<h3 class="govuk-heading-s">
+		  <mark style="background-color:#B4C4AE;padding:0.2em 0.5em;">{{ episode.date | date: "%B %d" }}</mark> 
+		  <a href="{{ episode.url }}" class="govuk-link">{{ episode.title }}</a>
+		</h3>
+	
 		<audio controls class="govuk-!-margin-bottom-3">
 		  <source src="{{ episode.file }}" type="audio/mpeg">
 		  Your browser does not support the audio element.
 		</audio>
-		<p class="govuk-body-s">{{ episode.summary }}</p>
-		<p class="govuk-body">
+		<p class="govuk-body-s govuk-!-padding-bottom-6">{{ episode.summary }}</p>
+
+		<!--
+		p class="govuk-body">
 		  <a href="{{ episode.file }}" class="govuk-link" download>Download episode</a>
-		</p>
+		</p
+		-->
+
 	  </div>
 	{% endfor %}
 
@@ -56,6 +66,28 @@ hero-accent: "#FFCC4E"
       {% endfor %}
 
     </div>
+
+
+
+  <div class="govuk-grid-column-one-third">
+
+    <!-- Episode Cover Image -->
+    {% if page.cover_image %}
+      <img src="{{ page.cover_image }}" alt="Cover for {{ page.title }}" class="govuk-!-margin-bottom-4" style="width:100%; border:1px solid #333;">
+    {% else %}
+      <img src="/assets/i/podcast-cover.jpg" alt="The Clarity Lab Podcast" class="govuk-!-margin-bottom-4" style="width:100%; border:1px solid #333;">
+    {% endif %}
+
+	<h3 class="govuk-heading-m">Subscribe to the podcast</h3>
+	
+	<ul class="govuk-list">
+	  <li style="background: url('{{ site.baseurl }}/assets/i/podcasts.png') no-repeat left center;background-size: 1.5em;padding: 0.25em 0 0.25em 2em;"><a href="https://podcasts.apple.com/us/podcast/the-clarity-lab/id1800838336" target="_blank">Apple Podcasts</a></li>
+	  <li style="background: url('{{ site.baseurl }}/assets/i/rss.png') no-repeat left center;background-size: 1.5em;padding: 0.25em 0 0.25em 2em;"><a href="https://claritylab.uk/podcast-feed.xml">RSS Feed</a></li>
+	</ul>
+
+	</div>
+	
+	
   </div>
 
 
@@ -66,4 +98,4 @@ hero-accent: "#FFCC4E"
 
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible" id="productComparison">
 
-<a href="https://claritylab.uk/podcast-feed.xml">(File)</a>
+<a href="https://claritylab.uk/podcast-feed.xml">(subscribe: rss file)</a>
