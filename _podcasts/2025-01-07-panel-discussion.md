@@ -2,7 +2,7 @@
 layout: podcast
 title: "Panel discussion: What is the Clarity Lab process?"
 cover_image: "/assets/i/fores-rainbow-sq.jpg"
-date: 2025-03-07
+date: 2025-01-07
 file: "/pod/mp3/Clarity-Lab-panel-discussion.mp3"
 audio_url: "https://claritylab.uk/pod/mp3/Clarity-Lab-panel-discussion.mp3"
 summary: >
