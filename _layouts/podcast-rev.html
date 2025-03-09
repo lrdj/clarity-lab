@@ -25,66 +25,6 @@ layout: unbranded
     <!-- Summary -->
     <p class="govuk-body">{{ page.summary }}</p>
 
-
-{% comment %}
-  -----------------------------------------
-  Previous / Next Episode Navigation
-  -----------------------------------------
-{% endcomment %}
-
-{% assign all_episodes = site.podcasts | sort: "date" | reverse %}
-{% assign current_index = nil %}
-
-{%- comment -%}
-  1) Find the numeric array index of the current page
-{%- endcomment -%}
-
-{% for ep in all_episodes %}
-  {% if ep.url == page.url %}
-    {% assign current_index = forloop.index0 %}
-  {% endif %}
-{% endfor %}
-
-{%- comment -%}
-  2) Identify previous & next items by array index
-     Note: Because we reversed the list, index 0 is the *newest* episode.
-     So "previous" means an older episode at a *higher* index.
-{%- endcomment -%}
-
-{% if current_index != nil %}
-  {% assign prev_index = current_index | plus: 1 %}
-  {% assign next_index = current_index | minus: 1 %}
-
-  {%- comment -%}
-    3) Make sure those indices are in range
-  {%- endcomment -%}
-  
-  {% if prev_index < all_episodes.size %}
-    {% assign prev_episode = all_episodes[prev_index] %}
-  {% endif %}
-  {% if next_index >= 0 %}
-    {% assign next_episode = all_episodes[next_index] %}
-  {% endif %}
-{% endif %}
-
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible">
-
-<nav aria-label="Episode navigation" style="display: flex; justify-content: space-between;">
-	{% if prev_episode %}
-	  <a href="{{ prev_episode.url }}" class="govuk-link">&laquo; Previous recording</a>
-	{% else %}
-	  <span></span>
-	{% endif %}
-	{% if next_episode %}
-	  <a href="{{ next_episode.url }}" class="govuk-link">Next recording &raquo;</a>
-	{% else %}
-	  <span></span>
-	{% endif %}
-</nav>
-
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--invisible">
-
-
   </div>
 
   <div class="govuk-grid-column-one-third">
@@ -106,6 +46,7 @@ layout: unbranded
     <li><a href="{{ page.audio_url }}" class="govuk-link" download>Download episode (MP3)</a>
     </p></li>
     {% endif %}
+
 	</ul>
 
 	  

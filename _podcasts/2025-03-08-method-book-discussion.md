@@ -1,6 +1,8 @@
 ---
 layout: podcast
 title: "Discussing the first draft of the Clarity Lab Method book"
+season: 1
+episode: 3
 cover_image: "/assets/i/assapol-in-winter-sq.jpg"
 date: 2025-03-08
 file: "/pod/mp3/Method-book-sections-discussion.mp3"

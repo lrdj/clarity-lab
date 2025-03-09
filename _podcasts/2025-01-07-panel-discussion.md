@@ -1,6 +1,8 @@
 ---
 layout: podcast
 title: "Panel discussion: What is the Clarity Lab process?"
+season: 1
+episode: 2
 cover_image: "/assets/i/fores-rainbow-sq.jpg"
 date: 2025-01-07
 file: "/pod/mp3/Clarity-Lab-panel-discussion.mp3"
