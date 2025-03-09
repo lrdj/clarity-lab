@@ -11,7 +11,7 @@ length: 22191167
 hero-image: "/assets/i/rocks-growth.jpg"
 hero-h1a: "Podcast"
 hero-h1b: "recordings"
-hero-mark: "#B4C4AE"
+hero-mark: "#85BFE6"
 hero-accent: "#FFCC4E"
 ---
 
