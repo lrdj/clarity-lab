@@ -20,7 +20,6 @@ permalink: /podcast-feed.xml
     <itunes:summary><![CDATA[{{ site.description }}]]></itunes:summary>
     <itunes:explicit>no</itunes:explicit>
     <itunes:image href="{{ site.url }}{{ site.baseurl }}/assets/i/podcast-cover.jpg"/>
-    <itunes:type>episodic</itunes:type>
 
     {% if site.email %}
     <itunes:owner>
@@ -30,14 +29,8 @@ permalink: /podcast-feed.xml
     {% endif %}
 
     <!-- iTunes Categories -->
-    <itunes:category text="Business">
-      <itunes:category text="Careers"/>
-    </itunes:category>
     <itunes:category text="Education">
       <itunes:category text="Self-Improvement"/>
-    </itunes:category>
-    <itunes:category text="Arts">
-      <itunes:category text="Design"/>
     </itunes:category>
 
     <!-- Podcast Episodes -->
@@ -45,7 +38,7 @@ permalink: /podcast-feed.xml
     {% if podcast.audio_url %}
     <item>
       <title><![CDATA[{{ podcast.title }}]]></title>
-      <link>{{ site.url }}{{ site.baseurl }}{{ page.url }}</link>
+      <link>{{ site.url }}{{ site.baseurl }}/pod/</link>
       
       <!-- Generate a Unique GUID -->
       <guid isPermaLink="false">{{ podcast.id | default: podcast.url | sha1 }}</guid>
@@ -55,8 +48,6 @@ permalink: /podcast-feed.xml
       <itunes:author><![CDATA[{{ site.title }}]]></itunes:author>
       <itunes:summary><![CDATA[{{ podcast.summary | strip_html }}]]></itunes:summary>
       <itunes:explicit>no</itunes:explicit>
-      <itunes:duration>{{ podcast.duration }}</itunes:duration>
-      <itunes:image href="{{ site.url }}{{ site.baseurl }}{{ page.cover_image }}"/>
 
       <enclosure url="{{ podcast.audio_url }}" type="audio/mpeg" {% if podcast.length %}length="{{ podcast.length }}"{% endif %}/>
       
@@ -66,8 +57,6 @@ permalink: /podcast-feed.xml
     </item>
     {% endif %}
     {% endfor %}
-
-	<copyright>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}</copyright>
 
   </channel>
 </rss>
