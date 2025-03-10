@@ -45,21 +45,21 @@ permalink: /podcast-feed.xml
     {% if podcast.audio_url %}
     <item>
       <title><![CDATA[{{ podcast.title }}]]></title>
-      <link>{{ site.url }}{{ site.baseurl }}{{ page.url }}</link>
+      <link>{{ site.url }}{{ site.baseurl }}{{ podcast.url }}</link>
       
       <!-- Generate a Unique GUID -->
-      <guid isPermaLink="false">{{ podcast.id | default: podcast.url | sha1 }}</guid>
+      <guid isPermaLink="false">{{ podcast.id | default: podcast.url }}</guid>
 
       <pubDate>{{ podcast.date | date_to_rfc822 }}</pubDate>
       <description><![CDATA[{{ podcast.summary | strip_html }}]]></description>
       <itunes:author><![CDATA[{{ site.title }}]]></itunes:author>
       <itunes:summary><![CDATA[{{ podcast.summary | strip_html }}]]></itunes:summary>
       <itunes:explicit>no</itunes:explicit>
-      <itunes:duration>{{ podcast.duration }}</itunes:duration>
-      <itunes:image href="{{ site.url }}{{ site.baseurl }}{{ page.cover_image }}"/>
 
-      <enclosure url="{{ podcast.audio_url }}" type="audio/mpeg" {% if podcast.length %}length="{{ podcast.length }}"{% endif %}/>
+      <itunes:image href="{{ site.url }}{{ site.baseurl }}{{ podcast.cover_image }}"/>
       
+      <enclosure url="{{ podcast.audio_url }}" type="audio/mpeg" length="{{ podcast.length | default: 0 }}"/>
+
       {% if podcast.duration %}
       <itunes:duration>{{ podcast.duration }}</itunes:duration>
       {% endif %}
