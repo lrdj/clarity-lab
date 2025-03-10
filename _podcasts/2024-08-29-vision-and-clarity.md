@@ -3,7 +3,7 @@ layout: podcast
 title: "How vision and clarity connect via the methods"
 season: 1
 episode: 1
-cover_image: "/assets/i/croft-workshop-sq.png"
+cover_image: "/assets/i/craterlochan_sq.jpg"
 date: 2024-08-29
 file: "/pod/mp3/The-Vision-Canvas_Crafting-Product-Vision-Together.mp3"
 duration: "20:38"
