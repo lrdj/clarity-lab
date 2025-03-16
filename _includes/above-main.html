@@ -3,6 +3,8 @@
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
+<!-- no standard top nav bar on landing pages -->
+{% if page.layout == "unbranded" %}
 <section aria-label="Service information" class="govuk-service-navigation"
   data-module="govuk-service-navigation">
   <div class="govuk-width-container">
@@ -28,6 +30,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </section>
-
-<!--
-a class="govuk-service-navigation__link" href="/book-a-discovery" Free discovery call -->
+{% endif %}
