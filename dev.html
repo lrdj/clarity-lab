@@ -1,0 +1,71 @@
+---
+layout: default
+title: "dev"
+---
+
+
+<style>
+	body {padding:50px;}
+
+	#cont { 
+		display:flex;
+		flex-direction:column;
+		border:10px solid #999;
+		gap:20px;
+	}
+
+	#cont p {
+		background-color: teal;
+/*
+		width:50px;
+		height:50px;
+		margin:10px;
+*/
+	}
+</style>
+ 
+<div id="cont">
+	<p>top</p>
+	<p>middle</p>
+	<p>bottom</p>
+</div>
+
+<!-- Make sure this script block appears BEFORE your usage code -->
+<script>
+  // Expose the contents of _data/utm_keywords.json to the browser
+  const utmKeywords = {{ site.data.utm_keywords | jsonify }};
+</script>
+
+<p>
+	<a href="/dev?utm_term=Need%20clarity%20in%20life">utm_term=Need clarity in life</a>
+</p>
+<p>
+	<a href="/dev?utm_term=Transformation%20strategy%20coaching">utm_term=Transformation strategy coaching</a>
+</p>
+
+<h1 id="utmHeader"></h1>
+<p id="utmIntro"></p>	
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  function getQueryParam(param) {
+    return new URLSearchParams(window.location.search).get(param);
+  }
+
+  // Attempt to match by utm_term
+  const searchTerm = getQueryParam("utm_term") || "";
+  let matchedEntry = utmKeywords.find(item => 
+    item.keyword?.toLowerCase() === searchTerm.toLowerCase()
+  );
+
+  // Final fallback: the first entry in the data array
+  if (!matchedEntry) {
+    matchedEntry = utmKeywords[0];
+  }
+
+  // Populate the DOM
+  document.getElementById("utmHeader").textContent = matchedEntry?.headline || "Welcome to our site";
+  document.getElementById("utmIntro").textContent = matchedEntry?.intro_para || "Discover how we can help you.";
+});
+</script>
+
