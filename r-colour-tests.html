@@ -1,0 +1,313 @@
+---
+layout: unbranded-landing
+title: "Say hello to a new way of finding answers."
+---
+
+<style>
+body.govuk-template__body {
+  background-color: #A47764;
+}
+
+/* 
+pinky beige EFE3DF
+mocha mousse A47764
+*/
+
+/* ----------------------------
+   Hero Section (Full Screen)
+---------------------------- */
+.fullscreen.hero {
+  min-height: 100svh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+
+  background-image: url('/assets/i/stevie-mull-landscape.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 83% center;
+
+  padding: 0; /* 2rem 1rem; */
+  margin-top: -50px;
+}
+
+/* full-width colour blocks */
+
+.fullscreen {padding: 1rem 0 1rem 0;}
+
+.fullscreen.mousse {background-color: #A47764;}
+.fullscreen.sage {background-color: #B4C4AE;}
+.fullscreen.mouse {background-color: #586994;}
+
+
+/* ----------------------------
+   Hero Flex Wrapper
+---------------------------- */
+.hero-flex-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  height: 100%;
+  width: 100%;
+  gap: 1.5rem;
+  padding: 2rem 0 1.25rem 0;
+  align-items: center;
+}
+
+/* Text and CTA default */
+.top-text, .cta-button {
+  margin: 0;
+  text-align: center;
+}
+
+/* CTA button style */
+.cta-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 0.5rem 0.5rem 2rem;
+  font-size: 1.25em;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: left;
+  text-decoration: none;
+  max-width:80%;
+}
+
+.cta-button:hover,
+.cta-button:focus,
+.cta-button:visited,
+.cta-button:active {
+  color: black !important;
+}
+
+.cta-text {
+  flex-grow: 1;
+}
+
+.cta-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-icon img {
+  width: 4rem;
+}
+
+/* Highlight "FREE CALL" */
+.highlight {
+  color: #7C2351;
+  font-weight: 700;
+}
+
+/* Typography and mark styling */
+.top-text, .bottom-text {
+  font-size: 1.25rem;
+  line-height: 1.9rem;
+  font-weight: bold;
+  color: #000;
+  text-transform: uppercase;
+}
+
+mark {
+  background: rgba(192, 190, 183, 0.5);
+  padding: 2px 4px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.bottom-text mark {
+  background: rgba(180, 196, 174, 1);
+}
+
+h2.govuk-heading-l mark {
+  line-height: 1.85rem;
+}
+
+h2.govuk-heading-l mark.sage {
+  color: #001011;
+  background-color: #B4C4AE;
+}
+
+h2.govuk-heading-l mark.bluebell {
+  color: #fff;
+  background-color: #586994;
+}
+
+h2.govuk-heading-l mark.mahogany {
+  color: #fff;
+  background-color: #3D2C2E;
+}
+
+/* ----------------------------
+   Tablet/Desktop Layout
+---------------------------- */
+@media (min-width: 640px) {
+  .fullscreen.hero {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+    margin-top: -90px;
+  }
+
+  .hero-flex-wrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    height: auto;
+    text-align: left;
+  }
+
+  .top-text {
+    flex: 1;
+    margin-right: 2rem;
+    text-align: left;
+  }
+
+  .cta-button {
+    flex-shrink: 0;
+    margin-bottom: 0;
+  }
+}
+</style>
+
+
+
+
+<!-- close container for full-width -->
+</main>
+</div> <!-- class="govuk-width-container" -->
+
+
+<!-- HERO SECTION -->
+<div class="fullscreen hero">	
+  <div class="hero-flex-wrapper">
+    <p class="top-text">
+      <mark>Scottish island strategy retreats for teams and remote (online) coaching for people feeling stuck</mark>
+    </p>
+
+    <a href="/book-a-discovery" class="cta-button">
+      <span class="cta-text">Find out more, book a <span class="highlight">free call</span></span>
+      <span class="cta-icon">
+        <img src="{{ site.baseurl}}/assets/i/disco-call-g.png" alt="Call us">
+      </span>
+    </a>
+  </div>
+</div>
+
+<div class="fullscreen sage">
+<div class="govuk-width-container">
+	  <div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds">
+
+		  <h2 class="govuk-heading-l"><mark class="sage">This is the Clarity Lab. We help people make sense of their challenges and lay down ways to make progress</mark></h2>
+
+		  <p class="govuk-body-l">And that's Stevie the wonder-dog there, admiring the view at the "Three Lochs" viewpoint.</p>
+		  <p class="govuk-body-l">It's a panoramic view of Loch an Eilein, Loch an Ellen and Loch Airde Glais <em>it's also a great spot to see Golden Eagles.</em></p>
+		  <p class="govuk-body-l">Stevie likes to welcome visitors from faraway lands...</p>
+
+	    </div>
+	</div>
+</div>
+</div>
+
+<!-- reset containers - matching tags are in footer include -->
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--l">
+
+	  <div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds">
+	
+
+		  <!-- What to Expect -->
+		  <h2 class="govuk-heading-l"><mark class="sage">What's this all about?</mark></h2>
+
+<img src="/assets/i/fionphort-pano.jpeg" style="width:100%;margin-bottom:1rem;">
+
+		  <p class="govuk-body-l">We're a small group of designers, coaches and consultants who live on a Scottish Island.</p> 
+
+		  <p class="govuk-body-l">We've developed a method to help teams and leaders find clarity and design their futures.</p>
+		  
+		  <p class="govuk-body-l">We host retreats where folk come together to work through that process:
+
+        <ul class="govuk-list cl-check">
+          <li><strong>Problem space work.</strong> Mornings are spent collaboratively building maps of our problem spaces before ideating a future vision.</li>
+          <li><strong>Agency through craft.</strong> In the afternoons you are paired with a local craftsperson and learn new skills while learning what you can control.</li>
+          <li><strong>Being in nature.</strong> Our island is magical. Whether you're cold-water swimming, foraging for bladderwrack, or climbing a hill, this land regenerates your soul as well as your body.</li>
+        </ul>
+
+<img src="/assets/i/ben-workshop-other.png" style="width:100%;margin-bottom:1rem;">
+
+		  <h2 class="govuk-heading-l"><mark class="bluebell">What if I can't come to Scotland?</mark></h2>
+
+		  <p class="govuk-body">We realise that paying for a retreat like ours can feel expensive, and Scotland is fairly remote if you're reading this in Chicago.</p>
+		  <p class="govuk-body">While nothing replaces the actual experience, we've been delivering workshops with this method for a long time, and since Covid, we've adapted the tools to work remotely.</p>
+		  <p class="govuk-body"><strong>For many of our customers, remote is the way to go.</strong></p>
+
+		  <h2 class="govuk-heading-l"><mark class="mahogany">We offer two types of remote problem-space work:</mark></h2>
+	
+		  <h3 class="govuk-heading-m">One: The "Checkpoint" session</h3>
+		  <p class="govuk-body">A 1-hour remote coaching call to reframe your challenges and map a way forward. The emphasis is on building the awareness you'll need to start moving out of your "stuck" stake.</p>
+	
+		  <h3 class="govuk-heading-m">Two: The "Breakthrough" workshop</h3>
+		  <p class="govuk-body">The breakthrough session is like a compressed retreat. Most of the problem-space work is approached with a preparatory session and homework followed by a 2-hour online strategy session and follow-up calls and reviews afterwards. The outcome of the breakthrough is a more structured roadmap to finding your path.</p>
+
+<img src="/assets/i/weavers.jpeg" style="width:100%;margin-bottom:1rem;">
+	
+		  <!-- Who This is For -->
+		  <h2 class="govuk-heading-l"><mark class="bluebell">Who is this is for?</mark></h2>
+		  <ul class="govuk-list govuk-list--bullet">
+			<li>Business leaders looking for strategic clarity</li>
+			<li>Mid-career professionals at a crossroads</li>
+			<li>Ordinary humans having trouble finding their path</li>
+			<li>Teams needing to define a vision and direction</li>
+		  </ul>
+
+		  <h2 class="govuk-heading-l"><mark class="mahogany">What Others Say</mark></h2>
+		  <blockquote class="govuk-body">“I was stuck for months, but after one session, I had a clear plan of action.” – Doug S.</blockquote>
+		  <blockquote class="govuk-body">“The retreat was a game-changer. We left with a renewed vision and confidence.” – James C.</blockquote>
+	
+		  <!-- FAQs -->
+		  <h2 class="govuk-heading-m"><mark class="sage"> FAQs </mark></h2>
+		  <details class="govuk-details">
+			<summary class="govuk-details__summary">
+			  <span class="govuk-details__summary-text">How much does it cost?</span>
+			</summary>
+			<div class="govuk-details__text">
+			  Checkpoint session: £65<br>
+			  Breakthrough workshop: £495<br>
+			  Retreat: £1,450 per person
+			</div>
+		  </details>
+		  <details class="govuk-details">
+			<summary class="govuk-details__summary">
+			  <span class="govuk-details__summary-text">How do I book?</span>
+			</summary>
+			<div class="govuk-details__text">
+			  If you're sure you know what you need and want to book a session, there are booking buttons on our <a href="/">home page</a>. Alternatively, click on the "book a call" button above and we can discuss your options in more detail.
+			</div>
+		  </details>
+	
+		</div>
+	  </div>
+	
+	
+
+
+		
+		
+		
+		
+		
