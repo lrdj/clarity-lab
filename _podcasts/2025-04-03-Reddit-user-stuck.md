@@ -4,7 +4,7 @@ title: "The Clarity Lab Method and a case of job dissatisfaction"
 season: 1
 episode: 6
 cover_image: "/assets/i/gears-stuck.jpg"
-date: 2025-03-26
+date: 2025-04-03
 file: "/pod/mp3/reddit-user-stuck.mp3"
 audio_url: "https://claritylab.uk/pod/mp3/reddit-user-stuck.mp3"
 duration: "11:56"
