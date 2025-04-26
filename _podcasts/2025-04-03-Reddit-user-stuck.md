@@ -9,7 +9,7 @@ file: "/pod/mp3/reddit-user-stuck.mp3"
 audio_url: "https://claritylab.uk/pod/mp3/reddit-user-stuck.mp3"
 duration: "11:56"
 summary: >
-  A user on the r/jobs subreddit asks some tough questions and is finding it hard to know hether or not to quit their job. The ML voices consider how Clarity Lab methods might be helpful in this situation.
+  A user on the r/jobs subreddit asks some tough questions and is finding it hard to know whether or not to quit their job. The ML voices consider how Clarity Lab methods might be helpful in this situation.
 length: 11460901
 hero-image: "/assets/i/rocks-growth.jpg"
 hero-h1a: "Podcast"
