@@ -9,7 +9,7 @@ file: "/pod/mp3/book-review.mp3"
 audio_url: "https://claritylab.uk/pod/mp3/book-review.mp3"
 duration: "15:40"
 summary: >
-  The NotebookML voices take a look at the review copy submission for Dug's book introducing the clarity lab method. The book should be on the shelves soon (crossing fingers and toes)
+  The NotebookML voices take a look at the review copy submission for Dug's book introducing the Clarity Lab method. The book should be on the shelves soon (crossing fingers and toes)
 length: 15042812
 hero-image: "/assets/i/rocks-growth.jpg"
 hero-h1a: "Podcast"
