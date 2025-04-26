@@ -8,7 +8,7 @@ hero-mark: "#FFFFFF"
 hero-accent: "#4F4D84"
 ---
 
-## {.govuk-heading-m} A solution-obsessed culture
+<h2 class="govuk-heading-l">A solution-obsessed culture?</h2>
 
 The fundamental problem that the Clarity Lab Method seeks to address for individuals and organisations stems from a pervasive cultural tendency and the limitations of existing frameworks that prioritize speed and solutions over deep understanding. In essence, it challenges a solution-obsessed culture or solution bias that leads to rushing to solutions before fully defining the problem.
 
