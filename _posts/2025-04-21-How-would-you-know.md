@@ -2,10 +2,11 @@
 layout: unbranded
 title: "How would a person know if the method is a useful tool for them?"
 hero-image: "/assets/i/concept-wall.jpg"
-hero-h1a: "Is this for me? Why should I do it?"
-hero-h1b: ""
+hero-h1a: "Is this for me?"
+hero-h1b: "Why should I do it?"
 hero-mark: "#FFFFFF"
-hero-accent: "#4F4D84"
+hero-accent: "#B4C4AE"
+hero-accent-mark: "#A47764"
 ---
 
   {%- include blog-css.html -%}

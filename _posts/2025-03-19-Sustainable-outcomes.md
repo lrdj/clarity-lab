@@ -2,10 +2,11 @@
 layout: unbranded
 title: "How does the method enable individuals and organisations to achieve sustainable outcomes?"
 hero-image: "/assets/i/concept-wall.jpg"
-hero-h1a: "Will this be effective? Will it last?"
-hero-h1b: ""
+hero-h1a: "Will this be effective?"
+hero-h1b: "Will it last?"
 hero-mark: "#FFFFFF"
-hero-accent: "#4F4D84"
+hero-accent: "#ffffff"
+hero-accent-mark: "#4F4D84"
 ---
 
   {%- include blog-css.html -%}

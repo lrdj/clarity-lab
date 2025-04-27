@@ -1,51 +1,75 @@
 
-{% if page.hero-image and page.hero-video %}
-  <!-- Display video when both are present -->
-  <div class="hero-video">
-	<video autoplay loop muted playsinline width="100%">
-		<source src="{{ page.hero-video }}" type="video/mp4">
-		Your browser does not support the video tag.
-	</video>
-  </div>
+<!-- used by all options -->
+<style>.inyourface mark { background-color:{{ page.hero-mark }}; }</style>
+
+<!-- what type of hero media? -->
+{% if page.hero-video %}
+<style>
+	/* fitting hero video content on mobile */
+	.hero-container {
+		position: relative;
+		overflow: hidden;
+		padding:1em 0 0 0.5em;
+	}
+	@media (min-width: 640px) {
+	  .hero-container {
+		padding:3em 3em 0.5em 4em;
+	  }
+	}
+	.hero-video {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transform: translate(-50%, -50%);
+		z-index: -1;
+	}
+	.hero-container .govuk-grid-column-two-thirds {
+		position: relative;
+		z-index: 1;
+	}
+</style>
+
+<div class="govuk-grid-row hero-container">
+<video muted autoplay loop playsinline class="hero-video" preload="auto">
+    <source src="{{ page.hero-video }}" type="video/webm">
+    <source src="{{ page.hero-video-colourblock }}" type="video/mp4">
+</video>
+    <div class="govuk-grid-column-three-quarters">
+		<h1 class="govuk-heading-xl inyourface"><mark>{{ page.hero-h1a }}</mark> <span style="color:{{ page.hero-accent }};">{{ page.hero-h1b}}</span></h1>
+    </div>
+</div>
 
 {% elsif page.hero-image %}
-  <!-- Display image when only hero-image is present -->
-
-	<style>
-	.hero-image {
-		width: 100%; /* Full width */
-		margin: 0;padding: 0;
-	}
-	.hero-image img {
-		width: 100%;
-		height: auto; /* Maintain aspect ratio */
-	}
-	.hero-caption {
-		font-size: x-small;
-		color: #666;
-		font-family: sans-serif;
-		margin:0.25em 0 0 1em;
-	}
-	</style>
-
-	<figure class="hero-image">
-		<img src="{{ page.hero-image }}" alt="{{ page.hero-image-alt }}">
-		<figcaption class="hero-caption">{{ page.hero-image-caption }}</figcaption>
-	</figure>
-
-{% elsif page.hero-video %}
-  <!-- Display video when only hero-video is present -->
-  <div class="hero-video">
-	<video autoplay loop muted playsinline width="100%">
-		<source src="{{ page.hero-video }}" type="video/mp4">
-		Your browser does not support the video tag.
-	</video>
-  </div>
-
-{% else %}
-  <!-- Display placeholder when neither is present -->
-  <!-- div class="hero-placeholder">
-    <img src="/assets/i/placeholder.jpg" alt="Placeholder Image">
-  </div -->
+<style>
+/* fitting h1 in hero with img bg */
+.hero-container {
+    padding:1em 0 0 0.5em;
+}
+@media (min-width: 640px) {
+  .hero-container {
+	padding:3em 3em 0.5em 3em;
+  }
+}
+.hero-container {
+    background: url('{{ page.hero-image }}') no-repeat center bottom; 
+    background-size: cover; /* Ensures full coverage */
+}
+</style>
+<div class="govuk-grid-row hero-container">
+    <div class="govuk-grid-column-three-quarters">
+		<h1 class="govuk-heading-xl inyourface"><mark>{{ page.hero-h1a }}</mark> <span style="color:{{ page.hero-accent }};">{{ page.hero-h1b}}</span></h1>
+    </div>
+</div>
 {% endif %}
+
+
+
+
+<!-- containers - matching tags are in footer include -->
+
+<div class="govuk-width-container">
+	<main class="govuk-main-wrapper govuk-main-wrapper--l">
 
