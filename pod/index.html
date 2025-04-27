@@ -41,32 +41,36 @@ hero-accent: "#FFCC4E"
 	{% endfor %}
 
 
-      <!-- Archive Section -->
-      <h2 class="govuk-heading-m">Episode archive</h2>
 
-      {% assign sorted_episodes = site.podcasts | sort: "date" | reverse %}
-      {% assign grouped_episodes = sorted_episodes | group_by_exp: "episode", "episode.date | date: '%Y-%m'" %}
-	
-	{% for group in grouped_episodes %}
-	  {% assign year  = group.name | slice: 0,4 %}
-	  {% assign month = group.name | slice: 5,2 %}
-	  
-	  {%- capture dateString -%}
-		{{ year }}-{{ month }}-01
-	  {%- endcapture -%}
-	
-	  <h3 class="govuk-heading-s">{{ year }} – {{ dateString | date: "%B" }}</h3>
-	
-	  <ul class="govuk-list">
-		{% for episode in group.items %}
-		  <li>
-			<a href="{{ episode.file }}" download>{{ episode.title }}</a>
-			{% if episode.summary %}<p class="govuk-body-s">{{ episode.summary | split: " " | slice: 0, 20 | join: " " }}...</p>{% endif %}
-		  </li>
-		{% endfor %}
-	  </ul>
-	{% endfor %}
 
+<!-- Archive Section -->
+<h2 class="govuk-heading-m">Episode archive</h2>
+
+{% assign sorted_episodes = site.podcasts | sort: "date" | reverse %}
+{% assign archive_episodes = sorted_episodes | slice: 4, sorted_episodes.size %}
+{% assign grouped_episodes = archive_episodes | group_by_exp: "episode", "episode.date | date: '%Y-%m'" %}
+
+{% for group in grouped_episodes %}
+  {% assign year  = group.name | slice: 0,4 %}
+  {% assign month = group.name | slice: 5,2 %}
+  
+  {%- capture dateString -%}
+    {{ year }}-{{ month }}-01
+  {%- endcapture -%}
+
+  <h3 class="govuk-heading-s">{{ year }} – {{ dateString | date: "%B" }}</h3>
+
+  <ul class="govuk-list">
+    {% for episode in group.items %}
+      <li>
+        <a href="{{ episode.file }}" download>{{ episode.title }}</a>
+        {% if episode.summary %}
+          <p class="govuk-body-s">{{ episode.summary | split: " " | slice: 0, 20 | join: " " }}...</p>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endfor %}
 
 
 
