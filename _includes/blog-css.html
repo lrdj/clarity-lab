@@ -1,0 +1,38 @@
+
+<style>
+
+.govuk-width-container li {
+  color: #0b0c0c;
+  font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.posts {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+
+.post-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.post-card h2 {
+  margin-top: 0;
+}
+
+@media (min-width: 768px) {
+  .posts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+</style>
+

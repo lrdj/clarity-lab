@@ -1,18 +1,18 @@
 ---
 layout: unbranded
-title: "What problems does the Clarity Lab Method solve for?"
+title: "Why should we host retreats?"
 hero-image: "/assets/i/concept-wall.jpg"
-hero-h1a: "Why join a"
-hero-h1b: "retreat?"
+hero-h1a: "Why join a retreat?"
+hero-h1b: ""
 hero-mark: "#FFFFFF"
 hero-accent: "#4F4D84"
 ---
 
+  {%- include blog-css.html -%}
+
 <h2 class="govuk-heading-l">How do the retreats support the method?</h2>
 
-The Clarity Lab Method is indeed deployed in dedicated retreat formats, alongside other modalities like workshops and individual application. There are three main types of retreats: the Isle of Mull (Scotland), Kielder Forest (England), and an Online retreat.
-
-Here's how the methods are deployed in the context of a physical retreat, particularly focusing on the Isle of Mull which fits your description of a Scottish island:
+The Clarity Lab Method is deployed in dedicated retreat formats, alongside other modes like workshops and individual applications. There are three main types of retreats: the Isle of Mull (Scotland), Kielder Forest (England), and an Online retreat.
 
 <h3 class="govuk-heading-m">Location as a key element:</h3>
 
