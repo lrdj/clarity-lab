@@ -12,7 +12,7 @@ duration: "11:44"
 summary: >
   The NotebookML voices read some Facebook posts and consider how people who describe themsleves as 'directionless' may be able to leverage some Clarity Lab thinking
 
-length: 33807404
+length: 11270312
 hero-image: "/assets/i/rocks-growth.jpg"
 hero-h1a: "Podcast"
 hero-h1b: "recordings"
