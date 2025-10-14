@@ -1,0 +1,36 @@
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXQLQKWL"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- no standard top nav bar on landing pages -->
+{% if page.layout == "spa" %}
+<section aria-label="Service information" class="govuk-service-navigation"
+  data-module="govuk-service-navigation">
+  <div class="govuk-width-container">
+    <div class="govuk-service-navigation__container">
+      <span class="govuk-service-navigation__service-name">
+        <a href="/" class="govuk-service-navigation__link"><img src="{{ site.baseurl}}/assets/i/claritylab-lockup.svg" id="cl-lockup"></a>
+      </span>
+      <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+        <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden>
+          Menu
+        </button>          
+          
+        <ul class="govuk-service-navigation__list" id="navigation">
+          <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/thought.html">Blog</a>
+          </li>
+          <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/pod/">Podcast</a>
+          </li>
+          <li class="govuk-service-navigation__item">
+            {% include disco-call-link.html %}
+          </li>
+        </ul>
+
+      </nav>
+    </div>
+  </div>
+</section>
+{% endif %}
