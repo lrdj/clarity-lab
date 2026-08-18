@@ -95,6 +95,11 @@ h1, h2, h3 {
   margin: 0 0 0.5em;
   letter-spacing: -0.01em;
 }
+h1 em, h2 em, h3 em { font-style: normal; color: var(--bl-signal); }
+
+/* A page title for hero-less pages (booking, blog index, etc.) — smaller
+   than .bl-hero__title, larger than a section heading. */
+.bl-page-title { font-size: clamp(1.9rem, 4.4vw, 3.2rem); color: var(--bl-ink); }
 
 p { margin: 0 0 1.1em; }
 p:last-child { margin-bottom: 0; }
@@ -132,16 +137,20 @@ p:last-child { margin-bottom: 0; }
   padding: 1.1em clamp(1.25rem, 4vw, 2.5rem);
   background: var(--bl-paper);
   border-bottom: 1px solid var(--bl-hairline);
-  opacity: 0;
-  transform: translateY(-0.5em);
   transition: opacity 0.3s ease, transform 0.3s ease;
-  pointer-events: none;
 }
-.bl-nav.is-visible { opacity: 1; transform: none; pointer-events: auto; }
+/* Default: visible. Only pages with a .bl-hero get the chrome-free first
+   viewport (see the direction contract); bulletin.js adds this modifier
+   only when a hero exists on the page, and only then does the nav start
+   hidden, reappearing on scroll past the hero. */
+.bl-nav.bl-nav--hero-mode { opacity: 0; transform: translateY(-0.5em); pointer-events: none; }
+.bl-nav.bl-nav--hero-mode.is-visible { opacity: 1; transform: none; pointer-events: auto; }
 
 @media (max-width: 26rem) {
   a.bl-nav__mark { font-size: 0.9rem; }
+  a.bl-nav__link { font-size: 0.7rem; }
   a.bl-nav__cta { font-size: 0.7rem; padding: 0.5em 0.85em; }
+  .bl-nav__links { gap: var(--space-2); }
 }
 
 a.bl-nav__mark {
@@ -150,6 +159,21 @@ a.bl-nav__mark {
   font-size: 1rem;
   color: var(--bl-ink);
 }
+
+.bl-nav__links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+a.bl-nav__link {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+  color: var(--bl-ink-muted);
+}
+a.bl-nav__link:hover, a.bl-nav__link:focus-visible { color: var(--bl-signal); }
 
 a.bl-nav__cta {
   font-family: var(--font-mono);
@@ -175,8 +199,15 @@ a.bl-nav__cta:hover, a.bl-nav__cta:focus-visible {
   flex-direction: column;
   justify-content: flex-end;
   overflow: hidden;
-  background: var(--bl-ink) url("/assets/i/fionphort-pano-hero.jpeg") center 72% / cover no-repeat;
+  background-color: var(--bl-ink);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
+/* A shorter banner variant for content pages (blog posts, index) that
+   don't need the homepage's full-viewport immersion. */
+.bl-hero--banner { min-height: min(60dvh, 26rem); }
 
 .bl-hero::before {
   content: "";
@@ -271,8 +302,28 @@ a.bl-btn--ghost:hover, a.bl-btn--ghost:focus-visible {
 .bl-section__inner { max-width: 68rem; margin: 0 auto; }
 .bl-prose { max-width: var(--measure); }
 
+/* Long-form article body (blog posts): headings, lists, and links styled
+   for sustained reading rather than a marketing section. */
+.bl-article__meta {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--bl-ink-muted);
+  margin-bottom: var(--space-3);
+}
+.bl-article h2 { font-size: clamp(1.35rem, 2.6vw, 1.75rem); margin-top: 1.8em; }
+.bl-article h3 { font-size: 1.15rem; margin-top: 1.5em; }
+.bl-article p, .bl-article li { color: var(--bl-ink); font-size: 1.0625rem; }
+.bl-article ul, .bl-article ol { margin: 0 0 1.1em; padding-left: 1.25em; }
+.bl-article li { margin-bottom: 0.4em; }
+.bl-article a:not([class]) {
+  color: var(--bl-signal);
+  text-decoration: underline;
+  text-decoration-color: var(--bl-hairline);
+  text-underline-offset: 0.15em;
+}
+.bl-article a:not([class]):hover { text-decoration-color: var(--bl-signal); }
+
 .bl-section h2 { font-size: clamp(1.6rem, 3.2vw, 2.4rem); margin-bottom: 0.6em; }
-.bl-section h2 em { font-style: normal; color: var(--bl-signal); }
 .bl-section p { color: var(--bl-ink); font-size: 1.0625rem; }
 
 .bl-lede { font-size: 1.25rem; color: var(--bl-ink); }
@@ -285,6 +336,15 @@ a.bl-btn--ghost:hover, a.bl-btn--ghost:focus-visible {
   .bl-pair { grid-template-columns: 1fr 1fr; gap: var(--space-6); }
   .bl-pair--reverse { direction: rtl; }
   .bl-pair--reverse > * { direction: ltr; }
+}
+
+.bl-gallery { display: grid; gap: var(--space-3); }
+.bl-gallery > * { min-width: 0; }
+@media (min-width: 36rem) {
+  .bl-gallery { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 56rem) {
+  .bl-gallery { grid-template-columns: 1fr 1fr 1fr; gap: var(--space-4); }
 }
 
 .bl-figure { margin: 0; border: 1px solid var(--bl-hairline); background: var(--bl-paper); }
@@ -326,6 +386,10 @@ a.bl-btn--ghost:hover, a.bl-btn--ghost:focus-visible {
 
 .bl-card { border: 1px solid var(--bl-hairline); padding: var(--space-3); background: var(--bl-paper); }
 .bl-card h3 { font-size: 1.15rem; margin-bottom: 0.5em; }
+.bl-card p { margin-bottom: var(--space-3); }
+.bl-card .bl-btn { margin-top: 0.25em; }
+
+.bl-btn--small { padding: 0.55em 1.1em; font-size: 0.875rem; }
 .bl-card__index {
   display: block;
   font-family: var(--font-mono);
@@ -381,9 +445,27 @@ a.bl-btn--ghost:hover, a.bl-btn--ghost:focus-visible {
 
 /* Data table — pricing rendered as an actual bulletin table */
 
-.bl-table { width: 100%; border-collapse: collapse; margin-top: var(--space-2); font-family: var(--font-mono); font-size: 0.9375rem; }
-.bl-table th, .bl-table td { text-align: left; padding: 0.6em 1em 0.6em 0; border-bottom: 1px solid var(--bl-hairline); }
+.bl-table-wrap { overflow-x: auto; margin-top: var(--space-2); }
+.bl-table { width: 100%; border-collapse: collapse; font-family: var(--font-mono); font-size: 0.9375rem; }
+.bl-table-wrap .bl-table { margin-top: 0; }
+.bl-table th, .bl-table td { text-align: left; padding: 0.6em 1em 0.6em 0; border-bottom: 1px solid var(--bl-hairline); white-space: nowrap; }
 .bl-table th { font-weight: 500; color: var(--bl-ink-muted); text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.75rem; }
+
+.bl-table--compare { font-size: 0.875rem; }
+.bl-table--compare th,
+.bl-table--compare td { white-space: normal; min-width: 11rem; }
+.bl-table--compare th:first-child,
+.bl-table--compare td:first-child { min-width: 7rem; }
+.bl-table--compare thead th { font-size: 0.8125rem; color: var(--bl-ink); font-weight: 700; text-transform: none; letter-spacing: normal; font-family: var(--font-display); }
+.bl-table--compare tbody th { color: var(--bl-ink-muted); font-weight: 500; }
+
+a.bl-table__cta {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  color: var(--bl-signal);
+  white-space: nowrap;
+}
+a.bl-table__cta:hover, a.bl-table__cta:focus-visible { text-decoration: underline; }
 
 /* Footer */
 

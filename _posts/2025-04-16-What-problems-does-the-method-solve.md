@@ -1,5 +1,5 @@
 ---
-layout: unbranded
+layout: bl-post
 title: "What problems does the Clarity Lab Method solve for?"
 hero-image: "/assets/i/concept-wall.jpg"
 hero-h1a: "Tell me what this solves for?"
@@ -10,7 +10,7 @@ hero-accent: "#4F4D84"
 
   {%- include blog-css.html -%}
 
-<h2 class="govuk-heading-l">A solution-obsessed culture?</h2>
+<h2>A solution-obsessed culture?</h2>
 
 The fundamental problem that the Clarity Lab Method seeks to address for individuals and organisations stems from a pervasive cultural tendency and the limitations of existing frameworks that prioritize speed and solutions over deep understanding. In essence, it challenges a solution-obsessed culture or solution bias that leads to rushing to solutions before usefully defining the problem.
 

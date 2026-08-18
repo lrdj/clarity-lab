@@ -1,5 +1,5 @@
 ---
-layout: unbranded
+layout: bl-post
 title: "Why should we host retreats?"
 hero-image: "/assets/i/concept-wall.jpg"
 hero-h1a: "Why join a retreat?"
@@ -10,17 +10,17 @@ hero-accent: "#4F4D84"
 
   {%- include blog-css.html -%}
 
-<h2 class="govuk-heading-l">How do the retreats support the method?</h2>
+<h2>How do the retreats support the method?</h2>
 
 The Clarity Lab Method is deployed in dedicated retreat formats, alongside other modes like workshops and individual applications. There are three main types of retreats: the Isle of Mull (Scotland), Kielder Forest (England), and an Online retreat.
 
-<h3 class="govuk-heading-m">Location as a key element:</h3>
+<h3>Location as a key element:</h3>
 
 The retreat format fundamentally leverages the power of a specific place, immersing participants in nature. 
 
 The Isle of Mull is a remote Scottish island retreat for deep work and reconnection, hosted in a traditional croft. Kielder Forest is a secluded off-grid location. This deliberate removal from daily environments is intended to help participants strip away distractions and find clarity.
 
-<h3 class="govuk-heading-m">Integration of structured method with experiential learning:</h3>
+<h3>Integration of structured method with experiential learning:</h3>
 
 The retreat blends the structured methodology of the Clarity Lab Method with immersive experiences. It uses a design-led approach to help navigate life's big questions.
 
@@ -29,12 +29,12 @@ The retreat blends the structured methodology of the Clarity Lab Method with imm
 These activities are designed to help to unlock new perspectives on problem-solving and allow participants to reconnect with nature and their hands. This isn't just recreation; it's framed as a way to complement the structured thinking with experiential learning and different modes of engagement.
 - **Evening Sessions:** Evenings focus on slowing down, communal meals, fireside conversations, and deeper integration of insights gained during the day. This provides a space for informal reflection and connection, processing the structured learning and outdoor experiences.
 
-<h3 class="govuk-heading-m">Focus on problem framing and vision setting:</h3>
+<h3>Focus on problem framing and vision setting:</h3>
 
 The retreats are explicitly structured to help participants reframe challenges using structured design tools, untangle challenges, explore challenges through design thinking and guided problem framing, and design a vision for their future. This aligns directly with the core phases of the Clarity Lab Method: Explore Together (problem framing) and Elaborate (vision crafting).
 
 
-<h2 class="govuk-heading-l">Why would a busy executive person want to come all the way to a tiny island in Scotland to get cold and wet and be made to engage in challenging exercises?</h2>
+<h2>Why would a busy executive person want to come all the way to a tiny island in Scotland to get cold and wet and be made to engage in challenging exercises?</h2>
 
 1.  **Escaping noise and distraction:** Busy daily life, especially for executives, is "noisy" and full of "clutter". The retreat offers a chance to pause, strip away distractions, and enter a space designed specifically for clarity and deep thinking. Locations like remote islands or secluded forests provide this necessary removal.
 2.  **Counteracting reactivity:** Busy individuals frequently find themselves moving from one thing to the next, reacting rather than choosing. The retreat format provides dedicated time and space to counteract this pattern and engage in more intentional, purpose-driven approaches.
@@ -46,7 +46,7 @@ The method and environment are designed to provide the clarity needed to define 
 The intention is to help us break out of usual routines and comfort zones through connection with the elemental world ("elemental landscape"), which is conducive to deep thinking and gaining perspective. It's a part of the transformative experience, not discomfort for its own sake:-)
 
 
-<h2 class="govuk-heading-l">TL;DR:</h2>
+<h2>TL;DR:</h2>
 
 The structured blend of the Clarity Lab Method's design-led workshops, immersive nature activities (including those that might lead to getting wet or being physically challenged, though not framed as intentional discomfort), and communal reflection. 
 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include head.html %}
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/bulletin.css">
+</head>
+<body class="bl-body">
+  {% include above-main-bulletin.html %}
+
+  <main id="bl-main" class="bl-main">
+
+    <section class="bl-hero bl-hero--banner" style="background-image: url('{{ page.hero-image | default: "/assets/i/concept-wall.jpg" }}');">
+      <div class="bl-hero__content">
+        <h1 class="bl-hero__title">{{ page.hero-h1a | default: page.title }}{% if page.hero-h1b and page.hero-h1b != "" %} {{ page.hero-h1b }}{% endif %}</h1>
+      </div>
+    </section>
+
+    <article class="bl-section bl-article">
+      <div class="bl-section__inner bl-prose">
+        <p class="bl-article__meta">{{ page.date | date: "%d %B %Y" }}</p>
+        {{ content }}
+      </div>
+    </article>
+
+  </main>
+
+  {% include footer-bulletin.html %}
+
+  <script src="{{ site.baseurl }}/assets/js/bulletin.js" defer></script>
+
+</body>
+</html>

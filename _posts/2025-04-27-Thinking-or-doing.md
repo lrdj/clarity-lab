@@ -1,5 +1,5 @@
 ---
-layout: unbranded
+layout: bl-post
 title: "Design Thinking vs. Design Doing"
 hero-image: "/assets/i/concept-wall.jpg"
 hero-h1a: "Design Thinking vs. Design Doing"
@@ -11,7 +11,7 @@ hero-accent-mark: "#424C55"
 
   {%- include blog-css.html -%}
 
-<h2 class="govuk-heading-l">Thinking v doing: This was posted today on Linkedin</h2>
+<h2>Thinking v doing: This was posted today on Linkedin</h2>
 
 <i>
 Lately, I’ve been reflecting on how often we get stuck in the thinking phase of design. Deep exploration, reframing the problem, mapping empathy… all good practices, but sometimes we spin our wheels and never actually solve the thing.
@@ -39,7 +39,7 @@ Curious to hear from others:
 Let’s talk.👇
 </i>
 
-<h2 class="govuk-heading-l">Interesting take, so I commented:-)</h2>
+<h2>Interesting take, so I commented:-)</h2>
 
 I thought the frame was false, opposing thinking and doing makes no sense...
 
@@ -54,7 +54,7 @@ I added:
 Also, the evidence is in the product (ie the outcome). If the apps on your iPhone are better today than five years ago then awesome, product culture works:-)
 In my experience the opposite is true, but I'd need a bigger sample to be sure...</span>
 
-<h2 class="govuk-heading-l">Commenting on social media is nice, but sometimes you need a bit of room to express your thoughts...</h2>
+<h2>Commenting on social media is nice, but sometimes you need a bit of room to express your thoughts...</h2>
 
 Thanks for your thoughts, this issue is central to modern problem-solving and design practices.
 

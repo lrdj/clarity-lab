@@ -31,6 +31,8 @@ Three tiers, escalating in depth and commitment:
 
 Delivered as a static Jekyll site (`claritylab.uk`, custom domain via CNAME, no server-side app). Site also carries a methodology blog (`_posts`) and a long-running interview podcast (`_podcasts`, `/pod`).
 
+**Home page funnel logic** (confirmed 2026-08-18, replacing an earlier Checkpoint-first funnel after it underperformed): the hero leads with the Retreat and its CTA is a free discovery call, not a direct purchase — a £1,450 decision needs a conversation first. Checkpoint and Breakthrough, lower commitment and lower price, get direct self-serve booking links instead. Any future page touching pricing/booking should preserve this distinction rather than giving every tier the same CTA treatment.
+
 ## Capabilities and Constraints
 
 - Static Jekyll site. No JavaScript framework — React is deliberately excluded as a standing principle across all of the user's projects (opposition to Meta-originated technology), not just this one.
