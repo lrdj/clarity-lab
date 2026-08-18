@@ -2,26 +2,39 @@
 <html lang="en">
 <head>
   {% include head.html %}
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/bulletin.css">
 </head>
+<body class="bl-body">
+<!--
+THESIS: A decision, not a mood. Clarity Lab turns a messy problem into one
+precise, actionable call, the way a shipping forecast turns weather into a
+go / no-go.
+OWN-WORLD: Pale marine-bulletin paper (#F4EFE4) throughout, navy ink
+(#1B2A3D), one chart-red signal accent (#A8362B) used only for the primary
+action. Bitter slab display, Source Serif 4 body, Spline Sans Mono for data
+(times, prices, sea areas).
+STORY: A visitor recognises their own uncertainty, sees it rendered as a
+forecast area with clear conditions, and trusts a service precise enough to
+hand them a real next step.
+FIRST VIEWPORT: Full-bleed real photo of an actual problem-mapping workshop
+in a Mull shed, headline set as a bulletin dispatch over it, one stamped
+CTA, no chrome above it.
+FORM: "The Shipping Forecast" — a direct pivot after the user reviewed the
+built "Bioluminescent Wake" direction (seed key 8d7a006a, assigned index 7
+"Drystone Dyke") and asked for a different world; chosen with the user from
+the same seven-candidate cultural list rather than a fresh dice roll, per
+their explicit "you go for it".
+FINISH: unreviewed and undocumented is unfinished; this build ends with the
+finish review, the verdict, DESIGN.md, and every shipping raster carrying
+its provenance.
+-->
+  {% include above-main-bulletin.html %}
 
-<!-- body class="govuk-template__body govuk-!-background-white" -->
+  {{ content }}
 
-<body class="govuk-template__body govuk-frontend-supported">
+  {% include footer-bulletin.html %}
 
-  {% include above-main.html %}
-  
-  {% include hero-area.html %}
-
-    {{ content }}
-
-  {% include footer.html %}
-
-  <!-- call frontend -->
-  {% include govuk-scripts.html %}
+  <script src="{{ site.baseurl }}/assets/js/bulletin.js" defer></script>
 
 </body>
 </html>
-
-
-
-

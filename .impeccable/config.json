@@ -1,0 +1,15 @@
+{
+  "buildPath": "code",
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-font",
+        "value": "spline sans mono",
+        "createdAt": "2026-08-18T16:22:44.721Z",
+        "reason": "The Shipping Forecast direction for /r (assets/css/bulletin.css) uses Spline Sans Mono for tabular data (prices, captions, citations); DESIGN.md is regenerated from the built world by the finish documenter, not kept live during the build."
+      }
+    ]
+  }
+}

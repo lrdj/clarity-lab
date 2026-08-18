@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-18T00:00:00Z",
+  "title": "Design System: The Clarity Lab",
+  "extensions": {
+    "colorMeta": {
+      "rose-tan": { "role": "primary", "displayName": "Rose-tan", "canonical": "#D19C97", "tonalRamp": ["#3D211C", "#5E332B", "#8A4D42", "#B06E63", "#D19C97", "#DFB7B3", "#EDD3D0", "#F8EDEC"] },
+      "viola": { "role": "secondary", "displayName": "Viola", "canonical": "#7E6EAC", "tonalRamp": ["#221D30", "#362E4C", "#4F4370", "#665792", "#7E6EAC", "#A296C4", "#C6BEDC", "#E7E3F1"] },
+      "cornflower-blue": { "role": "tertiary", "displayName": "Cornflower-blue", "canonical": "#93CCEA", "tonalRamp": ["#0E2B3B", "#17455F", "#276488", "#5A9AC0", "#93CCEA", "#B4DCF0", "#D5ECF7", "#EFF9FC"] },
+      "gardenia": { "role": "neutral", "displayName": "Gardenia", "canonical": "#F0EEE9", "tonalRamp": ["#2B2A26", "#4C4A42", "#736F63", "#A6A196", "#D6D2C7", "#F0EEE9", "#F7F6F3", "#FBFAF9"] },
+      "cobblestone": { "role": "neutral", "displayName": "Cobblestone", "canonical": "#A89A91", "tonalRamp": ["#2B2622", "#463F38", "#665B52", "#877971", "#A89A91", "#C3B9B2", "#DDD6D2", "#F0ECEA"] },
+      "mocha-mousse": { "role": "neutral", "displayName": "Mocha-mousse", "canonical": "#A78C8B", "tonalRamp": ["#2C2120", "#472F2E", "#684645", "#8A6564", "#A78C8B", "#C4AEAD", "#DECFCE", "#F1E9E9"] },
+      "willow": { "role": "neutral", "displayName": "Willow", "canonical": "#9A8B4F", "tonalRamp": ["#28230F", "#413A19", "#5E5424", "#7C6F35", "#9A8B4F", "#B6AA7C", "#D2C9A9", "#EBE7D4" ] },
+      "tendril": { "role": "neutral", "displayName": "Tendril", "canonical": "#8A9A5B", "tonalRamp": ["#212611", "#37401D", "#4F5B29", "#6C7A3F", "#8A9A5B", "#A9B885", "#C8D3AC", "#E6EAD6"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#0b0c0c", "tonalRamp": ["#000000", "#0b0c0c", "#232525", "#3d4040", "#5c6060", "#7f8484", "#a8adad", "#dcdede"] },
+      "focus-yellow": { "role": "functional", "displayName": "Focus Yellow", "canonical": "#ffdd00", "tonalRamp": ["#4d4200", "#7a6800", "#a68d00", "#d3b200", "#ffdd00", "#ffe64d", "#fff099", "#fff9d6"] },
+      "link-blue": { "role": "functional", "displayName": "Link Blue", "canonical": "#1d70b8", "tonalRamp": ["#0a1f2c", "#0e3350", "#134e78", "#175f95", "#1d70b8", "#4f92cb", "#8bb9e0", "#c8dff1"] },
+      "signal-green": { "role": "functional", "displayName": "Signal Green", "canonical": "#4CAF50", "tonalRamp": ["#123314", "#1e5321", "#2c7830", "#3a983f", "#4CAF50", "#78c37b", "#a8dab0", "#d6f0d8"] },
+      "footer-sage": { "role": "functional", "displayName": "Footer Sage", "canonical": "#B4C4AE", "tonalRamp": ["#2C3327", "#485541", "#68785E", "#8AA07E", "#B4C4AE", "#CBD7C1", "#E1EAD9", "#F2F6EF"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display / Hero", "purpose": "The .inyourface hero headline only — giant, uppercase, split into two <mark>-highlighted phrases." },
+      "headline": { "displayName": "Headline", "purpose": "Unmodified govuk-heading-xl, used for non-hero page titles." },
+      "title": { "displayName": "Title", "purpose": "Unmodified govuk-heading-l, used for section headers." },
+      "body": { "displayName": "Body", "purpose": "Unmodified GDS default paragraph and govuk-body-l lead text." }
+    },
+    "breakpoints": [
+      { "name": "mobile", "value": "20rem" },
+      { "name": "tablet", "value": "40.0625rem" },
+      { "name": "desktop", "value": "48.0625rem" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Clarity Lab's override of the GDS button — signal green, 9px radius, no shadow.",
+      "html": "<button class=\"ds-btn-primary\">Book your checkpoint session</button>",
+      "css": ".ds-btn-primary { font-family: 'HelveticaNeue', 'Helvetica Neue', Arial, Helvetica, sans-serif; font-size: 1rem; font-weight: 400; background-color: #4CAF50; color: #ffffff; border: 1px solid #4CAF50; border-radius: 9px; padding: 0.75em 1.25em; box-shadow: none; cursor: pointer; transition: background-color 0.2s ease-in-out; } .ds-btn-primary:hover { background-color: #388E3C; } .ds-btn-primary:focus-visible { outline: 3px solid #ffdd00; box-shadow: 0 0 0 4px rgba(255,221,0,0.5); }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "White outline variant, same 9px radius as primary.",
+      "html": "<button class=\"ds-btn-secondary\">Grab a free discovery call</button>",
+      "css": ".ds-btn-secondary { font-family: 'HelveticaNeue', 'Helvetica Neue', Arial, Helvetica, sans-serif; font-size: 1rem; background-color: #ffffff; color: #000000; border: 1px solid #ccc; border-radius: 9px; padding: 0.75em 1.25em; cursor: pointer; transition: background-color 0.2s ease-in-out; } .ds-btn-secondary:hover { background-color: #e0e0e0; } .ds-btn-secondary:focus-visible { outline: 3px solid #ffdd00; box-shadow: 0 0 0 4px rgba(255,221,0,0.5); }"
+    },
+    {
+      "name": "Hero Headline",
+      "kind": "custom",
+      "refersTo": "display",
+      "description": "The signature giant uppercase hero H1, split into two <mark>-highlighted phrases with per-page colours.",
+      "html": "<h1 class=\"ds-hero-h1\"><mark class=\"ds-mark-a\">Your breakthrough</mark><br><mark class=\"ds-mark-b\">starts here.</mark></h1>",
+      "css": ".ds-hero-h1 { font-family: 'HelveticaNeue', 'Helvetica Neue', Arial, Helvetica, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 2.45em; line-height: 1.14; text-indent: 0.5em; margin: 0; } @media (min-width: 640px) { .ds-hero-h1 { font-size: 5em; line-height: 1.17; } } .ds-mark-a { background-color: #FFFFFF; } .ds-mark-b { background-color: #D19C97; color: #D19C97; }"
+    },
+    {
+      "name": "Service Navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Full-width band above the hero: logo lockup left, three text links right.",
+      "html": "<nav class=\"ds-service-nav\"><a class=\"ds-service-nav__logo\" href=\"/\">The Clarity Lab</a><ul class=\"ds-service-nav__list\"><li><a href=\"/thought.html\">Blog</a></li><li><a href=\"/pod/\">Podcast</a></li><li><a href=\"#\" class=\"ds-service-nav__cta\">Book a discovery call</a></li></ul></nav>",
+      "css": ".ds-service-nav { display: flex; align-items: center; justify-content: space-between; padding: 0.5em 1em; font-family: 'HelveticaNeue', 'Helvetica Neue', Arial, Helvetica, sans-serif; } .ds-service-nav__list { display: flex; gap: 1.5em; list-style: none; margin: 0; padding: 0; } .ds-service-nav__list a { color: #0b0c0c; text-decoration: none; } .ds-service-nav__list a:hover { text-decoration: underline; } .ds-service-nav__cta { background-color: #D19C97; padding: 1px 0.25em; }"
+    },
+    {
+      "name": "Checklist Item",
+      "kind": "custom",
+      "refersTo": "cl-check",
+      "description": "List item with a custom checkmark icon replacing the default marker.",
+      "html": "<ul class=\"ds-check-list\"><li>Gain an outside perspective</li></ul>",
+      "css": ".ds-check-list { list-style: none; margin: 0; padding: 0; } .ds-check-list li { background-repeat: no-repeat; background-position: left center; background-size: 1.5em; padding: 0.25em 0 0.25em 2em; background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%238A9A5B' d='M9 16.2l-3.5-3.5L4 14.2l5 5 11-11-1.5-1.5z'/%3E%3C/svg%3E\"); }"
+    },
+    {
+      "name": "Comparison Table",
+      "kind": "custom",
+      "refersTo": "table",
+      "description": "Unmodified GDS table used for pricing/comparison grids.",
+      "html": "<table class=\"ds-table\"><caption>Investment</caption><thead><tr><th>Checkpoint</th><th>Breakthrough</th><th>Island Retreat</th></tr></thead><tbody><tr><td>£65</td><td>£495</td><td>£1,450</td></tr></tbody></table>",
+      "css": ".ds-table { width: 100%; border-collapse: collapse; font-family: 'HelveticaNeue', 'Helvetica Neue', Arial, Helvetica, sans-serif; } .ds-table caption { text-align: left; font-weight: 700; margin-bottom: 0.5em; } .ds-table th, .ds-table td { text-align: left; padding: 10px 20px 10px 0; border-bottom: 1px solid #b1b4b6; }"
+    },
+    {
+      "name": "Footer Band",
+      "kind": "custom",
+      "refersTo": "footer",
+      "description": "Full-width sage footer band with small licence-style copy.",
+      "html": "<footer class=\"ds-footer\"><p>Clarity Lab Method workshops offer a structured approach to reset your perspective.</p><p>&copy; 2026 Cockburn Advisory Services Ltd.</p></footer>",
+      "css": ".ds-footer { background-color: #B4C4AE; padding: 3em 1em 9em; } .ds-footer p { font-size: small; font-family: 'HelveticaNeue', 'Helvetica Neue', Arial, Helvetica, sans-serif; margin: 0 0 0.5em; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Civic Croft",
+    "overview": "This is GOV.UK Design System chrome — flat, squared, built for tax forms and benefit claims — carrying a pastoral, nature-named accent palette and one oversized signature move: a giant uppercase hero headline with hand-highlighted phrases. The base structure (grid, type scale, focus states, component markup) is unmodified GOV.UK Frontend running in its \"unbranded\" configuration. Everything that reads as \"Clarity Lab\" rather than \"a government service\" is a thin layer on top: eight named custom-property colours, one enlarged and highlighted heading style, and a handful of per-page inline overrides that don't generalise into a system. This file documents the implementation exactly as built — a baseline for reference, not a set of choices the next visual direction is obliged to keep.",
+    "keyCharacteristics": [
+      "GOV.UK Frontend (unbranded variant) as the unmodified structural and accessibility base.",
+      "A fixed eight-colour named palette (Gardenia, Tendril, Willow, Mocha-mousse, Cobblestone, Rose-tan, Viola, Cornflower-blue) defined once as CSS custom properties, applied inconsistently.",
+      "One signature composition: full-bleed hero (video or image) behind a giant uppercase headline split across two <mark>-highlighted phrases.",
+      "A large population of one-off hex colours used only in a single page's hero front matter, outside the named palette.",
+      "Flat, sharply-squared GDS surfaces everywhere except buttons, which carry a hand-added 9px radius with no corresponding rationale elsewhere in the system."
+    ],
+    "rules": [
+      { "name": "The Per-Page Accent Rule", "body": "Hero headline colours (hero-mark, hero-accent) are set per page in Jekyll front matter, not drawn from one governing rule. Beyond the eight named tokens, more than a dozen further one-off hex values appear, each used on only a single page.", "section": "colors" },
+      { "name": "The Highlighter Rule", "body": "Every hero <h1> is two phrases, each wrapped in <mark>, each coloured independently via front matter. The device (giant, uppercase, highlighted) is consistent; the colours behind it are not.", "section": "typography" }
+    ],
+    "dos": [
+      "Do inherit GOV.UK Frontend's native focus, keyboard, and ARIA behaviour unmodified on every interactive element — it is the one part of this system that is genuinely load-bearing.",
+      "Do treat the eight named custom-property colours as the closest thing this implementation has to a real palette; they are the only colours defined once and reused rather than invented per page."
+    ],
+    "donts": [
+      "Don't assume any page's hero accent colour predicts another's — it's chosen per page in front matter, and more than a dozen one-off hex values exist outside the named palette.",
+      "Don't treat the button's 9px radius or shadow removal as evidence of a deliberate \"soft GDS\" design language — it's an isolated override with no counterpart anywhere else in the flat, square GDS base.",
+      "Don't reuse the near-black footer override from /retreats as a pattern — every other page uses the Footer Sage default."
+    ]
+  }
+}

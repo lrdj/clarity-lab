@@ -1,0 +1,406 @@
+/*
+  The Clarity Lab — "The Shipping Forecast" direction for /r.
+  A decision, not a mood: pale bulletin paper, navy ink, one signal red used
+  only for the primary action. See the direction contract in
+  _layouts/unbranded-landing.html.
+*/
+
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 500 800;
+  font-display: swap;
+  src: url("/assets/fonts/bitter-var.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/assets/fonts/sourceserif4-var.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/assets/fonts/sourceserif4-italic-var.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Spline Sans Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/spline-mono-400.woff2") format("woff2");
+}
+
+:root {
+  --bl-paper: #f4efe4;
+  --bl-paper-deep: #eae1cd;
+  --bl-ink: #1b2a3d;
+  --bl-ink-muted: #4a5773;
+  --bl-hairline: rgba(27, 42, 61, 0.22);
+  --bl-signal: #a8362b;
+  --bl-signal-soft: rgba(168, 54, 43, 0.12);
+  --bl-stamp-bg: #1b2a3d;
+  --bl-stamp-ink: #f4efe4;
+
+  --font-display: "Bitter", Georgia, "Times New Roman", serif;
+  --font-body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-mono: "Spline Sans Mono", "Courier New", monospace;
+
+  --measure: 40rem;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.75rem;
+  --space-4: 2.75rem;
+  --space-5: 4.5rem;
+  --space-6: 7rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { background: var(--bl-paper); }
+html, body.bl-body { overflow-x: hidden; }
+
+body.bl-body {
+  margin: 0;
+  background: var(--bl-paper);
+  color: var(--bl-ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bl-body ::selection { background: var(--bl-signal-soft); color: var(--bl-ink); }
+
+/* This page carries no GOV.UK Frontend classes, but head.html still loads
+   the shared govuk-frontend stylesheets for other pages; their bare
+   `a:link`/`a:visited` rules would otherwise win the color cascade. Match
+   their specificity exactly (element + pseudo-class, no extra scoping
+   class) so this rule ties and wins on source order, while staying low
+   enough that any single-class component rule declared after it still
+   wins on its own. */
+a:link, a:visited, a:hover, a:active, a:focus {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 0.5em;
+  letter-spacing: -0.01em;
+}
+
+p { margin: 0 0 1.1em; }
+p:last-child { margin-bottom: 0; }
+
+.bl-skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  z-index: 100;
+  background: var(--bl-stamp-bg);
+  color: var(--bl-stamp-ink);
+  padding: 0.75em 1.25em;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+.bl-skip-link:focus { left: var(--space-2); top: var(--space-2); }
+
+/* ---------- Nav ---------- */
+/* The first viewport is deliberately chrome-free (see the direction
+   contract); bulletin.js reveals the nav once the visitor has scrolled
+   past the hero. */
+
+.bl-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6em 1em;
+  padding: 1.1em clamp(1.25rem, 4vw, 2.5rem);
+  background: var(--bl-paper);
+  border-bottom: 1px solid var(--bl-hairline);
+  opacity: 0;
+  transform: translateY(-0.5em);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+.bl-nav.is-visible { opacity: 1; transform: none; pointer-events: auto; }
+
+@media (max-width: 26rem) {
+  a.bl-nav__mark { font-size: 0.9rem; }
+  a.bl-nav__cta { font-size: 0.7rem; padding: 0.5em 0.85em; }
+}
+
+a.bl-nav__mark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--bl-ink);
+}
+
+a.bl-nav__cta {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+  color: var(--bl-ink);
+  border: 1px solid var(--bl-hairline);
+  padding: 0.55em 1.1em;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+  white-space: nowrap;
+}
+a.bl-nav__cta:hover, a.bl-nav__cta:focus-visible {
+  border-color: var(--bl-signal);
+  color: var(--bl-signal);
+}
+
+/* ---------- Hero ---------- */
+
+.bl-hero {
+  position: relative;
+  min-height: min(100dvh, 50rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  background: var(--bl-ink) url("/assets/i/fionphort-pano-hero.jpeg") center 72% / cover no-repeat;
+}
+
+.bl-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(14, 20, 28, 0.88) 0%, rgba(14, 20, 28, 0.46) 46%, rgba(14, 20, 28, 0.1) 68%);
+  pointer-events: none;
+}
+
+.bl-hero__content {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+  padding: 0 clamp(1.25rem, 6vw, 4rem) clamp(2.5rem, 8vh, 5rem);
+  max-width: 62rem;
+}
+
+.bl-hero__title {
+  font-size: clamp(1.9rem, 5.4vw, 4.1rem);
+  color: var(--bl-paper);
+  text-shadow: 0 2px 30px rgba(0, 0, 0, 0.35);
+}
+
+.bl-hero__title em {
+  font-style: normal;
+  color: #e0a999;
+}
+
+.bl-hero__actions {
+  margin-top: var(--space-3);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.bl-hero__note {
+  margin: var(--space-2) 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: rgba(244, 239, 228, 0.75);
+}
+
+/* ---------- Buttons ---------- */
+
+.bl-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  border: 1px solid transparent;
+  padding: 0.9em 1.6em;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+a.bl-btn--primary {
+  background: var(--bl-signal);
+  color: var(--bl-paper);
+  box-shadow: 0 1px 2px rgba(27, 20, 12, 0.12);
+}
+a.bl-btn--primary:hover, a.bl-btn--primary:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(27, 20, 12, 0.22);
+  background: #8f2c22;
+}
+
+a.bl-btn--ghost {
+  background: transparent;
+  color: var(--bl-ink);
+  border-color: var(--bl-hairline);
+}
+a.bl-btn--ghost:hover, a.bl-btn--ghost:focus-visible {
+  border-color: var(--bl-signal);
+  color: var(--bl-signal);
+}
+
+.bl-btn:focus-visible {
+  outline: 2px solid var(--bl-signal);
+  outline-offset: 3px;
+}
+
+/* ---------- Sections ---------- */
+
+.bl-main { position: relative; }
+
+.bl-section { padding: var(--space-6) clamp(1.25rem, 6vw, 4rem); }
+.bl-section--panel { background: var(--bl-paper-deep); }
+
+.bl-section__inner { max-width: 68rem; margin: 0 auto; }
+.bl-prose { max-width: var(--measure); }
+
+.bl-section h2 { font-size: clamp(1.6rem, 3.2vw, 2.4rem); margin-bottom: 0.6em; }
+.bl-section h2 em { font-style: normal; color: var(--bl-signal); }
+.bl-section p { color: var(--bl-ink); font-size: 1.0625rem; }
+
+.bl-lede { font-size: 1.25rem; color: var(--bl-ink); }
+
+/* Media + text pairing */
+
+.bl-pair { display: grid; gap: var(--space-4); align-items: center; }
+.bl-pair > * { min-width: 0; }
+@media (min-width: 56rem) {
+  .bl-pair { grid-template-columns: 1fr 1fr; gap: var(--space-6); }
+  .bl-pair--reverse { direction: rtl; }
+  .bl-pair--reverse > * { direction: ltr; }
+}
+
+.bl-figure { margin: 0; border: 1px solid var(--bl-hairline); background: var(--bl-paper); }
+.bl-figure img { display: block; width: 100%; height: auto; }
+.bl-figure figcaption {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  color: var(--bl-ink-muted);
+  padding: 0.75em 1em;
+  border-top: 1px solid var(--bl-hairline);
+}
+
+/* Checklist */
+
+.bl-list { list-style: none; margin: var(--space-3) 0 0; padding: 0; display: grid; gap: var(--space-3); }
+.bl-list li { position: relative; padding-left: 2em; }
+.bl-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.55em;
+  height: 0.55em;
+  background: var(--bl-signal);
+  transform: rotate(45deg);
+}
+.bl-list strong { display: block; font-family: var(--font-display); font-weight: 700; color: var(--bl-ink); margin-bottom: 0.15em; }
+.bl-list span { color: var(--bl-ink-muted); }
+.bl-list--plain li::before { background: var(--bl-ink-muted); }
+
+/* Two remote-option cards */
+
+.bl-grid-2 { display: grid; gap: var(--space-3); margin-top: var(--space-3); }
+.bl-grid-2 > * { min-width: 0; }
+@media (min-width: 48rem) {
+  .bl-grid-2 { grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+}
+
+.bl-card { border: 1px solid var(--bl-hairline); padding: var(--space-3); background: var(--bl-paper); }
+.bl-card h3 { font-size: 1.15rem; margin-bottom: 0.5em; }
+.bl-card__index {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--bl-signal);
+  letter-spacing: 0.06em;
+  margin-bottom: 0.6em;
+}
+
+/* Testimonials */
+
+.bl-quotes { display: grid; gap: var(--space-4); margin-top: var(--space-4); }
+@media (min-width: 48rem) { .bl-quotes { grid-template-columns: 1fr 1fr; } }
+
+.bl-quote { margin: 0; border-left: 1px solid var(--bl-signal); padding-left: var(--space-3); }
+.bl-quote p { font-size: 1.15rem; font-style: italic; color: var(--bl-ink); }
+.bl-quote cite {
+  display: block;
+  margin-top: var(--space-2);
+  font-style: normal;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--bl-ink-muted);
+}
+
+/* FAQ, styled as a bulletin ledger */
+
+.bl-faq { margin-top: var(--space-3); border-top: 1px solid var(--bl-hairline); }
+.bl-faq details { border-bottom: 1px solid var(--bl-hairline); padding: var(--space-2) 0; }
+
+.bl-faq summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--bl-ink);
+  padding: 0.4em 0;
+}
+.bl-faq summary::-webkit-details-marker { display: none; }
+
+.bl-faq__icon { display: inline-flex; flex: none; color: var(--bl-signal); transition: transform 0.2s ease; }
+.bl-faq details[open] .bl-faq__icon { transform: rotate(180deg); }
+
+.bl-faq summary:focus-visible { outline: 2px solid var(--bl-signal); outline-offset: 4px; }
+
+.bl-faq .bl-faq__body { padding: 0.4em 0 1em; color: var(--bl-ink-muted); max-width: var(--measure); }
+.bl-faq .bl-faq__body p { margin-bottom: 0.6em; }
+
+/* Data table — pricing rendered as an actual bulletin table */
+
+.bl-table { width: 100%; border-collapse: collapse; margin-top: var(--space-2); font-family: var(--font-mono); font-size: 0.9375rem; }
+.bl-table th, .bl-table td { text-align: left; padding: 0.6em 1em 0.6em 0; border-bottom: 1px solid var(--bl-hairline); }
+.bl-table th { font-weight: 500; color: var(--bl-ink-muted); text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.75rem; }
+
+/* Footer */
+
+.bl-footer {
+  background: var(--bl-ink);
+  color: var(--bl-paper);
+  padding: var(--space-5) clamp(1.25rem, 6vw, 4rem) var(--space-6);
+}
+.bl-footer__inner { max-width: 68rem; margin: 0 auto; }
+.bl-footer__licence { color: rgba(244, 239, 228, 0.75); font-size: 0.9375rem; max-width: 44rem; }
+.bl-footer__copyright {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: rgba(244, 239, 228, 0.55);
+  margin-top: var(--space-2);
+}
+
+@media (max-width: 30rem) {
+  .bl-section { padding-left: 1.25rem; padding-right: 1.25rem; }
+}
