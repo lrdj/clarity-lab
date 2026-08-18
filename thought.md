@@ -1,36 +1,43 @@
 ---
-layout: unbranded
+layout: unbranded-landing
 title: "Reflections on creating and using the method"
-hero-image: "/assets/i/concept-wall.jpg"
-hero-h1a: "We're thinking about stuff:-)"
-hero-h1b: ""
-hero-mark: "#85BFE6"
-hero-accent: "#FFCC4E"
 ---
 
-{%- include blog-css.html -%}
-  
-<p class="govuk-body-l">
-	{% include TCLM-mark.html %} uses design thinking techniques from the world of commercial agencies and consultancies to help customers explore their problem spaces, uncover their opportunities, and deliver the change they need. <strong>We're freeing those tools from the confines of specialist consultancies so everyone can benefit.</strong></p>
+<main id="bl-main" class="bl-main">
 
-<ul class="govuk-list cl-check">
-	<li><strong>What it is:</strong> A blend of design thinking and real-world facilitation.</li>
-	<li><strong>Who it’s for:</strong> Individuals and teams feeling stuck or uncertain.</li>
-	<li><strong>Why it works:</strong> Rapid problem definition + future vision = actionable next steps.</li>
-</ul>
+<section class="bl-hero bl-hero--banner" style="background-image: url('/assets/i/concept-wall.jpg');">
+  <div class="bl-hero__content">
+    <h1 class="bl-hero__title">We're thinking about <em>stuff</em>.</h1>
+  </div>
+</section>
 
-<h2 class="govuk-heading-l">Why are we doing this?</h2>
+<section class="bl-section">
+  <div class="bl-section__inner bl-prose">
+    <p class="bl-lede">The Clarity Lab Method&reg; uses design thinking techniques from the world of commercial agencies and consultancies to help customers explore their problem spaces, uncover their opportunities, and deliver the change they need. <strong>We're freeing those tools from the confines of specialist consultancies so everyone can benefit.</strong></p>
 
-<p class="govuk-body">
-This is a work in progress, here are some of the ideas and issues we're working through as we continue to refine the method and invite individuals to join us.</p>
+    <ul class="bl-list">
+      <li><strong>What it is.</strong> <span>A blend of design thinking and real-world facilitation.</span></li>
+      <li><strong>Who it&rsquo;s for.</strong> <span>Individuals and teams feeling stuck or uncertain.</span></li>
+      <li><strong>Why it works.</strong> <span>Rapid problem definition + future vision = actionable next steps.</span></li>
+    </ul>
+  </div>
+</section>
 
-<div class="posts">
-  {% for post in site.posts %}
-    <div class="post-card">
-      <h3 class="govuk-heading-m"><a href="{{ post.url }}">{{ post.title }}</a></h3>
-      <p class="govuk-body"><small>{{ post.date | date: "%-d %B %Y" }}</small></p>
-      <p class="govuk-body">{{ post.content | strip_html | truncatewords: 25 }}</p>
+<section class="bl-section bl-section--panel">
+  <div class="bl-section__inner">
+    <h2>Why are we <em>doing</em> this?</h2>
+    <p class="bl-prose">This is a work in progress &mdash; here are some of the ideas and issues we're working through as we continue to refine the method and invite individuals to join us.</p>
+
+    <div class="bl-entry-list">
+      {% for post in site.posts %}
+        <article class="bl-entry">
+          <p class="bl-entry__date">{{ post.date | date: "%-d %B %Y" }}</p>
+          <h3 class="bl-entry__title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+          <p class="bl-entry__excerpt">{{ post.content | strip_html | truncatewords: 30 }}</p>
+        </article>
+      {% endfor %}
     </div>
-  {% endfor %}
-</div>
+  </div>
+</section>
 
+</main>
