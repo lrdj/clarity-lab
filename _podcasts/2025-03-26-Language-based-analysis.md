@@ -1,5 +1,5 @@
 ---
-layout: podcast
+layout: bl-podcast
 title: "How do Language-Based Analysis and the Tushman Congruence Model intersect?"
 season: 1
 episode: 5

@@ -1,5 +1,5 @@
 ---
-layout: podcast
+layout: bl-podcast
 title: "How vision and clarity connect via the methods"
 season: 1
 episode: 1

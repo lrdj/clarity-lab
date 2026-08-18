@@ -1,5 +1,5 @@
 ---
-layout: podcast
+layout: bl-podcast
 title: "Pre-release copy of the Clarity Lab Method book reviewed"
 season: 1
 episode: 7

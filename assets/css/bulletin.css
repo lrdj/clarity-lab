@@ -208,6 +208,7 @@ a.bl-nav__cta:hover, a.bl-nav__cta:focus-visible {
 /* A shorter banner variant for content pages (blog posts, index) that
    don't need the homepage's full-viewport immersion. */
 .bl-hero--banner { min-height: min(60dvh, 26rem); }
+.bl-hero--banner .bl-hero__title { font-size: clamp(1.6rem, 3.6vw, 2.75rem); }
 
 .bl-hero::before {
   content: "";
@@ -338,6 +339,17 @@ a.bl-btn--ghost:hover, a.bl-btn--ghost:focus-visible {
   .bl-pair--reverse > * { direction: ltr; }
 }
 
+/* Main content + a persistent sidebar (used sparingly: content-heavy list
+   pages like the podcast archive, where the sidebar's action stays useful
+   while scrolling a long list — not a sitewide pattern). */
+.bl-layout { display: grid; gap: var(--space-5); }
+.bl-layout__main { min-width: 0; }
+.bl-layout__aside { min-width: 0; }
+@media (min-width: 56rem) {
+  .bl-layout { grid-template-columns: 2fr 1fr; gap: var(--space-6); align-items: start; }
+  .bl-layout__aside { position: sticky; top: 6rem; }
+}
+
 .bl-gallery { display: grid; gap: var(--space-3); }
 .bl-gallery > * { min-width: 0; }
 @media (min-width: 36rem) {
@@ -443,6 +455,23 @@ a.bl-btn--ghost:hover, a.bl-btn--ghost:focus-visible {
 .bl-faq .bl-faq__body { padding: 0.4em 0 1em; color: var(--bl-ink-muted); max-width: var(--measure); }
 .bl-faq .bl-faq__body p { margin-bottom: 0.6em; }
 
+/* Entry list — the blog index, read as a dispatch log */
+
+.bl-entry-list { margin-top: var(--space-4); border-top: 1px solid var(--bl-hairline); }
+.bl-entry { padding: var(--space-3) 0; border-bottom: 1px solid var(--bl-hairline); max-width: var(--measure); }
+.bl-entry__date {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--bl-ink-muted);
+  margin-bottom: 0.4em;
+}
+.bl-entry__title { font-size: 1.25rem; margin-bottom: 0.4em; }
+a.bl-entry__title-link, .bl-entry__title a { color: var(--bl-ink); }
+.bl-entry__title a:hover, .bl-entry__title a:focus-visible { color: var(--bl-signal); }
+.bl-entry__excerpt { color: var(--bl-ink-muted); font-size: 1rem; margin: 0; }
+
 /* Data table — pricing rendered as an actual bulletin table */
 
 .bl-table-wrap { overflow-x: auto; margin-top: var(--space-2); }
@@ -466,6 +495,77 @@ a.bl-table__cta {
   white-space: nowrap;
 }
 a.bl-table__cta:hover, a.bl-table__cta:focus-visible { text-decoration: underline; }
+
+/* Podcast: audio player, episode meta, prev/next, subscribe, archive cards */
+
+.bl-back-link {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--bl-ink-muted);
+  margin-bottom: var(--space-3);
+}
+.bl-back-link:hover, .bl-back-link:focus-visible { color: var(--bl-signal); }
+
+.bl-episode-meta {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--bl-ink-muted);
+  margin-bottom: var(--space-3);
+}
+
+.bl-episode-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-2);
+}
+.bl-episode-header > div { flex: 1 1 16rem; min-width: 0; }
+.bl-episode-cover {
+  width: 8rem;
+  height: 8rem;
+  object-fit: cover;
+  border: 1px solid var(--bl-hairline);
+  flex: none;
+}
+
+audio.bl-audio { width: 100%; accent-color: var(--bl-signal); margin: var(--space-2) 0 var(--space-3); }
+
+.bl-episode-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--bl-hairline);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+}
+.bl-episode-nav a { color: var(--bl-ink); }
+.bl-episode-nav a:hover, .bl-episode-nav a:focus-visible { color: var(--bl-signal); }
+.bl-episode-nav span { color: var(--bl-ink-muted); }
+
+.bl-subscribe { margin-top: var(--space-2); }
+.bl-subscribe a {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--bl-ink);
+  padding: 0.5em 0;
+  border-bottom: 1px solid var(--bl-hairline);
+}
+.bl-subscribe a:hover, .bl-subscribe a:focus-visible { color: var(--bl-signal); }
+
+.bl-episode-card {
+  border: 1px solid var(--bl-hairline);
+  padding: var(--space-3);
+  background: var(--bl-paper);
+}
+.bl-episode-card + .bl-episode-card { margin-top: var(--space-3); }
+.bl-episode-card__title { font-size: 1.15rem; margin-bottom: 0.3em; }
+.bl-episode-card__title a { color: var(--bl-ink); }
+.bl-episode-card__title a:hover, .bl-episode-card__title a:focus-visible { color: var(--bl-signal); }
 
 /* Footer */
 

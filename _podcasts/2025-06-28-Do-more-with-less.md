@@ -1,5 +1,5 @@
 ---
-layout: podcast
+layout: bl-podcast
 title: "Are we delivering the right thing?"
 season: 1
 episode: 10

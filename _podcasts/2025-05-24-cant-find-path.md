@@ -1,5 +1,5 @@
 ---
-layout: podcast
+layout: bl-podcast
 title: "Feeling like there's no point"
 season: 1
 episode: 9

@@ -1,113 +1,82 @@
 ---
-layout: unbranded
-title: "Clarity Lab podcast episodes"
-# hero-image: "/assets/i/retreat-night-sky-rev.jpg"
-hero-image: "/assets/i/rocks-growth.jpg"
-hero-h1a: "The Clarity Lab podcast episode"
-hero-h1b: "archive"
-hero-mark: "#B4C4AE"
-hero-accent: "#FFCC4E"
+layout: unbranded-landing
+title: "Clarity Lab podcast episode archive"
 ---
 
+<main id="bl-main" class="bl-main">
 
-  <div class="govuk-grid-row">
+<section class="bl-hero bl-hero--banner" style="background-image: url('/assets/i/rocks-growth.jpg');">
+  <div class="bl-hero__content">
+    <h1 class="bl-hero__title">The Clarity Lab podcast <em>archive</em>.</h1>
+  </div>
+</section>
 
-    <div class="govuk-grid-column-two-thirds">
-      <h2 class="govuk-heading-m">Latest recordings</h2>
+<section class="bl-section">
+  <div class="bl-section__inner bl-layout">
+    <div class="bl-layout__main">
+      <h2>Latest <em>recordings</em></h2>
 
       {% assign latest_episodes = site.podcasts | sort: "date" | reverse | slice: 0,4 %}
+      {% for episode in latest_episodes %}
+        <div class="bl-episode-card">
+          <div class="bl-episode-header">
+            <img class="bl-episode-cover" src="{{ episode.cover_image | default: '/assets/i/podcast-cover.jpg' }}" alt="Cover art for &ldquo;{{ episode.title }}&rdquo;, also used on Apple Podcasts." loading="lazy" decoding="async">
+            <div>
+              <p class="bl-episode-meta">{{ episode.date | date: "%d %B %Y" }}{% if episode.episode %} &middot; Episode {{ episode.episode }}{% endif %}</p>
+              <h3 class="bl-episode-card__title"><a href="{{ episode.url }}">{{ episode.title }}</a></h3>
+              <audio controls class="bl-audio">
+                <source src="{{ episode.file }}" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </div>
+          <p>{{ episode.summary | truncatewords: 30 }}</p>
+        </div>
+      {% endfor %}
 
-	{% for episode in latest_episodes %}
-	  <div class="govuk-card">
-			  
-		<h3 class="govuk-heading-s">
-		  <mark style="background-color:#B4C4AE;padding:0.2em 0.5em;">{{ episode.date | date: "%B %d" }}</mark> 
-		  <a href="{{ episode.url }}" class="govuk-link">{{ episode.title }}</a>
-		</h3>
-	
-		<audio controls class="govuk-!-margin-bottom-3">
-		  <source src="{{ episode.file }}" type="audio/mpeg">
-		  Your browser does not support the audio element.
-		</audio>
-		<p class="govuk-body-s govuk-!-padding-bottom-6">{{ episode.summary }}</p>
+      <h2 style="margin-top: var(--space-6);">Episode <em>archive</em></h2>
 
-		<!--
-		p class="govuk-body">
-		  <a href="{{ episode.file }}" class="govuk-link" download>Download episode</a>
-		</p
-		-->
+      {% assign sorted_episodes = site.podcasts | sort: "date" | reverse %}
+      {% assign archive_episodes = sorted_episodes | slice: 4, sorted_episodes.size %}
+      {% assign grouped_episodes = archive_episodes | group_by_exp: "episode", "episode.date | date: '%Y-%m'" %}
 
-	  </div>
-	{% endfor %}
+      {% for group in grouped_episodes %}
+        {% assign year = group.name | slice: 0,4 %}
+        {% assign month = group.name | slice: 5,2 %}
+        {%- capture dateString -%}{{ year }}-{{ month }}-01{%- endcapture -%}
 
+        <p class="bl-episode-meta" style="margin-top: var(--space-4);">{{ dateString | date: "%B" }} {{ year }}</p>
 
-
-
-<!-- Archive Section -->
-<h2 class="govuk-heading-m">Episode archive</h2>
-
-{% assign sorted_episodes = site.podcasts | sort: "date" | reverse %}
-{% assign archive_episodes = sorted_episodes | slice: 4, sorted_episodes.size %}
-{% assign grouped_episodes = archive_episodes | group_by_exp: "episode", "episode.date | date: '%Y-%m'" %}
-
-{% for group in grouped_episodes %}
-  {% assign year  = group.name | slice: 0,4 %}
-  {% assign month = group.name | slice: 5,2 %}
-  
-  {%- capture dateString -%}
-    {{ year }}-{{ month }}-01
-  {%- endcapture -%}
-
-  <h3 class="govuk-heading-s">{{ year }} – {{ dateString | date: "%B" }}</h3>
-
-  <ul class="govuk-list">
-    {% for episode in group.items %}
-      <li>
-        <a href="{{ episode.file }}" download>{{ episode.title }}</a>
-        {% if episode.summary %}
-          <p class="govuk-body-s">{{ episode.summary | split: " " | slice: 0, 20 | join: " " }}...</p>
-        {% endif %}
-      </li>
-    {% endfor %}
-  </ul>
-{% endfor %}
-
-
-
+        <div class="bl-entry-list">
+          {% for episode in group.items %}
+            <article class="bl-entry">
+              <p class="bl-entry__date">{{ episode.date | date: "%d %B %Y" }}{% if episode.episode %} &middot; Episode {{ episode.episode }}{% endif %}</p>
+              <h3 class="bl-entry__title"><a href="{{ episode.url }}">{{ episode.title }}</a></h3>
+              {% if episode.summary %}<p class="bl-entry__excerpt">{{ episode.summary | truncatewords: 20 }}</p>{% endif %}
+            </article>
+          {% endfor %}
+        </div>
+      {% endfor %}
     </div>
 
-
-
-  <div class="govuk-grid-column-one-third">
-
-    <!-- Episode Cover Image -->
-    {% if page.cover_image %}
-      <img src="{{ page.cover_image }}" alt="Cover for {{ page.title }}" class="govuk-!-margin-bottom-4" style="width:100%; border:1px solid #333;">
-    {% else %}
-      <img src="/assets/i/podcast-cover.jpg" alt="The Clarity Lab Podcast" class="govuk-!-margin-bottom-4" style="width:100%; border:1px solid #333;">
-    {% endif %}
-
-	<h3 class="govuk-heading-m">Subscribe to the podcast</h3>
-	
-	<ul class="govuk-list">
-	  <li style="background: url('{{ site.baseurl }}/assets/i/podcasts.png') no-repeat left center;background-size: 1.5em;padding: 0.25em 0 0.25em 2em;"><a href="https://podcasts.apple.com/us/podcast/the-clarity-lab/id1800838336" target="_blank">Apple Podcasts</a></li>
-	  <li style="background: url('{{ site.baseurl }}/assets/i/rss.png') no-repeat left center;background-size: 1.5em;padding: 0.25em 0 0.25em 2em;"><a href="https://claritylab.uk/podcast-feed.xml">RSS Feed</a></li>
-	</ul>
-
-	</div>
-	
-	
+    <aside class="bl-layout__aside">
+      <h2>Subscribe</h2>
+      <div class="bl-subscribe">
+        <a href="https://podcasts.apple.com/us/podcast/the-clarity-lab/id1800838336" target="_blank" rel="noopener">Apple Podcasts &rarr;</a>
+        <a href="https://claritylab.uk/podcast-feed.xml">RSS Feed &rarr;</a>
+      </div>
+    </aside>
   </div>
+</section>
 
+<section class="bl-section bl-section--panel">
+  <div class="bl-section__inner">
+    <h2>What others <em>say</em></h2>
+    <blockquote class="bl-quote bl-prose">
+      <p>&ldquo;I was stuck in an endless loop, questioning past decisions and second-guessing my moves. It was completely paralysing. The Checkpoint session at Clarity Lab helped me get off that track. In just one conversation, I went from ruminating on the past to seeing the potential for change.&rdquo;</p>
+      <cite>&mdash; Doug S., University Lecturer</cite>
+    </blockquote>
+  </div>
+</section>
 
-
-<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"  id="customerReviews">
-
-{% include testimonials-doug.html %}
-
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible" id="productComparison">
-
-<a href="https://www.castfeedvalidator.com/validate.php?url=https://claritylab.uk/podcast-feed.xml">validator</a>
-
-
-
+</main>

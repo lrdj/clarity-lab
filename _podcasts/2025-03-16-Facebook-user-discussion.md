@@ -1,5 +1,5 @@
 ---
-layout: podcast
+layout: bl-podcast
 title: "Unable to find my path and asking for help"
 season: 1
 episode: 4

@@ -1,5 +1,5 @@
 ---
-layout: podcast
+layout: bl-podcast
 title: "The Clarity Lab Method and a case of job dissatisfaction"
 season: 1
 episode: 6

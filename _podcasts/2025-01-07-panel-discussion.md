@@ -1,5 +1,5 @@
 ---
-layout: podcast
+layout: bl-podcast
 title: "Panel discussion: What is the Clarity Lab process?"
 season: 1
 episode: 2

@@ -1,5 +1,5 @@
 ---
-layout: podcast
+layout: bl-podcast
 title: "Discussing the first draft of the Clarity Lab Method book"
 season: 1
 episode: 3

@@ -1,5 +1,5 @@
 ---
-layout: podcast
+layout: bl-podcast
 title: "Jobless and directionless, a Facebook user has questions"
 season: 1
 episode: 8

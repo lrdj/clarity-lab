@@ -1,5 +1,5 @@
 ---
-layout: podcast
+layout: bl-podcast
 title: "Struggling to lead through ambiguity and uncertainty"
 season: 1
 episode: 11
