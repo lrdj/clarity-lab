@@ -1,183 +1,265 @@
 ---
 name: The Clarity Lab
-description: GOV.UK Design System chrome softened with a nature-named earth palette and giant highlighter-marked headlines
+description: A pale marine-bulletin system — paper, ink, and one signal-red accent, built for a precise, actionable call rather than a mood
 colors:
-  rose-tan: "#D19C97"
-  viola: "#7E6EAC"
-  cornflower-blue: "#93CCEA"
-  gardenia: "#F0EEE9"
-  cobblestone: "#A89A91"
-  mocha-mousse: "#A78C8B"
-  willow: "#9A8B4F"
-  tendril: "#8A9A5B"
-  ink: "#0b0c0c"
-  focus-yellow: "#ffdd00"
-  link-blue: "#1d70b8"
-  signal-green: "#4CAF50"
-  footer-sage: "#B4C4AE"
+  paper: "#f4efe4"
+  paper-deep: "#eae1cd"
+  ink: "#1b2a3d"
+  ink-muted: "#4a5773"
+  hairline: "rgba(27, 42, 61, 0.22)"
+  signal: "#a8362b"
+  signal-soft: "rgba(168, 54, 43, 0.12)"
+  signal-deep: "#8f2c22"
+  hero-accent: "#e0a999"
+  hero-text-shadow: "rgba(0, 0, 0, 0.35)"
+  button-shadow-rest: "rgba(27, 20, 12, 0.12)"
+  button-shadow-hover: "rgba(27, 20, 12, 0.22)"
 typography:
   display:
-    fontFamily: "HelveticaNeue, 'Helvetica Neue', Arial, Helvetica, sans-serif"
-    fontSize: "clamp(2.45em, 8vw, 5em)"
+    fontFamily: "Bitter, Georgia, 'Times New Roman', serif"
+    fontSize: "clamp(1.9rem, 5.4vw, 4.1rem)"
     fontWeight: 700
-    lineHeight: 1.15
-    letterSpacing: "normal"
+    lineHeight: 1.1
+    letterSpacing: "-0.01em"
+  page-title:
+    fontFamily: "Bitter, Georgia, 'Times New Roman', serif"
+    fontSize: "clamp(1.9rem, 4.4vw, 3.2rem)"
+    fontWeight: 700
+    lineHeight: 1.1
+  hero-banner:
+    fontFamily: "Bitter, Georgia, 'Times New Roman', serif"
+    fontSize: "clamp(1.6rem, 3.6vw, 2.75rem)"
+    fontWeight: 700
+    lineHeight: 1.1
   headline:
-    fontFamily: "HelveticaNeue, 'Helvetica Neue', Arial, Helvetica, sans-serif"
-    fontSize: "clamp(2rem, 4vw, 3rem)"
+    fontFamily: "Bitter, Georgia, 'Times New Roman', serif"
+    fontSize: "clamp(1.6rem, 3.2vw, 2.4rem)"
     fontWeight: 700
-    lineHeight: 1.07
+    lineHeight: 1.1
+  article-heading:
+    fontFamily: "Bitter, Georgia, 'Times New Roman', serif"
+    fontSize: "clamp(1.35rem, 2.6vw, 1.75rem)"
+    fontWeight: 700
+    lineHeight: 1.1
   title:
-    fontFamily: "HelveticaNeue, 'Helvetica Neue', Arial, Helvetica, sans-serif"
-    fontSize: "1.5rem"
+    fontFamily: "Bitter, Georgia, 'Times New Roman', serif"
+    fontSize: "1.15rem"
     fontWeight: 700
-    lineHeight: 1.04
+    lineHeight: 1.1
+  faq-summary:
+    fontFamily: "Bitter, Georgia, 'Times New Roman', serif"
+    fontSize: "1.05rem"
+    fontWeight: 700
+    lineHeight: 1.1
+  lede:
+    fontFamily: "'Source Serif 4', Georgia, 'Times New Roman', serif"
+    fontSize: "1.25rem"
+    fontWeight: 400
+    lineHeight: 1.6
   body:
-    fontFamily: "HelveticaNeue, 'Helvetica Neue', Arial, Helvetica, sans-serif"
+    fontFamily: "'Source Serif 4', Georgia, 'Times New Roman', serif"
+    fontSize: "1.0625rem"
+    fontWeight: 400
+    lineHeight: 1.6
+  body-compact:
+    fontFamily: "'Source Serif 4', Georgia, 'Times New Roman', serif"
     fontSize: "1rem"
     fontWeight: 400
-    lineHeight: 1.25
+    lineHeight: 1.6
+  button:
+    fontFamily: "Bitter, Georgia, 'Times New Roman', serif"
+    fontSize: "1rem"
+    fontWeight: 700
+  button-small:
+    fontFamily: "Bitter, Georgia, 'Times New Roman', serif"
+    fontSize: "0.875rem"
+    fontWeight: 700
+  table-body:
+    fontFamily: "'Spline Sans Mono', 'Courier New', monospace"
+    fontSize: "0.9375rem"
+    fontWeight: 400
+  table-compare:
+    fontFamily: "'Spline Sans Mono', 'Courier New', monospace"
+    fontSize: "0.875rem"
+    fontWeight: 400
+  label:
+    fontFamily: "'Spline Sans Mono', 'Courier New', monospace"
+    fontSize: "0.8125rem"
+    fontWeight: 400
+    letterSpacing: "0.02em"
+  label-small:
+    fontFamily: "'Spline Sans Mono', 'Courier New', monospace"
+    fontSize: "0.75rem"
+    fontWeight: 400
+    letterSpacing: "0.02em"
+  label-nav-mobile:
+    fontFamily: "'Spline Sans Mono', 'Courier New', monospace"
+    fontSize: "0.7rem"
+    fontWeight: 400
+  mark-mobile:
+    fontFamily: "Bitter, Georgia, 'Times New Roman', serif"
+    fontSize: "0.9rem"
+    fontWeight: 700
 rounded:
   none: "0px"
-  button: "9px"
-  circle: "50%"
 spacing:
-  sm: "15px"
-  md: "22px"
-  lg: "30px"
-  xl: "50px"
+  1: "0.5rem"
+  2: "1rem"
+  3: "1.75rem"
+  4: "2.75rem"
+  5: "4.5rem"
+  6: "7rem"
 components:
   button-primary:
-    backgroundColor: "{colors.signal-green}"
-    textColor: "#ffffff"
-    rounded: "{rounded.button}"
-    padding: "0.75em 1.25em"
+    backgroundColor: "{colors.signal}"
+    textColor: "{colors.paper}"
+    rounded: "{rounded.none}"
+    padding: "0.9em 1.6em"
   button-primary-hover:
-    backgroundColor: "#388E3C"
-    textColor: "#ffffff"
-    rounded: "{rounded.button}"
-    padding: "0.75em 1.25em"
-  button-secondary:
-    backgroundColor: "#ffffff"
-    textColor: "#000000"
-    rounded: "{rounded.button}"
-    padding: "0.75em 1.25em"
-  button-secondary-hover:
-    backgroundColor: "#e0e0e0"
-    textColor: "#000000"
-    rounded: "{rounded.button}"
-    padding: "0.75em 1.25em"
+    backgroundColor: "{colors.signal-deep}"
+    textColor: "{colors.paper}"
+    rounded: "{rounded.none}"
+    padding: "0.9em 1.6em"
+  button-ghost:
+    backgroundColor: "transparent"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.none}"
+    padding: "0.9em 1.6em"
+  button-ghost-hover:
+    backgroundColor: "transparent"
+    textColor: "{colors.signal}"
+    rounded: "{rounded.none}"
+    padding: "0.9em 1.6em"
 ---
 
 # Design System: The Clarity Lab
 
 ## Overview
 
-**Creative North Star: "The Civic Croft"**
+**Creative North Star: "The Shipping Forecast"**
 
-This is GOV.UK Design System chrome — flat, squared, built for tax forms and benefit claims — carrying a pastoral, nature-named accent palette and one oversized signature move: a giant uppercase hero headline with hand-highlighted phrases. The base structure (grid, type scale, focus states, component markup) is unmodified GOV.UK Frontend running in its "unbranded" configuration. Everything that reads as "Clarity Lab" rather than "a government service" is a thin layer on top: eight named custom-property colours, one enlarged and highlighted heading style, and a handful of per-page inline overrides that don't generalise into a system.
+This system exists to prove one idea: clarity isn't a mood, it's a decision. A shipping forecast doesn't inspire you — it gives you exactly what you need to make a confident go/no-go call, in the same terse, structured form every time. That's the register this whole site now speaks in: pale bulletin paper, navy ink, hairline rules, tabular data rendered as an actual ledger rather than a bulleted list pretending to be one. Where something needs to matter, it gets the one signal-red accent this system permits itself. Everywhere else, the paper and the ink do the work.
 
-This file documents the implementation exactly as built — a baseline for reference, not a set of choices the next visual direction is obliged to keep.
+It replaced an earlier, wrong-headed attempt at the same brief — a dark, bioluminescent night-sea world that was technically accomplished but fought the brand's real asset: bright, documentary daylight photography of an actual place. This system was chosen specifically because a pale, paper-toned world works *with* that photography instead of against it, and because "a precise, actionable call" is a closer, less sentimental match for what Clarity Lab actually sells than a map (too clichéd a wayfinding device) or a growth diary (too sentimental for a product about agency, not reflection).
 
 **Key Characteristics:**
-- GOV.UK Frontend (unbranded variant) as the unmodified structural and accessibility base.
-- A fixed eight-colour named palette (Gardenia, Tendril, Willow, Mocha-mousse, Cobblestone, Rose-tan, Viola, Cornflower-blue) defined once as CSS custom properties, applied inconsistently.
-- One signature composition: full-bleed hero (video or image) behind a giant uppercase headline split across two `<mark>`-highlighted phrases.
-- A large population of one-off hex colours used only in a single page's hero front matter, outside the named palette.
-- Flat, sharply-squared GDS surfaces everywhere except buttons, which carry a hand-added 9px radius with no corresponding rationale elsewhere in the system.
+- Pale bulletin paper throughout — no page in this system uses a dark ground.
+- Exactly one accent colour (signal red), spent deliberately: primary actions, `em` emphasis inside headings, and nothing else.
+- Every corner in the system is square. Zero `border-radius` anywhere — the one deliberate exception is native browser chrome (audio player, `<details>` marker) that can't be un-rounded without losing platform behaviour.
+- Three typefaces with distinct jobs, never substituted for each other: a slab display face for headings and buttons, a humanist serif for reading, a monospace for anything that is data — prices, dates, captions, navigation labels.
+- Real photography only. No page in this system carries an illustrative, AI-generated, or stock image as a hero.
 
 ## Colors
 
-Eight named earth/pastel tones sit on top of GDS's own functional colour set; the named tones are the only part of the palette defined once and reused rather than picked per page.
+A restrained strategy: paper and ink neutrals carry the whole surface, and one accent is spent only where it means something.
 
 ### Primary
-- **Rose-tan** (#D19C97): the most-used accent — the colour most often assigned to the highlighted half of a hero headline (`hero-accent`) across the pages that use it.
-
-### Secondary
-- **Viola** (#7E6EAC): used for inset-text left borders and as a secondary hero accent.
-
-### Tertiary
-- **Cornflower-blue** (#93CCEA): part of the named palette but the least-used of the eight in practice.
+- **Signal** (`#a8362b`): the only accent in the system. Used for primary buttons, `em` emphasis inside `h1`/`h2`/`h3`, active/hover states on links and nav items, list bullets, quote rules, and table CTAs. Never used decoratively — if it's red, it's asking for action or marking the one important word in a sentence.
+- **Signal deep** (`#8f2c22`): primary button hover only, not a standalone token for anything else.
 
 ### Neutral
-- **Gardenia** (#F0EEE9): warm off-white, used as an occasional page background.
-- **Cobblestone** (#A89A91): warm grey-brown, named but rarely applied directly.
-- **Mocha-mousse** (#A78C8B): dusty brown-mauve, named but rarely applied directly.
-- **Willow** (#9A8B4F): muted gold-olive, named but rarely applied directly.
-- **Tendril** (#8A9A5B): olive green, named but rarely applied directly.
-- **Ink** (#0b0c0c): GDS's own body/heading text colour, unmodified.
-
-### Functional (inherited from GOV.UK Frontend)
-- **Focus Yellow** (#ffdd00): the statutory GDS focus-state colour; Clarity Lab softens its ring (`0 0 0 4px rgba(255,221,0,0.5)`) but keeps the colour itself.
-- **Link Blue** (#1d70b8) / visited #4c2c92 / hover #003078: unmodified GDS link states.
-- **Signal Green** (#4CAF50): the Clarity Lab override for the primary button background, replacing GDS's own default button green (#00703c) entirely.
-- **Footer Sage** (#B4C4AE): the default footer background; overridden to near-black (#001011) with white text on at least one page (`/retreats`), which is the only page that diverges.
+- **Paper** (`#f4efe4`): the ground. Every page in this system sits on this colour or `paper-deep`; there is no dark-mode-style alternate ground.
+- **Paper deep** (`#eae1cd`): the alternating panel tone used to separate adjacent sections without a border (`.bl-section--panel`).
+- **Ink** (`#1b2a3d`): primary text, and — inverted — the footer's background (the one place the system goes dark, deliberately: a closing band, not a competing world).
+- **Ink muted** (`#4a5773`): secondary text (captions, metadata, excerpts). Darkened once during the build after a contrast check against `paper-deep` came back tighter than intended (4.66:1) — treat this value as already-corrected, not a starting point to lighten.
+- **Hairline** (`rgba(27, 42, 61, 0.22)`): every rule, border, and table division in the system. There is no second border colour.
 
 ### Named Rules
-**The Per-Page Accent Rule.** Hero headline colours (`hero-mark`, `hero-accent`) are set per page in Jekyll front matter, not drawn from one governing rule. Beyond the eight named tokens above, more than a dozen further one-off hex values appear (e.g. `#F1E068`, `#FFCC4E`, `#E7A4BC`, `#586994`, `#A6C36F`) each used on only a single page. No page's hero colour choice predicts another's — this is experimentation captured in code, not a resolved system.
+**The One Accent Rule.** Signal red is the only colour in the system that means something when you see it. It never appears as a decorative field, a background tint on more than a soft 12%-opacity wash, or a colour choice made for variety. If a second saturated colour is needed, that is a sign the system needs a deliberate second accent added here — not a one-off hex value in a component file.
+
+**The Hero Exception.** The hero's `em` emphasis uses `#e0a999` (a dusty rose), not signal red — the one place in the system a heading's emphasis colour differs from the sitewide rule, chosen because it read better against warm photographic skies than the cooler signal red did. Confined to `.bl-hero__title em`; do not let it leak into any other component.
 
 ## Typography
 
-**Display/Body Font:** `HelveticaNeue, "Helvetica Neue", Arial, Helvetica, sans-serif` — GOV.UK Frontend's "unbranded" stack. (GDS's branded stylesheet, which specifies "GDS Transport", is also loaded in `<head>` but the unbranded stylesheet loads after it and wins on every declared property.)
+**Display Font:** Bitter (self-hosted variable, weights 500–800), with Georgia/Times New Roman fallback.
+**Body Font:** Source Serif 4 (self-hosted variable, weights 400–700, italic included), same fallback stack.
+**Label/Mono Font:** Spline Sans Mono (self-hosted, weight 400), Courier New fallback.
 
-**Character:** A civic-service system typeface carrying one theatrical exception — the hero headline — while every other text role stays exactly as GOV.UK Frontend ships it.
+**Character:** A slab display face carrying real weight and confidence, paired with a humanist serif built for sustained reading, and a mono face reserved strictly for things that are actually data. The pairing reads as a printed bulletin, not a marketing deck.
 
 ### Hierarchy
-- **Display / Hero** (700, 2.45em → 5em at the 640px breakpoint, line-height 1.14–1.17, uppercase, 0.5em text-indent): the `.inyourface` override on `govuk-heading-xl`, used only for the page hero `<h1>`, always split into two `<mark>`-highlighted phrases.
-- **Headline** (`govuk-heading-xl`, 700, 2rem → 3rem at 40.0625em, line-height ~1.04–1.09): unmodified GDS extra-large heading, used for non-hero page titles.
-- **Title** (`govuk-heading-l`, 700, 1.5rem, line-height 1.04): unmodified GDS large heading, used for section headers ("What do I get out of it?", "Compare your options:").
-- **Lead body** (`govuk-body-l`, 400, 1.125rem, line-height 1.11): unmodified GDS lead paragraph, used for the first paragraphs under a hero.
-- **Body** (`govuk-body`/`p`, 400, 1rem → 1.1875rem at 40.0625em, line-height 1.25–1.32): unmodified GDS default paragraph.
+- **Display** (700, `clamp(1.9rem, 5.4vw, 4.1rem)`, 1.1): the home page hero only. A shorter `clamp(1.6rem, 3.6vw, 2.75rem)` variant (`.bl-hero--banner .bl-hero__title`) covers every other page's hero — blog posts, the podcast archive — so a two-line title never overruns its banner.
+- **Headline** (700, `clamp(1.6rem, 3.2vw, 2.4rem)`, 1.1): section headings (`.bl-section h2`).
+- **Title** (700, 1.15–1.25rem): card and entry titles (`.bl-card h3`, `.bl-entry__title`, `.bl-episode-card__title`).
+- **Body** (400, 1.0625rem, 1.6): default paragraph and list text. A lede variant (1.25rem) opens a section's first paragraph.
+- **Label** (400, 0.75–0.875rem, mono, often uppercase with `0.02–0.04em` tracking): dates, captions, nav links, table headers, episode metadata. This is the system's data voice — used for everything that is a fact rather than prose.
 
 ### Named Rules
-**The Highlighter Rule.** Every hero `<h1>` is two phrases, each wrapped in `<mark>`, each coloured independently via front matter. The device (giant, uppercase, highlighted) is consistent; the colours behind it are not.
+**The Mono-Is-Data Rule.** Spline Sans Mono is never used for opinion or narrative — only for things that are factually true regardless of who's reading: dates, prices, durations, captions, navigation labels. If a mono label is describing something subjective, it's the wrong face for that string.
 
 ## Layout
 
-Unmodified GOV.UK Frontend grid: `govuk-grid-row` / `govuk-grid-column-{half,one-third,two-thirds,three-quarters,full}`, contained by `govuk-width-container` (max-width 960px, 15px side margins) wrapping `govuk-main-wrapper`. Breakpoints are GDS's own: mobile 20rem, tablet 40.0625rem, desktop 48.0625rem.
+A single content column (`.bl-section__inner`, max-width `68rem`) with an internal reading measure (`.bl-prose`, max-width `40rem`) for anything meant to be read rather than scanned. Section vertical rhythm is generous and constant: `7rem` (`--space-6`) top and bottom on every `.bl-section`, tightening only on narrow phones (`max-width: 30rem` drops horizontal padding, not vertical).
 
-The one deviation from stock GDS layout is the hero: it breaks out of `govuk-width-container` to run full-bleed (video or background-image), with the heading column floated above it via `position: relative; z-index: 1`, before the page returns to the standard contained grid for all subsequent content. The service navigation band above the hero, and the footer band below the content, both also run full-width.
+Two-column layouts exist but are used deliberately, not as a default: `.bl-pair` (equal 1fr/1fr, image-and-text sections, ≥56rem) and `.bl-gallery` (1/2/3 columns depending on viewport, for photo sets). The one asymmetric exception is `.bl-layout` (2fr/1fr, ≥56rem) — reserved for the podcast archive's main-content-plus-Subscribe-sidebar, where a persistent action beside a long scrolling list is a genuine content need, not a template default. Its aside is `position: sticky` on desktop, and stacks to plain single-column below `56rem` with the aside falling after the full list — never introduce a second sticky sidebar elsewhere in the system without the same justification.
+
+Breakpoints in use: `30rem` (mobile padding), `36rem` (gallery 2-up), `48rem` (`.bl-grid-2`, `.bl-quotes` 2-up), `56rem` (`.bl-pair`, `.bl-gallery` 3-up, `.bl-layout` 2-column).
 
 ## Elevation & Depth
 
-Flat throughout. GOV.UK Frontend's own default button carries a native 2px bottom shadow (a "pressed paper" affordance, with the button shifting down 2px on `:active`), but Clarity Lab's button override explicitly removes it (`box-shadow: none`) on both the primary and secondary variants. No other component in the implementation uses a shadow. Depth, where it reads at all, comes from flat colour blocks (the `<mark>` highlights, the footer band) rather than elevation.
+Flat by default. The system conveys structure with hairline borders and rules (`--bl-hairline`, 1px, used on every card, table, and section division) rather than shadow. The one place true elevation appears is the primary button's hover state — a soft, blurred shadow (`0 6px 16px rgba(27, 20, 12, 0.22)`) paired with a 1px lift, both removed at rest (`0 1px 2px` only). No card, image, or panel in the system carries a resting shadow.
+
+### Named Rules
+**The Hairline-Not-Shadow Rule.** Depth and separation come from a 1px rule at 22% ink opacity, not from a shadow. A component reaching for `box-shadow` to separate itself from the page is using the wrong tool — reach for a border first.
 
 ## Shapes
 
-GDS's default form language is sharply squared: `border-radius: 0` on virtually every surface, with radius used only for circular elements (avatar-style icons, GDS's own 50% radii). The one exception is the button component, which carries a hand-added 9px radius. Per the incumbent implementation, this is an isolated override, not a system-wide softening — no other rounded corner, card, or container in the codebase picks it up.
+Every corner in the system is square — `border-radius` is not used anywhere in `bulletin.css`. Buttons, cards, figures, tables, the nav, the footer: all sharp rectangles. This is a deliberate carry-over discipline from the system's bulletin-form register (official paperwork doesn't have rounded corners) and a deliberate difference from the site's previous "Bioluminescent Wake" attempt, which used pill-shaped buttons.
+
+### Named Rules
+**The Square Corner Rule.** No component in this system may introduce `border-radius` without a named reason strong enough to go here first. Native browser chrome (the audio player's scrubber, a `<details>` disclosure triangle) is the only exempted rounding, because it isn't drawn by this system's CSS.
 
 ## Components
 
 ### Buttons
-- **Shape:** 9px radius (ad hoc override; GDS base is square).
-- **Primary:** background #4CAF50, white text, 1px solid #4CAF50 border, padding 0.75em 1.25em, no shadow.
-- **Hover:** background darkens to #388E3C.
-- **Focus:** 3px solid #ffdd00 outline plus a softened `0 0 0 4px rgba(255,221,0,0.5)` ring (GDS's own focus ring style adjusted).
-- **Secondary:** white background, black text, 1px solid #ccc border, same 9px radius; hover background #e0e0e0.
+- **Shape:** square corners, no exception.
+- **Primary** (`.bl-btn--primary`): signal-red background, paper text, 1px solid signal border, `0.9em 1.6em` padding. Rests nearly flat (`0 1px 2px`), lifts 1px with a soft shadow on hover/focus, background deepens to `#8f2c22`.
+- **Ghost** (`.bl-btn--ghost`): transparent background, ink text, hairline border; hover swaps both to signal red. Used for secondary actions (per-tier booking links on cards) where the primary button would over-claim importance.
+- **Small** (`.bl-btn--small`): same visual language, tighter padding (`0.55em 1.1em`) and 0.875rem type — used inside cards where a full-size button would dominate.
+- **Focus:** every interactive element in the system gets a 2px solid signal outline, 3–4px offset. No component overrides this away.
 
 ### Navigation
-- Full-width band above the hero. Left: an SVG logo lockup (`claritylab-lockup.svg`). Right: a three-item text link list (Blog, Podcast, a highlighted "book a discovery call" link using the Rose-tan mark colour). Collapses to GDS's standard "Menu" toggle button below the 640px breakpoint — unmodified GDS mobile nav behaviour.
+- Fixed, full-width, paper background, hairline bottom border. Carries a wordmark (`.bl-nav__mark`, display face), text links (`.bl-nav__link`, mono, ink-muted, signal on hover), and a bordered CTA pill... no — a bordered CTA rectangle (`.bl-nav__cta`).
+- **Default state is visible.** Only on pages with a `.bl-hero` does `bulletin.js` add `.bl-nav--hero-mode`, which starts the nav hidden and reveals it once the visitor scrolls past the hero — the system's one deliberate "no chrome above the fold" moment. A hero-less page (booking, 404) never hides its nav; there's nothing to be chrome-free above.
 
-### Hero (signature)
-- Full-bleed looping muted video, or a background image, behind a two-column grid row.
-- One giant uppercase `<h1>` in two `<mark>`-highlighted phrases, colours set per page via front matter rather than a fixed rule (see Named Rules above).
+### Hero
+- Full-bleed real photograph, dark gradient scrim (`rgba(14, 20, 28, ...)`, 88% at the base fading to 10%) for text legibility, headline anchored to the bottom of the frame.
+- Two heights: full (`min(100dvh, 50rem)`, home page only) and banner (`min(60dvh, 26rem)`, every other hero — blog posts, podcast archive/episodes) with its own smaller title scale so a two-line title never forces the section taller than intended.
 
-### Footer
-- Full-width band, default background Footer Sage (#B4C4AE), small (`font-size: small`) licence-style legal copy and a copyright line naming the parent company. No footer navigation links. One page (`/retreats`) overrides the band to near-black (#001011) with white text — the only such divergence in the codebase.
-
-### Checklist list
-- `.cl-check` — replaces the default list marker with a custom checkmark icon (`cl-check.png`), 1.5em icon size, 2em left padding.
+### Cards
+- **Corner style:** square.
+- **Background:** paper (not paper-deep, even inside a panel section — cards stay one step lighter than their container).
+- **Border:** 1px hairline, no shadow.
+- **Internal padding:** `--space-3` (1.75rem).
+- Variants: `.bl-card` (remote-option tiers), `.bl-episode-card` (podcast archive), both share the same visual language.
 
 ### Tables
-- Native `govuk-table` used verbatim (caption, header row, row headers) for pricing and comparison grids — no custom styling layered on GDS's own table component.
+- Rendered as an actual bulletin ledger, not a styled list: mono figures, uppercase muted column headers, hairline row dividers, no zebra striping, no cell backgrounds. Row labels (`<th scope="row">`) sit in ink-muted; column headers in ink, display face, for the comparison table specifically (`.bl-table--compare thead th`) where they're naming a whole tier rather than a data field.
+- Wrapped in `.bl-table-wrap` (`overflow-x: auto`) whenever a table has more than two or three columns, so it scrolls on narrow viewports instead of squeezing.
+
+### Checklist
+- A rotated square (diamond) bullet in signal red, not a tick, dot, or dash — `.bl-list li::before`. Deliberately abstract rather than claiming to be a checkmark icon.
+
+### FAQ
+- Native `<details>`/`<summary>`, no JS. An authored SVG chevron (never a Unicode `+`/`−` — an earlier draft used those and it was flagged as a floor violation) rotates 180° on open.
+
+### Entry list (blog index, podcast archive)
+- Date (mono, uppercase, muted) → title (display face, link) → excerpt (muted), hairline rule between entries. Reads as a dispatch log, which is the point — the same device works for blog posts and podcast episodes without modification.
+
+### Podcast-specific
+- Episode cover art (`.bl-episode-cover`, 8rem square, hairline border) is real, already-published artwork (also used on Apple Podcasts) — never omit it in favour of a generic placeholder.
+- `audio.bl-audio` is themed only via `accent-color: var(--bl-signal)` — native browser chrome otherwise, no custom player skin.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** inherit GOV.UK Frontend's native focus, keyboard, and ARIA behaviour unmodified on every interactive element — it is the one part of this system that is genuinely load-bearing.
-- **Do** treat the eight named custom-property colours (Gardenia, Tendril, Willow, Mocha-mousse, Cobblestone, Rose-tan, Viola, Cornflower-blue) as the closest thing this implementation has to a real palette; they are the only colours defined once and reused rather than invented per page.
+- **Do** spend signal red only on primary actions and `em` emphasis — treat any third use as a system decision, not a one-off.
+- **Do** use real, documentary photography for every hero. This system was chosen specifically because it works with real daylight photography; an illustrative or AI-generated hero image undoes the reason it exists.
+- **Do** use the mono face for anything that is a fact (date, price, label) and the serif for anything that is prose, without mixing the two roles.
+- **Do** keep every corner square. A rounded component is a different design system wearing this one's colours.
 
 ### Don't:
-- **Don't** assume any page's hero accent colour predicts another's — it's chosen per page in front matter, and more than a dozen one-off hex values exist outside the named palette.
-- **Don't** treat the button's 9px radius or shadow removal as evidence of a deliberate "soft GDS" design language — it's an isolated override with no counterpart anywhere else in the flat, square GDS base.
-- **Don't** reuse the near-black footer override from `/retreats` as a pattern — every other page uses the Footer Sage default.
+- **Don't** add a kicker or eyebrow label above a heading, on this site or any future page in this system — an absolute craft-floor ban, caught and removed twice during this system's build (once on the home page, once on the 404 page) before it shipped either time.
+- **Don't** introduce a second sticky sidebar without the same "persistent action beside a long list" justification `.bl-layout` was built for on the podcast archive — it is an exception, not a pattern to reach for by default.
+- **Don't** use `box-shadow` for resting-state depth. Reach for a hairline border first; shadow is reserved for the primary button's hover state only.
+- **Don't** substitute Unicode glyphs or emoji for an icon. The FAQ's chevron is an authored SVG for exactly this reason.

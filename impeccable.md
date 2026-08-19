@@ -223,19 +223,27 @@ final references) — only the home page's are in `.impeccable/review/`.
 
 ## Continuing the work
 
-- The sitewide extension is done — every live, linked page uses the new
-  system now. The natural next step is `/impeccable document` to
-  regenerate `DESIGN.md` from the built system (it currently still
-  describes the retired GOV.UK look, accurate for nothing live). Not done
-  yet because it wasn't asked for; flagged repeatedly by the design hook
-  throughout the rollout, which is expected — see Process notes.
-- Genuine remaining scratch files at the repo root (`colour.html`,
+- The sitewide extension is done, and `DESIGN.md` now describes the built
+  system properly (regenerated 2026-08-19 via `/impeccable document`,
+  overwriting the retired GOV.UK description). The type scale in its
+  frontmatter was expanded past the initial four canonical roles to the
+  real 16 distinct sizes actually used across the CSS — the first draft
+  left 28 detector findings even after the regeneration because it had
+  abstracted the scale rather than documented it; confirmed clear (0
+  findings) across `bulletin.css` and every page template after the fix.
+  The one detector ignore-value from earlier in the build (Spline Sans
+  Mono) is gone from `.impeccable/config.json` — no longer needed now
+  that the font is properly documented instead of worked around.
+- The 17 unlinked scratch files at the repo root (`colour.html`,
   `dev.html`, `fig.html`, `mood.html`, `mood-rev.html`, `checkpoint.html`,
   `fb-checkpoint.html`, `comparison-table.html`, `index-b.html`,
   `index2025.html`, `land-20250304.html`, `keep-useful-elements.html`,
-  `urg.html`, `method.html`, plus the three old `r-*.html` draft variants)
-  are unlinked from anywhere live and still on the old system. None of
-  this was touched during the rollout — out of scope, not an oversight.
+  `urg.html`, `method.html`, and the three old `r-*.html` draft variants)
+  were deleted on 2026-08-19, confirmed unlinked from anywhere live via a
+  repo-wide link scan before removal, and the build/smoke-tested clean
+  afterward. `media/index.html` is the same category (an unlinked scratch
+  test page, itself linking to the now-deleted `mood.html`) but wasn't
+  included in that pass — still there, flagged, not yet removed.
 - `/impeccable critique` / `/impeccable audit` — UX review / technical
   (a11y, perf, responsive) checks on any page.
 - `/impeccable polish`, `bolder`, `quieter`, `clarify`, `adapt` — targeted

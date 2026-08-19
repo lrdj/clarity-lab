@@ -1,33 +1,28 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-08-18T00:00:00Z",
+  "generatedAt": "2026-08-19T00:00:00Z",
   "title": "Design System: The Clarity Lab",
   "extensions": {
     "colorMeta": {
-      "rose-tan": { "role": "primary", "displayName": "Rose-tan", "canonical": "#D19C97", "tonalRamp": ["#3D211C", "#5E332B", "#8A4D42", "#B06E63", "#D19C97", "#DFB7B3", "#EDD3D0", "#F8EDEC"] },
-      "viola": { "role": "secondary", "displayName": "Viola", "canonical": "#7E6EAC", "tonalRamp": ["#221D30", "#362E4C", "#4F4370", "#665792", "#7E6EAC", "#A296C4", "#C6BEDC", "#E7E3F1"] },
-      "cornflower-blue": { "role": "tertiary", "displayName": "Cornflower-blue", "canonical": "#93CCEA", "tonalRamp": ["#0E2B3B", "#17455F", "#276488", "#5A9AC0", "#93CCEA", "#B4DCF0", "#D5ECF7", "#EFF9FC"] },
-      "gardenia": { "role": "neutral", "displayName": "Gardenia", "canonical": "#F0EEE9", "tonalRamp": ["#2B2A26", "#4C4A42", "#736F63", "#A6A196", "#D6D2C7", "#F0EEE9", "#F7F6F3", "#FBFAF9"] },
-      "cobblestone": { "role": "neutral", "displayName": "Cobblestone", "canonical": "#A89A91", "tonalRamp": ["#2B2622", "#463F38", "#665B52", "#877971", "#A89A91", "#C3B9B2", "#DDD6D2", "#F0ECEA"] },
-      "mocha-mousse": { "role": "neutral", "displayName": "Mocha-mousse", "canonical": "#A78C8B", "tonalRamp": ["#2C2120", "#472F2E", "#684645", "#8A6564", "#A78C8B", "#C4AEAD", "#DECFCE", "#F1E9E9"] },
-      "willow": { "role": "neutral", "displayName": "Willow", "canonical": "#9A8B4F", "tonalRamp": ["#28230F", "#413A19", "#5E5424", "#7C6F35", "#9A8B4F", "#B6AA7C", "#D2C9A9", "#EBE7D4" ] },
-      "tendril": { "role": "neutral", "displayName": "Tendril", "canonical": "#8A9A5B", "tonalRamp": ["#212611", "#37401D", "#4F5B29", "#6C7A3F", "#8A9A5B", "#A9B885", "#C8D3AC", "#E6EAD6"] },
-      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#0b0c0c", "tonalRamp": ["#000000", "#0b0c0c", "#232525", "#3d4040", "#5c6060", "#7f8484", "#a8adad", "#dcdede"] },
-      "focus-yellow": { "role": "functional", "displayName": "Focus Yellow", "canonical": "#ffdd00", "tonalRamp": ["#4d4200", "#7a6800", "#a68d00", "#d3b200", "#ffdd00", "#ffe64d", "#fff099", "#fff9d6"] },
-      "link-blue": { "role": "functional", "displayName": "Link Blue", "canonical": "#1d70b8", "tonalRamp": ["#0a1f2c", "#0e3350", "#134e78", "#175f95", "#1d70b8", "#4f92cb", "#8bb9e0", "#c8dff1"] },
-      "signal-green": { "role": "functional", "displayName": "Signal Green", "canonical": "#4CAF50", "tonalRamp": ["#123314", "#1e5321", "#2c7830", "#3a983f", "#4CAF50", "#78c37b", "#a8dab0", "#d6f0d8"] },
-      "footer-sage": { "role": "functional", "displayName": "Footer Sage", "canonical": "#B4C4AE", "tonalRamp": ["#2C3327", "#485541", "#68785E", "#8AA07E", "#B4C4AE", "#CBD7C1", "#E1EAD9", "#F2F6EF"] }
+      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#f4efe4", "tonalRamp": ["#2b2620", "#463f37", "#665c50", "#8a7e70", "#aea092", "#cec2b3", "#e4dacb", "#f4efe4"] },
+      "paper-deep": { "role": "neutral", "displayName": "Paper Deep", "canonical": "#eae1cd", "tonalRamp": ["#26221a", "#413a2c", "#5f5642", "#807459", "#a29174", "#c2b092", "#dccdb2", "#eae1cd"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#1b2a3d", "tonalRamp": ["#0a1017", "#131f2c", "#1b2a3d", "#2c4360", "#3e5c83", "#5f7fa5", "#93a9c2", "#c9d5e2"] },
+      "ink-muted": { "role": "neutral", "displayName": "Ink Muted", "canonical": "#4a5773", "tonalRamp": ["#12161e", "#252c3a", "#39445a", "#4a5773", "#67759590", "#8a97b0", "#b3bccd", "#dbdfe7"] },
+      "hairline": { "role": "neutral", "displayName": "Hairline", "canonical": "rgba(27, 42, 61, 0.22)" },
+      "signal": { "role": "primary", "displayName": "Signal", "canonical": "#a8362b", "tonalRamp": ["#2c0d09", "#4a1712", "#6d211a", "#8f2c22", "#a8362b", "#c25a4f", "#da8a81", "#efc2bc"] },
+      "signal-deep": { "role": "primary", "displayName": "Signal Deep", "canonical": "#8f2c22" },
+      "hero-accent": { "role": "functional", "displayName": "Hero Accent (dusty rose)", "canonical": "#e0a999", "tonalRamp": ["#3a1e17", "#5e3229", "#83473b", "#a75f4f", "#c67f6d", "#dca192", "#e0a999", "#f3ded7"] }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display / Hero", "purpose": "The .inyourface hero headline only — giant, uppercase, split into two <mark>-highlighted phrases." },
-      "headline": { "displayName": "Headline", "purpose": "Unmodified govuk-heading-xl, used for non-hero page titles." },
-      "title": { "displayName": "Title", "purpose": "Unmodified govuk-heading-l, used for section headers." },
-      "body": { "displayName": "Body", "purpose": "Unmodified GDS default paragraph and govuk-body-l lead text." }
+      "display": { "displayName": "Display", "purpose": "Home-page hero only (full scale); every other hero uses the smaller .bl-hero--banner variant." },
+      "headline": { "displayName": "Headline", "purpose": "Section headings across every page." },
+      "label": { "displayName": "Label", "purpose": "Anything that is a fact rather than prose: dates, prices, captions, nav links, table headers." }
     },
     "breakpoints": [
-      { "name": "mobile", "value": "20rem" },
-      { "name": "tablet", "value": "40.0625rem" },
-      { "name": "desktop", "value": "48.0625rem" }
+      { "name": "mobile-tight", "value": "30rem" },
+      { "name": "gallery-2up", "value": "36rem" },
+      { "name": "grid-2up", "value": "48rem" },
+      { "name": "wide", "value": "56rem" }
     ]
   },
   "components": [
@@ -35,81 +30,103 @@
       "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Clarity Lab's override of the GDS button — signal green, 9px radius, no shadow.",
-      "html": "<button class=\"ds-btn-primary\">Book your checkpoint session</button>",
-      "css": ".ds-btn-primary { font-family: 'HelveticaNeue', 'Helvetica Neue', Arial, Helvetica, sans-serif; font-size: 1rem; font-weight: 400; background-color: #4CAF50; color: #ffffff; border: 1px solid #4CAF50; border-radius: 9px; padding: 0.75em 1.25em; box-shadow: none; cursor: pointer; transition: background-color 0.2s ease-in-out; } .ds-btn-primary:hover { background-color: #388E3C; } .ds-btn-primary:focus-visible { outline: 3px solid #ffdd00; box-shadow: 0 0 0 4px rgba(255,221,0,0.5); }"
+      "description": "The one high-commitment action per page — signal red, square, near-flat at rest.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Ready for this? Book a free call</a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; font-family: 'Bitter', Georgia, serif; font-weight: 700; font-size: 1rem; background: #a8362b; color: #f4efe4; border: 1px solid #a8362b; padding: 0.9em 1.6em; box-shadow: 0 1px 2px rgba(27,20,12,0.12); transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease; text-decoration: none; } .ds-btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(27,20,12,0.22); background: #8f2c22; } .ds-btn-primary:focus-visible { outline: 2px solid #a8362b; outline-offset: 3px; }"
     },
     {
-      "name": "Secondary Button",
+      "name": "Ghost Button",
       "kind": "button",
-      "refersTo": "button-secondary",
-      "description": "White outline variant, same 9px radius as primary.",
-      "html": "<button class=\"ds-btn-secondary\">Grab a free discovery call</button>",
-      "css": ".ds-btn-secondary { font-family: 'HelveticaNeue', 'Helvetica Neue', Arial, Helvetica, sans-serif; font-size: 1rem; background-color: #ffffff; color: #000000; border: 1px solid #ccc; border-radius: 9px; padding: 0.75em 1.25em; cursor: pointer; transition: background-color 0.2s ease-in-out; } .ds-btn-secondary:hover { background-color: #e0e0e0; } .ds-btn-secondary:focus-visible { outline: 3px solid #ffdd00; box-shadow: 0 0 0 4px rgba(255,221,0,0.5); }"
+      "refersTo": "button-ghost",
+      "description": "Secondary action — used per-tier on cards where the primary button would over-claim.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">Book Checkpoint &mdash; &pound;65</a>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; font-family: 'Bitter', Georgia, serif; font-weight: 700; font-size: 0.875rem; background: transparent; color: #1b2a3d; border: 1px solid rgba(27,42,61,0.22); padding: 0.55em 1.1em; text-decoration: none; transition: border-color 0.2s ease, color 0.2s ease; } .ds-btn-ghost:hover { border-color: #a8362b; color: #a8362b; }"
     },
     {
-      "name": "Hero Headline",
-      "kind": "custom",
-      "refersTo": "display",
-      "description": "The signature giant uppercase hero H1, split into two <mark>-highlighted phrases with per-page colours.",
-      "html": "<h1 class=\"ds-hero-h1\"><mark class=\"ds-mark-a\">Your breakthrough</mark><br><mark class=\"ds-mark-b\">starts here.</mark></h1>",
-      "css": ".ds-hero-h1 { font-family: 'HelveticaNeue', 'Helvetica Neue', Arial, Helvetica, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 2.45em; line-height: 1.14; text-indent: 0.5em; margin: 0; } @media (min-width: 640px) { .ds-hero-h1 { font-size: 5em; line-height: 1.17; } } .ds-mark-a { background-color: #FFFFFF; } .ds-mark-b { background-color: #D19C97; color: #D19C97; }"
-    },
-    {
-      "name": "Service Navigation",
+      "name": "Navigation",
       "kind": "nav",
       "refersTo": "navigation",
-      "description": "Full-width band above the hero: logo lockup left, three text links right.",
-      "html": "<nav class=\"ds-service-nav\"><a class=\"ds-service-nav__logo\" href=\"/\">The Clarity Lab</a><ul class=\"ds-service-nav__list\"><li><a href=\"/thought.html\">Blog</a></li><li><a href=\"/pod/\">Podcast</a></li><li><a href=\"#\" class=\"ds-service-nav__cta\">Book a discovery call</a></li></ul></nav>",
-      "css": ".ds-service-nav { display: flex; align-items: center; justify-content: space-between; padding: 0.5em 1em; font-family: 'HelveticaNeue', 'Helvetica Neue', Arial, Helvetica, sans-serif; } .ds-service-nav__list { display: flex; gap: 1.5em; list-style: none; margin: 0; padding: 0; } .ds-service-nav__list a { color: #0b0c0c; text-decoration: none; } .ds-service-nav__list a:hover { text-decoration: underline; } .ds-service-nav__cta { background-color: #D19C97; padding: 1px 0.25em; }"
+      "description": "Fixed, paper background, hairline border. Visible by default; hidden-then-reveal-on-scroll only on pages with a hero.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-nav__mark\" href=\"/\">The Clarity Lab</a><nav class=\"ds-nav__links\"><a href=\"/thought.html\">Blog</a><a href=\"/pod/\">Podcast</a><a class=\"ds-nav__cta\" href=\"/book-a-discovery\">Free discovery call</a></nav></header>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; gap: 1em; padding: 1.1em 2.5em; background: #f4efe4; border-bottom: 1px solid rgba(27,42,61,0.22); } .ds-nav__mark { font-family: 'Bitter', Georgia, serif; font-weight: 700; color: #1b2a3d; text-decoration: none; } .ds-nav__links { display: flex; align-items: center; gap: 1.75rem; } .ds-nav__links a { font-family: 'Spline Sans Mono', monospace; font-size: 0.8125rem; color: #4a5773; text-decoration: none; } .ds-nav__links a:hover { color: #a8362b; } .ds-nav__cta { color: #1b2a3d !important; border: 1px solid rgba(27,42,61,0.22); padding: 0.55em 1.1em; } .ds-nav__cta:hover { border-color: #a8362b; color: #a8362b !important; }"
     },
     {
-      "name": "Checklist Item",
+      "name": "Hero Heading",
       "kind": "custom",
-      "refersTo": "cl-check",
-      "description": "List item with a custom checkmark icon replacing the default marker.",
-      "html": "<ul class=\"ds-check-list\"><li>Gain an outside perspective</li></ul>",
-      "css": ".ds-check-list { list-style: none; margin: 0; padding: 0; } .ds-check-list li { background-repeat: no-repeat; background-position: left center; background-size: 1.5em; padding: 0.25em 0 0.25em 2em; background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%238A9A5B' d='M9 16.2l-3.5-3.5L4 14.2l5 5 11-11-1.5-1.5z'/%3E%3C/svg%3E\"); }"
+      "refersTo": "display",
+      "description": "Full-bleed real photograph, dark scrim, bottom-anchored headline with signal-red (or, on the home page only, dusty-rose) em emphasis.",
+      "html": "<div class=\"ds-hero\"><div class=\"ds-hero__scrim\"></div><h1 class=\"ds-hero__title\">Scottish island strategy retreats for teams, and remote coaching for people <em>feeling stuck</em>.</h1></div>",
+      "css": ".ds-hero { position: relative; min-height: 420px; display: flex; align-items: flex-end; background: #1b2a3d center/cover no-repeat; padding: 2rem; overflow: hidden; } .ds-hero__scrim { position: absolute; inset: 0; background: linear-gradient(to top, rgba(14,20,28,0.88), rgba(14,20,28,0.1) 68%); } .ds-hero__title { position: relative; z-index: 2; font-family: 'Bitter', Georgia, serif; font-weight: 700; font-size: clamp(1.9rem, 5vw, 3.5rem); line-height: 1.1; color: #f4efe4; margin: 0; text-shadow: 0 2px 30px rgba(0,0,0,0.35); } .ds-hero__title em { font-style: normal; color: #e0a999; }"
     },
     {
       "name": "Comparison Table",
       "kind": "custom",
       "refersTo": "table",
-      "description": "Unmodified GDS table used for pricing/comparison grids.",
-      "html": "<table class=\"ds-table\"><caption>Investment</caption><thead><tr><th>Checkpoint</th><th>Breakthrough</th><th>Island Retreat</th></tr></thead><tbody><tr><td>£65</td><td>£495</td><td>£1,450</td></tr></tbody></table>",
-      "css": ".ds-table { width: 100%; border-collapse: collapse; font-family: 'HelveticaNeue', 'Helvetica Neue', Arial, Helvetica, sans-serif; } .ds-table caption { text-align: left; font-weight: 700; margin-bottom: 0.5em; } .ds-table th, .ds-table td { text-align: left; padding: 10px 20px 10px 0; border-bottom: 1px solid #b1b4b6; }"
+      "description": "Pricing/tier data rendered as an actual ledger — mono figures, hairline rows, no zebra striping.",
+      "html": "<table class=\"ds-table\"><thead><tr><th></th><th>Checkpoint</th><th>Breakthrough</th></tr></thead><tbody><tr><th scope=\"row\">Format</th><td>1-hour remote call</td><td>2-hour with prep</td></tr><tr><th scope=\"row\">Investment</th><td>&pound;65</td><td>&pound;495</td></tr></tbody></table>",
+      "css": ".ds-table { width: 100%; border-collapse: collapse; font-family: 'Spline Sans Mono', monospace; font-size: 0.875rem; } .ds-table th, .ds-table td { text-align: left; padding: 0.6em 1em 0.6em 0; border-bottom: 1px solid rgba(27,42,61,0.22); } .ds-table thead th { font-family: 'Bitter', Georgia, serif; font-weight: 700; color: #1b2a3d; font-size: 0.8125rem; } .ds-table tbody th { color: #4a5773; font-weight: 500; }"
     },
     {
-      "name": "Footer Band",
+      "name": "Checklist Item",
       "kind": "custom",
-      "refersTo": "footer",
-      "description": "Full-width sage footer band with small licence-style copy.",
-      "html": "<footer class=\"ds-footer\"><p>Clarity Lab Method workshops offer a structured approach to reset your perspective.</p><p>&copy; 2026 Cockburn Advisory Services Ltd.</p></footer>",
-      "css": ".ds-footer { background-color: #B4C4AE; padding: 3em 1em 9em; } .ds-footer p { font-size: small; font-family: 'HelveticaNeue', 'Helvetica Neue', Arial, Helvetica, sans-serif; margin: 0 0 0.5em; }"
+      "refersTo": "checklist",
+      "description": "Rotated-square (diamond) bullet in signal red — deliberately abstract, not a checkmark icon.",
+      "html": "<ul class=\"ds-list\"><li><strong>Problem space work.</strong> <span>Mornings are spent collaboratively building maps of our problem spaces.</span></li></ul>",
+      "css": ".ds-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.75rem; } .ds-list li { position: relative; padding-left: 2em; } .ds-list li::before { content: ''; position: absolute; left: 0; top: 0.55em; width: 0.55em; height: 0.55em; background: #a8362b; transform: rotate(45deg); } .ds-list strong { display: block; font-family: 'Bitter', Georgia, serif; font-weight: 700; color: #1b2a3d; } .ds-list span { color: #4a5773; }"
+    },
+    {
+      "name": "FAQ Item",
+      "kind": "custom",
+      "refersTo": "faq",
+      "description": "Native <details>, authored SVG chevron (never Unicode) rotating 180° on open.",
+      "html": "<details class=\"ds-faq\"><summary>How much does it cost?<span class=\"ds-faq__icon\"><svg viewBox=\"0 0 16 16\" width=\"16\" height=\"16\" fill=\"none\"><path d=\"M4 6l4 4 4-4\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span></summary><div class=\"ds-faq__body\"><p>Checkpoint: &pound;65</p></div></details>",
+      "css": ".ds-faq { border-bottom: 1px solid rgba(27,42,61,0.22); padding: 1rem 0; } .ds-faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; font-family: 'Bitter', Georgia, serif; font-weight: 700; color: #1b2a3d; } .ds-faq summary::-webkit-details-marker { display: none; } .ds-faq__icon { color: #a8362b; transition: transform 0.2s ease; } .ds-faq[open] .ds-faq__icon { transform: rotate(180deg); } .ds-faq__body { color: #4a5773; padding-top: 0.4em; }"
+    },
+    {
+      "name": "Entry List Item",
+      "kind": "custom",
+      "refersTo": "entry-list",
+      "description": "Blog/podcast index row — date, title, excerpt, hairline rule. Reads as a dispatch log.",
+      "html": "<article class=\"ds-entry\"><p class=\"ds-entry__date\">27 APRIL 2025</p><h3 class=\"ds-entry__title\"><a href=\"#\">Design Thinking vs. Design Doing</a></h3><p class=\"ds-entry__excerpt\">Lately, I've been reflecting on how often we get stuck in the thinking phase of design...</p></article>",
+      "css": ".ds-entry { padding: 1.75rem 0; border-bottom: 1px solid rgba(27,42,61,0.22); max-width: 40rem; } .ds-entry__date { font-family: 'Spline Sans Mono', monospace; font-size: 0.75rem; letter-spacing: 0.04em; text-transform: uppercase; color: #4a5773; } .ds-entry__title { font-family: 'Bitter', Georgia, serif; font-size: 1.25rem; margin: 0.4em 0; } .ds-entry__title a { color: #1b2a3d; text-decoration: none; } .ds-entry__title a:hover { color: #a8362b; } .ds-entry__excerpt { color: #4a5773; margin: 0; }"
+    },
+    {
+      "name": "Episode Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Podcast archive card — real cover art (also used on Apple Podcasts), themed native audio player.",
+      "html": "<div class=\"ds-episode-card\"><div class=\"ds-episode-card__header\"><img class=\"ds-episode-cover\" src=\"/assets/i/podcast-cover.jpg\" alt=\"\"><div><p class=\"ds-episode-meta\">17 September 2025 &middot; Episode 11</p><h3><a href=\"#\">Struggling to lead through ambiguity</a></h3><audio class=\"ds-audio\" controls></audio></div></div></div>",
+      "css": ".ds-episode-card { border: 1px solid rgba(27,42,61,0.22); padding: 1.75rem; background: #f4efe4; } .ds-episode-card__header { display: flex; gap: 1.75rem; flex-wrap: wrap; } .ds-episode-cover { width: 8rem; height: 8rem; object-fit: cover; border: 1px solid rgba(27,42,61,0.22); flex: none; } .ds-episode-meta { font-family: 'Spline Sans Mono', monospace; font-size: 0.8125rem; color: #4a5773; } .ds-audio { width: 100%; accent-color: #a8362b; }"
     }
   ],
   "narrative": {
-    "northStar": "The Civic Croft",
-    "overview": "This is GOV.UK Design System chrome — flat, squared, built for tax forms and benefit claims — carrying a pastoral, nature-named accent palette and one oversized signature move: a giant uppercase hero headline with hand-highlighted phrases. The base structure (grid, type scale, focus states, component markup) is unmodified GOV.UK Frontend running in its \"unbranded\" configuration. Everything that reads as \"Clarity Lab\" rather than \"a government service\" is a thin layer on top: eight named custom-property colours, one enlarged and highlighted heading style, and a handful of per-page inline overrides that don't generalise into a system. This file documents the implementation exactly as built — a baseline for reference, not a set of choices the next visual direction is obliged to keep.",
+    "northStar": "The Shipping Forecast",
+    "overview": "This system exists to prove one idea: clarity isn't a mood, it's a decision. A shipping forecast doesn't inspire you — it gives you exactly what you need to make a confident go/no-go call, in the same terse, structured form every time. That's the register this whole site now speaks in: pale bulletin paper, navy ink, hairline rules, tabular data rendered as an actual ledger rather than a bulleted list pretending to be one. Where something needs to matter, it gets the one signal-red accent this system permits itself. Everywhere else, the paper and the ink do the work. It replaced an earlier, wrong-headed attempt at the same brief — a dark, bioluminescent night-sea world that was technically accomplished but fought the brand's real asset: bright, documentary daylight photography of an actual place.",
     "keyCharacteristics": [
-      "GOV.UK Frontend (unbranded variant) as the unmodified structural and accessibility base.",
-      "A fixed eight-colour named palette (Gardenia, Tendril, Willow, Mocha-mousse, Cobblestone, Rose-tan, Viola, Cornflower-blue) defined once as CSS custom properties, applied inconsistently.",
-      "One signature composition: full-bleed hero (video or image) behind a giant uppercase headline split across two <mark>-highlighted phrases.",
-      "A large population of one-off hex colours used only in a single page's hero front matter, outside the named palette.",
-      "Flat, sharply-squared GDS surfaces everywhere except buttons, which carry a hand-added 9px radius with no corresponding rationale elsewhere in the system."
+      "Pale bulletin paper throughout — no page in this system uses a dark ground.",
+      "Exactly one accent colour (signal red), spent deliberately: primary actions, em emphasis inside headings, and nothing else.",
+      "Every corner in the system is square. Zero border-radius anywhere except unavoidable native browser chrome.",
+      "Three typefaces with distinct jobs, never substituted for each other: slab display, humanist serif for reading, monospace for anything that is data.",
+      "Real photography only. No page in this system carries an illustrative, AI-generated, or stock image as a hero."
     ],
     "rules": [
-      { "name": "The Per-Page Accent Rule", "body": "Hero headline colours (hero-mark, hero-accent) are set per page in Jekyll front matter, not drawn from one governing rule. Beyond the eight named tokens, more than a dozen further one-off hex values appear, each used on only a single page.", "section": "colors" },
-      { "name": "The Highlighter Rule", "body": "Every hero <h1> is two phrases, each wrapped in <mark>, each coloured independently via front matter. The device (giant, uppercase, highlighted) is consistent; the colours behind it are not.", "section": "typography" }
+      { "name": "The One Accent Rule", "body": "Signal red is the only colour in the system that means something when you see it. It never appears as a decorative field or a colour choice made for variety.", "section": "colors" },
+      { "name": "The Hero Exception", "body": "The hero's em emphasis uses #e0a999 (dusty rose), not signal red — confined to .bl-hero__title em, chosen because it reads better against warm photographic skies.", "section": "colors" },
+      { "name": "The Mono-Is-Data Rule", "body": "Spline Sans Mono is never used for opinion or narrative — only for things that are factually true regardless of who's reading.", "section": "typography" },
+      { "name": "The Hairline-Not-Shadow Rule", "body": "Depth and separation come from a 1px rule at 22% ink opacity, not from a shadow. Reach for a border first.", "section": "elevation" },
+      { "name": "The Square Corner Rule", "body": "No component may introduce border-radius without a named reason strong enough to be documented. Native browser chrome is the only exempted rounding.", "section": "shapes" }
     ],
     "dos": [
-      "Do inherit GOV.UK Frontend's native focus, keyboard, and ARIA behaviour unmodified on every interactive element — it is the one part of this system that is genuinely load-bearing.",
-      "Do treat the eight named custom-property colours as the closest thing this implementation has to a real palette; they are the only colours defined once and reused rather than invented per page."
+      "Do spend signal red only on primary actions and em emphasis.",
+      "Do use real, documentary photography for every hero.",
+      "Do use the mono face for facts and the serif for prose, without mixing the two roles.",
+      "Do keep every corner square."
     ],
     "donts": [
-      "Don't assume any page's hero accent colour predicts another's — it's chosen per page in front matter, and more than a dozen one-off hex values exist outside the named palette.",
-      "Don't treat the button's 9px radius or shadow removal as evidence of a deliberate \"soft GDS\" design language — it's an isolated override with no counterpart anywhere else in the flat, square GDS base.",
-      "Don't reuse the near-black footer override from /retreats as a pattern — every other page uses the Footer Sage default."
+      "Don't add a kicker or eyebrow label above a heading — caught and removed twice during this system's build before it shipped either time.",
+      "Don't introduce a second sticky sidebar without the same justification the podcast archive's Subscribe sidebar was built for.",
+      "Don't use box-shadow for resting-state depth — reserved for the primary button's hover state only.",
+      "Don't substitute Unicode glyphs or emoji for an icon."
     ]
   }
 }

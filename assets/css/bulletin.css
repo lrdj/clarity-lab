@@ -306,7 +306,13 @@ a.bl-btn--ghost:hover, a.bl-btn--ghost:focus-visible {
 
 .bl-main { position: relative; }
 
-.bl-section { padding: var(--space-6) clamp(1.25rem, 6vw, 4rem); }
+/* Asymmetric on purpose: more space above a section's own heading than
+   below its last element. Two adjacent sections previously stacked two
+   equal 7rem paddings into an unexplained 14rem dead zone at every
+   boundary; now a boundary is top-padding (7rem) + the previous section's
+   smaller bottom padding (2.75rem) = 9.75rem, still generous, no longer a
+   gap nobody can account for. */
+.bl-section { padding: var(--space-6) clamp(1.25rem, 6vw, 4rem) var(--space-4); }
 .bl-section--panel { background: var(--bl-paper-deep); }
 
 .bl-section__inner { max-width: 68rem; margin: 0 auto; }
