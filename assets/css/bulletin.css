@@ -101,6 +101,15 @@ h1 em, h2 em, h3 em { font-style: normal; color: var(--bl-signal); }
    than .bl-hero__title, larger than a section heading. */
 .bl-page-title { font-size: clamp(1.9rem, 4.4vw, 3.2rem); color: var(--bl-ink); }
 
+.bl-404 { min-height: 60dvh; display: flex; align-items: center; }
+.bl-404__inner {
+  max-width: 30rem;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: var(--space-5);
+}
+.bl-404 .bl-lede { margin: 0 auto var(--space-3); }
+
 p { margin: 0 0 1.1em; }
 p:last-child { margin-bottom: 0; }
 

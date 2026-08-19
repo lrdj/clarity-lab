@@ -27,18 +27,26 @@ infers the right command from context.
 - **`DESIGN.md`** (root) + **`.impeccable/design.json`** sidecar — documents
   the *incumbent* system: GOV.UK Frontend ("unbranded" variant) carrying a
   nature-named colour palette and a giant highlighter-marked hero headline.
-  This is now **stale for the home page** (`index.html`), which runs its own
-  separate system — see below — but still accurate for every other page
-  (`/retreats`, `/book-a-discovery`, podcast pages, blog). It was captured
-  as a baseline/anti-reference before the redesign, not as something the new
-  home page had to preserve.
+  **This is now fully stale**: every live, linked page on the site has moved
+  to the new "Shipping Forecast" system (see below). Nothing that a visitor
+  can actually reach still uses GOV.UK Frontend — only unlinked scratch/dev
+  files at the repo root (`colour.html`, `dev.html`, `mood.html`,
+  `checkpoint.html`, and similar) and three old draft variants of the home
+  page (`r-rev-preston.html`, `r-colour-tests.html`, `r-rev-22-Mar.html`)
+  still declare `layout: unbranded`. `DESIGN.md` was kept as-is deliberately
+  through the whole rollout (captured as a baseline/anti-reference before
+  the redesign began) rather than patched page-by-page; regenerating it
+  from the new system (`/impeccable document`) is the natural next step,
+  not yet done because it wasn't asked for.
 - **`.impeccable/surfaces/index-html.md`** — the surface brief for the home
   page: scope, audience, funnel logic, chosen direction, and the reasoning
-  behind it. This is where the home page's design decisions live, separately
-  from the sitewide `DESIGN.md`, because only this one page has moved to a
-  new visual world so far. (This brief was originally written for `/r.html`
-  before that file was promoted to `index.html` — its full history, including
-  the rejected "Bioluminescent Wake" direction, is in git log for this file.)
+  behind it. This is the most detailed design-decision record for the new
+  system, but it only covers the home page specifically — the blog and
+  podcast extensions (see below) don't have their own briefs; their
+  reasoning lives in this file instead. (This brief was originally written
+  for `/r.html` before that file was promoted to `index.html` — its full
+  history, including the rejected "Bioluminescent Wake" direction, is in
+  git log for this file.)
 - **`.impeccable/config.json`** — `buildPath: "code"` (build directly in
   code rather than generating an AI image comp first, chosen because the
   brand's whole premise is real, documentary photography — an AI-generated
@@ -125,6 +133,71 @@ See `PRODUCT.md` for which images in `assets/i/` are confirmed real versus
 unverified, including the one AI-generated image that was caught and
 removed before shipping.
 
+## The rest of the site: extended sitewide (2026-08-19)
+
+After the home page shipped, the user decided to extend the same system to
+every other live page rather than leave it as a one-page outlier. In order:
+
+1. **Nav fix (prerequisite, not a page).** The shared nav
+   (`_includes/above-main-bulletin.html`) only ever worked correctly on
+   pages with a hero — `bulletin.js` hid it and relied on scrolling past a
+   hero to reveal it again, so any hero-less page would have a permanently
+   invisible nav. Fixed by making the nav's CSS default visible everywhere,
+   and having `bulletin.js` add a `.bl-nav--hero-mode` modifier (hide,
+   reveal-on-scroll) only on pages that actually have a `.bl-hero`. Also
+   restored Blog and Podcast links, missing from the new nav entirely.
+2. **`/book-a-discovery`** — rebuilt with the real Calendly inline booking
+   widget (script added per-page, not sitewide), tinted to the new palette.
+3. **Blog** (`/thought.html` + all 6 posts in `_posts/`) — new
+   `_layouts/bl-post.html` builds each post's hero from front matter
+   (`hero-image`, and the punchy `hero-h1a`/`hero-h1b` display headline,
+   kept deliberately separate from the SEO `title` field). New `.bl-article`
+   typography for long-form prose, and a `.bl-entry-list` component (date,
+   title, excerpt, hairline dividers) for the index — reads as a dispatch
+   log, which fits the world better than cards would. Real photo
+   (`concept-wall.jpg`, a genuine research-wall photo) reused as a shorter
+   "banner" hero (`.bl-hero--banner`) across all posts, distinct from the
+   home page's full-viewport hero.
+4. **Podcast** (`/pod/` + all 11 episodes in `_podcasts/`) — new
+   `_layouts/bl-podcast.html`, reusing `rocks-growth.jpg` (already the
+   established podcast hero image pre-redesign) as a consistent banner.
+   Per-episode cover art (`cover_image` front matter) — genuine artwork
+   also used on Apple Podcasts, not incidental images — is shown at
+   `.bl-episode-cover` thumbnail size on both the archive and each episode
+   page; this was missed in the first pass and added back after the user
+   flagged it, along with a full Subscribe block (Apple Podcasts, RSS,
+   direct MP3 download) on every individual episode page, not just the
+   archive. The archive page uses a two-column layout (`.bl-layout`,
+   `.bl-layout__main` + a `position: sticky` `.bl-layout__aside`) carrying
+   Subscribe — a deliberate, sparing exception to the sitewide
+   single-column pattern, because a persistent action beside a long
+   scrolling list is a real Read-mode need, not decoration. The
+   testimonial stayed full-width at the bottom, matching the home page.
+5. **`/retreats/`** — retired, not rebuilt. Its content was AI-drafted
+   exploration text with no unique value once Kielder Forest was retired
+   (the home page's comparison table and "What if I can't come to
+   Scotland?" section already cover Mull + Online more completely, and
+   more accurately, than the old page ever did). Its 27 real photos were
+   moved to `assets/i/retreats-holding/` before the folder was deleted —
+   see `PRODUCT.md`'s Evidence on Hand for what's in there and what's
+   confirmed about them. One genuine detail worth keeping was pulled out
+   of the otherwise-discarded draft text: a real "past activities" list
+   (Fingal's Cave and Iona, wool-dyeing, crater swimming near Tobermory,
+   a local distillery) and a liability note about guided wild swimming —
+   also recorded in `PRODUCT.md`.
+6. **`404.html`** — was on `layout: page` (a *different* old system,
+   minima's own default, not even GOV.UK) with no styling at all. Rebuilt
+   centred, on-brand, no hero. Caught and fixed a subtle craft-floor
+   violation before shipping: an initial draft put "404" as a small label
+   above the "Not found" heading — structurally a kicker (banned outright,
+   no exceptions in the craft floor) even though it was functional (a
+   status code) rather than decorative. Removed; the heading carries it
+   alone now.
+
+Every one of these pages was smoke-tested (HTTP 200) after the change;
+screenshots were taken for each but not kept afterward (working files, not
+final references) — only the home page's are in `.impeccable/review/`.
+
 ## Process notes worth knowing
 
 - Both direction rounds went through a self-review against
@@ -150,20 +223,19 @@ removed before shipping.
 
 ## Continuing the work
 
-- The home page is now a visual outlier on its own site: every other page
-  (`/retreats`, `/book-a-discovery`, podcast pages, blog) is still on the
-  old GOV.UK system. Worth a deliberate decision on whether/when to extend
-  the Shipping Forecast system further, rather than drifting into it
-  page-by-page.
-- Podcast pages were discussed as a plausible next extension — the
-  "shipping forecast" metaphor fits a broadcast archive well — but they're
-  `Read` mode, not `Persuade`, and need genuinely new components (episode
-  list, audio player, prev/next nav), not a copy-paste of home-page
-  components.
-- `/impeccable document` — regenerate `DESIGN.md` from a page's built code.
-  Don't run this against the home page without first deciding whether its
-  system should become the new sitewide `DESIGN.md`, replace it outright,
-  or stay a separate surface — right now it's deliberately kept separate.
+- The sitewide extension is done — every live, linked page uses the new
+  system now. The natural next step is `/impeccable document` to
+  regenerate `DESIGN.md` from the built system (it currently still
+  describes the retired GOV.UK look, accurate for nothing live). Not done
+  yet because it wasn't asked for; flagged repeatedly by the design hook
+  throughout the rollout, which is expected — see Process notes.
+- Genuine remaining scratch files at the repo root (`colour.html`,
+  `dev.html`, `fig.html`, `mood.html`, `mood-rev.html`, `checkpoint.html`,
+  `fb-checkpoint.html`, `comparison-table.html`, `index-b.html`,
+  `index2025.html`, `land-20250304.html`, `keep-useful-elements.html`,
+  `urg.html`, `method.html`, plus the three old `r-*.html` draft variants)
+  are unlinked from anywhere live and still on the old system. None of
+  this was touched during the rollout — out of scope, not an oversight.
 - `/impeccable critique` / `/impeccable audit` — UX review / technical
   (a11y, perf, responsive) checks on any page.
 - `/impeccable polish`, `bolder`, `quieter`, `clarify`, `adapt` — targeted
