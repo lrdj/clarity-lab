@@ -362,7 +362,10 @@ a.bl-btn--ghost:hover, a.bl-btn--ghost:focus-visible {
 .bl-article a:not([class]):hover { text-decoration-color: var(--bl-signal); }
 
 .bl-section h2 { font-size: clamp(1.6rem, 3.2vw, 2.4rem); margin-bottom: 0.6em; }
-.bl-section p { color: var(--bl-ink); font-size: 1.0625rem; }
+/* :not(.bl-lede) so this doesn't out-specificity the lede variant below —
+   .bl-section p and .bl-lede were tied at equal specificity otherwise,
+   silently flattening every lede paragraph on the site to body size. */
+.bl-section p:not(.bl-lede) { color: var(--bl-ink); font-size: 1.0625rem; }
 
 .bl-lede { font-size: 1.25rem; color: var(--bl-ink); }
 
