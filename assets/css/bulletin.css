@@ -128,9 +128,6 @@ p:last-child { margin-bottom: 0; }
 .bl-skip-link:focus { left: var(--space-2); top: var(--space-2); }
 
 /* ---------- Nav ---------- */
-/* The first viewport is deliberately chrome-free (see the direction
-   contract); bulletin.js reveals the nav once the visitor has scrolled
-   past the hero. */
 
 .bl-nav {
   position: fixed;
@@ -141,32 +138,40 @@ p:last-child { margin-bottom: 0; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
   gap: 0.6em 1em;
   padding: 1.1em clamp(1.25rem, 4vw, 2.5rem);
   background: var(--bl-paper);
   border-bottom: 1px solid var(--bl-hairline);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
 }
-/* Default: visible. Only pages with a .bl-hero get the chrome-free first
-   viewport (see the direction contract); bulletin.js adds this modifier
-   only when a hero exists on the page, and only then does the nav start
-   hidden, reappearing on scroll past the hero. */
-.bl-nav.bl-nav--hero-mode { opacity: 0; transform: translateY(-0.5em); pointer-events: none; }
-.bl-nav.bl-nav--hero-mode.is-visible { opacity: 1; transform: none; pointer-events: auto; }
-
-@media (max-width: 26rem) {
-  a.bl-nav__mark { font-size: 0.9rem; }
-  a.bl-nav__link { font-size: 0.7rem; }
-  a.bl-nav__cta { font-size: 0.7rem; padding: 0.5em 0.85em; }
-  .bl-nav__links { gap: var(--space-2); }
-}
+/* Default: visible. Only the home page's full hero gets the chrome-free
+   first viewport (see the direction contract); bulletin.js adds this
+   modifier only when that hero exists on the page, and only then does the
+   nav start hidden, reappearing on scroll past the hero. visibility is
+   toggled alongside opacity (not just opacity) so the nav also leaves the
+   keyboard tab order while hidden — opacity:0 alone stays focusable. */
+.bl-nav.bl-nav--hero-mode { opacity: 0; visibility: hidden; transform: translateY(-0.5em); pointer-events: none; }
+.bl-nav.bl-nav--hero-mode.is-visible { opacity: 1; visibility: visible; transform: none; pointer-events: auto; transition: opacity 0.3s ease, transform 0.3s ease; }
 
 a.bl-nav__mark {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1rem;
   color: var(--bl-ink);
+  flex: 0 0 auto;
+  transition: color 0.2s ease;
+}
+a.bl-nav__mark:hover, a.bl-nav__mark:focus-visible { color: var(--bl-signal); }
+
+/* Groups the text links and the CTA together on the trailing edge, as one
+   unit, so mobile has exactly two rows (mark+cta, then links) instead of
+   wrapping each item onto its own row. */
+.bl-nav__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .bl-nav__links {
@@ -174,6 +179,15 @@ a.bl-nav__mark {
   align-items: center;
   gap: var(--space-3);
   flex-wrap: wrap;
+}
+
+@media (max-width: 30rem) {
+  .bl-nav { flex-wrap: wrap; }
+  .bl-nav__right { flex-basis: 100%; flex-wrap: nowrap; justify-content: space-between; order: 1; }
+  a.bl-nav__mark { font-size: 0.9rem; }
+  a.bl-nav__link { font-size: 0.7rem; }
+  a.bl-nav__cta { font-size: 0.7rem; padding: 0.5em 0.85em; }
+  .bl-nav__links { gap: var(--space-2); flex-wrap: nowrap; }
 }
 
 a.bl-nav__link {
@@ -304,7 +318,15 @@ a.bl-btn--ghost:hover, a.bl-btn--ghost:focus-visible {
 
 /* ---------- Sections ---------- */
 
-.bl-main { position: relative; }
+/* The nav is position:fixed and its true height varies (one row on
+   desktop, up to two on narrow phones), so bulletin.js measures it into
+   --bl-nav-height rather than guessing a breakpoint value. Text-first
+   pages (book-a-discovery, 404) need that space reserved so the fixed nav
+   doesn't sit over their opening heading. Hero-first pages pull the hero
+   back up by the same amount so the full-bleed photo still starts at the
+   true top of the viewport, unchanged from before. */
+.bl-main { position: relative; padding-top: var(--bl-nav-height, 4.5rem); }
+.bl-main > .bl-hero:first-child { margin-top: calc(var(--bl-nav-height, 4.5rem) * -1); }
 
 /* Asymmetric on purpose: more space above a section's own heading than
    below its last element. Two adjacent sections previously stacked two
@@ -489,7 +511,32 @@ a.bl-entry__title-link, .bl-entry__title a { color: var(--bl-ink); }
 
 /* Data table — pricing rendered as an actual bulletin table */
 
-.bl-table-wrap { overflow-x: auto; margin-top: var(--space-2); }
+.bl-table-wrap { overflow-x: auto; margin-top: var(--space-2); position: relative; }
+/* A wide comparison table has no other visual cue that it scrolls on
+   narrow viewports; the trailing fade plus a mono hint make that
+   discoverable instead of silently clipping the Breakthrough/Retreat
+   columns off-screen. */
+.bl-table-wrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 2.5rem;
+  background: linear-gradient(to right, transparent, var(--bl-paper-deep));
+  pointer-events: none;
+}
+.bl-table-hint {
+  display: none;
+  margin: 0 0 var(--space-1);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--bl-ink-muted);
+  letter-spacing: 0.02em;
+}
+@media (max-width: 48rem) {
+  .bl-table-hint { display: block; }
+}
 .bl-table { width: 100%; border-collapse: collapse; font-family: var(--font-mono); font-size: 0.9375rem; }
 .bl-table-wrap .bl-table { margin-top: 0; }
 .bl-table th, .bl-table td { text-align: left; padding: 0.6em 1em 0.6em 0; border-bottom: 1px solid var(--bl-hairline); white-space: nowrap; }
